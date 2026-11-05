@@ -72,8 +72,8 @@ can import ToyBlocks (`--python` or `$AGENTIC_ROBOTICS_PYTHON` names it).
 
 ```bash
 agentic-robotics menu    --backend oracle                      # pick tasks one after another at http://127.0.0.1:8083
-agentic-robotics episode --task ai2_stacked --backend oracle   # one model-driven episode, scripted skills
-agentic-robotics human   --task ai2_stacked --backend oracle   # drive it yourself at http://127.0.0.1:8083
+agentic-robotics episode --task r_on_red --backend oracle      # one model-driven episode, scripted skills
+agentic-robotics human   --task r_on_red --backend oracle      # drive it yourself at http://127.0.0.1:8083
 agentic-robotics portal                                        # browse finished runs at http://127.0.0.1:8082
 agentic-robotics portal --static                               # or write them as pages under <runs dir>/portal/
 ```
