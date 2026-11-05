@@ -16,7 +16,7 @@ loop fails**, not a success rate.
 The design commitment is the seam. `core/` is the MCP host and knows nothing about any robot or
 simulator; each domain is an MCP server behind an install extra. Only JSON-serializable values
 cross the seam: no live Python objects, no tensors, no environment handles. `core` never imports
-`blocksuite`, `torch` or `isaaclab`, and the two-interpreter layout is what enforces it, since
+`toyblocks`, `torch` or `isaaclab`, and the two-interpreter layout is what enforces it, since
 `core` runs in an interpreter where none of those is installed.
 
 ### `core/`, which knows no robot
@@ -78,7 +78,7 @@ cross the seam: no live Python objects, no tensors, no environment handles. `cor
 - **`skills/`** implements them. `inline_oracle.py` is the scripted skills' server; its motion
   layer, `vecgen_motion.py`, runs ToyBlocks's vecgen skills (pick, place, flip, rotate; cuRobo v2
   planning) on the live Isaac Lab scene, wired like ToyBlocks's evaluation low-level oracle
-  (`blocksuite.eval.ll_oracle`). `maniflow_skills.py` is the learned-policy side.
+  (`toyblocks.eval.ll_oracle`). `maniflow_skills.py` is the learned-policy side.
 - **Around the boot**: `task_variants.py`; the checks that refuse to start a run on a scene the
   model cannot act in (`block_asset_check.py`, `scene_preflight.py`, `reset_state_check.py`);
   `block_pointing.py` (which block a pointed pixel names); `human_model_client.py`; `portal.py`,
@@ -103,7 +103,7 @@ it typed will spend the episode hunting the difference instead of the block.
 **Documentation about one file belongs in that file.** A design note in a directory beside the
 code drifts from what it describes; write it where the reader of that code will hit it.
 
-The sibling ToyBlocks repository (whose package imports as `blocksuite`), and its submodules, is outside this repository's authorship
+The sibling ToyBlocks repository (whose package imports as `toyblocks`), and its submodules, is outside this repository's authorship
 rules; see "Commit your own work".
 
 ---

@@ -7,7 +7,7 @@ choosing tool calls. There is no verifier and no success signal: the agent sees 
 image and decides for itself what happened. `core/` is the MCP host and knows nothing about any
 robot or simulator; each domain is an MCP server behind an install extra. The one domain here is
 [ToyBlocks](https://github.com/allenai/ToyBlocks), the block-manipulation simulator (its Python
-package imports as `blocksuite`), reached through `adapters/toyblocks/`.
+package imports as `toyblocks`), reached through `adapters/toyblocks/`.
 
 [`CLAUDE.md`](CLAUDE.md) describes the modules and states the authorship expectations for
 agents working in this repo.

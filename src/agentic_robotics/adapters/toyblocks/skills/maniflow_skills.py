@@ -247,7 +247,7 @@ class SimThreadManiFlowServer(ManiFlowMCPServer):
         Goes through `ToyBlocksEnv.step` the way a policy action does: seven absolute arm joint
         targets, here the current positions, and the binary gripper command, negative to close
         and positive to open (Isaac Lab's `BinaryJointPositionAction`, as
-        `blocksuite.utils.tamp_dataset.action_tensor` documents). No policy is called, so the
+        `toyblocks.utils.tamp_dataset.action_tensor` documents). No policy is called, so the
         ManiFlow conditioning is left as the last skill set it. The configured step count does not
         finish the motion on its own, so the command is then held until the joints settle
         (`SETTLE_JOINT_TOLERANCE`); the oracle settles its gripper over 24 simulation steps.

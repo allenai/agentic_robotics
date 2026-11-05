@@ -153,10 +153,10 @@ def solved_state(state: Any, on_pairs: list[tuple[str, str]], orientations: dict
 
 def reexec_under_isaac_python_if_needed(args: argparse.Namespace) -> None:
     """Hand this command to an interpreter with ToyBlocks in it, if this one lacks it."""
-    if os.environ.get(REEXEC_MARKER) or importlib.util.find_spec("blocksuite") is not None:
+    if os.environ.get(REEXEC_MARKER) or importlib.util.find_spec("toyblocks") is not None:
         return
     python = boot.resolve_isaac_python(args.python)
-    logger.info(f"{sys.executable} cannot import blocksuite; re-running under {python}.")
+    logger.info(f"{sys.executable} cannot import toyblocks; re-running under {python}.")
     os.execve(
         str(python),
         [str(python), str(Path(__file__).resolve()), *sys.argv[1:]],

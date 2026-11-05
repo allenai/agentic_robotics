@@ -39,7 +39,7 @@ _THIS_FILE = Path(__file__).resolve()
 AGENTIC_ROBOTICS_ROOT = _THIS_FILE.parents[4]
 
 MANIFEST_REPOS = {
-    "toyblocks": _repo_root("blocksuite", 2),
+    "toyblocks": _repo_root("toyblocks", 2),
     "agentic_robotics": AGENTIC_ROBOTICS_ROOT,
     "curobo": _repo_root("curobo", 1),  # cuRobo v2: <repo>/curobo/__init__.py
 }

@@ -174,7 +174,7 @@ def glyph_library_for(task: TaskConfig | ResolvedTask) -> str:
     Reads `glyph_library` off the task when its config carries one, else the default above.
 
     :param task: A `TaskConfig` or `ResolvedTask`
-    :return: A library name from `blocksuite.tamp.blocks.glyph_blocks.GLYPH_LIBRARIES`
+    :return: A library name from `toyblocks.tamp.blocks.glyph_blocks.GLYPH_LIBRARIES`
     """
     return getattr(task, "glyph_library", None) or DEFAULT_GLYPH_LIBRARY
 
@@ -483,11 +483,11 @@ def reexec_under_isaac_python_if_needed(args: argparse.Namespace) -> None:
 
     if args.mode not in ISAAC_MODES or os.environ.get(REEXEC_MARKER):
         return
-    if importlib.util.find_spec("blocksuite") is not None:
+    if importlib.util.find_spec("toyblocks") is not None:
         return
 
     python = boot.resolve_isaac_python(args.python)
-    logger.info(f"{sys.executable} cannot import blocksuite; re-running under {python}.")
+    logger.info(f"{sys.executable} cannot import toyblocks; re-running under {python}.")
     # `src` leads the path so the heavy interpreter finds this package even where it is not
     # installed
     pythonpath = os.pathsep.join(
@@ -1141,7 +1141,7 @@ def run_serve_mode(args: argparse.Namespace, settings: ExperimentSettings) -> No
     argv = [
         str(python),
         "-m",
-        "blocksuite.serving.serve_maniflow_policy",
+        "toyblocks.serving.serve_maniflow_policy",
         "--checkpoint",
         str(checkpoint),
         "--config",

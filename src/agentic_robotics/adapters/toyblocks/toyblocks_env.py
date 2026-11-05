@@ -7,8 +7,8 @@
 # ========================================================================
 # The venv's Warp must be imported before the app starts: Isaac Sim's omni.warp.core extension
 # otherwise puts its bundled (older) Warp first on sys.path, and the oracle skills' cuRobo v2 needs
-# the Warp version ToyBlocks pins (the same order as `blocksuite.cli.isaac_app.launch_app`).
-import warp  # noqa: F401, I001
+# the Warp version ToyBlocks pins (the same order as `toyblocks.cli.isaac_app.launch_app`).
+import warp  # noqa: F401
 from isaaclab.app import AppLauncher
 
 _SIMULATION_APP = AppLauncher(headless=True, enable_cameras=True, device="cuda:0").app
@@ -23,8 +23,6 @@ from typing import Any
 import gymnasium as gym
 import numpy as np
 import torch
-from blocksuite.utils.obs_utils import get_bounding_box
-from blocksuite.viewer.viewer import Viewer, ViewerCfg
 from isaaclab.sensors import Camera as IsaacCamera
 from isaaclab_tasks.utils import parse_env_cfg
 from scipy.spatial.transform import Rotation
@@ -32,6 +30,8 @@ from scipy.spatial.transform import Rotation
 from agentic_robotics.adapters.toyblocks import runner_bootstrap
 from agentic_robotics.adapters.toyblocks.config import TaskConfig
 from agentic_robotics.core.cameras import CameraModel
+from toyblocks.utils.obs_utils import get_bounding_box
+from toyblocks.viewer.viewer import Viewer, ViewerCfg
 
 logger = logging.getLogger(__name__)
 

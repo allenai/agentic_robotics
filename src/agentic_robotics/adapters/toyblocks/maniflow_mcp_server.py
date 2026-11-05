@@ -7,13 +7,6 @@ from math import nan
 from typing import Any, TypeVar
 
 import numpy as np
-from blocksuite.eval.pd_mode_controller import PDModeController
-from blocksuite.serving import PolicyClientAdapter, WebsocketClientPolicy
-from blocksuite.serving.action_chunk_broker import ActionChunkBroker
-from blocksuite.serving.maniflow_serving_utils import _build_heatmap, format_task_name
-from blocksuite.serving.obs_transforms import ObsTransformPolicy
-from blocksuite.serving.obs_transforms.maniflow import transform_kwargs_from_server_metadata
-from blocksuite.serving.obs_transforms.maniflow_blocks_table import ManiflowBlocksTableObsTransform
 from mcp.server.mcpserver import Image as MCPImage
 
 from agentic_robotics.adapters.toyblocks.leap.constants import (
@@ -33,6 +26,13 @@ from agentic_robotics.adapters.toyblocks.toyblocks_mcp_server import (
     ToyBlocksMCPServer,
 )
 from agentic_robotics.core.images import PixelCoord
+from toyblocks.eval.pd_mode_controller import PDModeController
+from toyblocks.serving import PolicyClientAdapter, WebsocketClientPolicy
+from toyblocks.serving.action_chunk_broker import ActionChunkBroker
+from toyblocks.serving.maniflow_serving_utils import _build_heatmap, format_task_name
+from toyblocks.serving.obs_transforms import ObsTransformPolicy
+from toyblocks.serving.obs_transforms.maniflow import transform_kwargs_from_server_metadata
+from toyblocks.serving.obs_transforms.maniflow_blocks_table import ManiflowBlocksTableObsTransform
 
 logger = logging.getLogger(__name__)
 

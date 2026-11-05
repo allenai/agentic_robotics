@@ -5,7 +5,7 @@ the gripper, registered as exactly the nine tools ``OracleMCPServer`` declares. 
 ToyBlocks vecgen skill planned with cuRobo v2 and run through
 :class:`skills.vecgen_motion.VecgenMotion` -- the skills that record ToyBlocks's training
 demonstrations, wired the way ToyBlocks's evaluation low-level oracle
-(``blocksuite.eval.ll_oracle``) wires them.
+(``toyblocks.eval.ll_oracle``) wires them.
 
 Skills executed by scripted motion rather than by a learned policy server, so a failure can be
 attributed to the *agent's* planning rather than to an undertrained checkpoint. That is the whole

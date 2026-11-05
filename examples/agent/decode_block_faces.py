@@ -47,7 +47,7 @@ import numpy as np
 from agentic_robotics.adapters.toyblocks.runner_bootstrap import toyblocks_root
 
 ASSETS_DIR = toyblocks_root() / "assets/objects"
-"""Where the ToyBlocks checkout keeps the glyph libraries (`blocksuite.OBJECT_ASSET_DIR`)."""
+"""Where the ToyBlocks checkout keeps the glyph libraries (`toyblocks.OBJECT_ASSET_DIR`)."""
 
 ATLAS_GRID = 16
 """Cells per side of the glyph atlas texture."""

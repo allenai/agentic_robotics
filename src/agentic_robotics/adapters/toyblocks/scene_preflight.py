@@ -220,7 +220,7 @@ def report_intrinsics_scale(env: ToyBlocksEnv, *, camera_name: str) -> None:
     length: left at None it derived a 0.412 cm lens behind a 1.0 cm aperture, and Isaac Lab reads
     fx back as `width * focalLength / horizontalAperture` either way, so the *reported* intrinsics
     looked right while the render did not match them. Fixed in ToyBlocks by passing
-    `focal_length=24.0` in `src/blocksuite/scenes/sim2real.py`.
+    `focal_length=24.0` in `src/toyblocks/scenes/sim2real.py`.
 
     The check: the camera also renders `distance_to_image_plane` at the same resolution. Take a
     grid of pixels over the table, turn each into a world point using the *reported* intrinsics

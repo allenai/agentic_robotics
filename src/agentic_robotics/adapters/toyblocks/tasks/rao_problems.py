@@ -21,7 +21,7 @@ are computed by breadth-first search over the symbolic state (`optimal_plan_leng
 counted by hand, and the generator refuses an unsolvable instance.
 
 Colors are the cube colors `template/codegen.py` infers from a block's name (red, blue,
-green, yellow, purple, orange); names follow `blocksuite.tamp.blocks.distractors.cube_name`
+green, yellow, purple, orange); names follow `toyblocks.tamp.blocks.distractors.cube_name`
 (`block_red1`, `block_blue`, ...). Six blocks add orange, which sits between red and yellow
 in hue; whether the camera tells them apart is a thing the first renders should show.
 """

@@ -4,7 +4,7 @@ Every motion here is a ToyBlocks vecgen skill -- ``Pick``, ``Place`` (on a block
 ``Flip`` and ``Rotate`` -- planned with vecgen's batched IK and cuRobo v2 (``Geometry``) and played
 out through its segment table: the same skills that record ToyBlocks's training demonstrations,
 and the same engine wiring as ToyBlocks's evaluation low-level oracle
-(``blocksuite.eval.ll_oracle``), which runs one skill per high-level command. This module is that
+(``toyblocks.eval.ll_oracle``), which runs one skill per high-level command. This module is that
 wiring for a single environment, stepped synchronously: a skill starts, the simulator is stepped
 one control tick at a time until the engine reports its outcome, and every tick passes through
 :meth:`VecgenMotion.step`, so the video, the viewer and a human's stop see all of them.
@@ -12,7 +12,7 @@ one control tick at a time until the engine reports its outcome, and every tick 
 A skill runs once: no retries, no snapshot restores, no re-planning. Its outcome is either a
 success or an :class:`OracleSkillError` naming what failed, which the MCP server hands the agent.
 
-**Importing this module needs a running Isaac Sim app** (``blocksuite.eval.ll_oracle`` imports
+**Importing this module needs a running Isaac Sim app** (``toyblocks.eval.ll_oracle`` imports
 Isaac Lab); ``inline_oracle.py`` imports it only after its own boot import.
 """
 
@@ -25,24 +25,25 @@ from typing import TYPE_CHECKING, Any
 
 import numpy as np
 import torch
-from blocksuite.eval.ll_oracle import (
+
+from toyblocks.eval.ll_oracle import (
     DOMAIN_PDDL,
     _EvalSim,
     _OracleEngine,
     _PixelTablePlace,
 )
-from blocksuite.tamp.blocks.pddl_goal_tensor_conversions import (
+from toyblocks.tamp.blocks.pddl_goal_tensor_conversions import (
     ORI_QUATERNIONS,
     _quat_close_batched,
     front_camera_pixels,
     resolve_root_pose_w,
 )
-from blocksuite.vecgen.engine import EngineConfig
-from blocksuite.vecgen.geometry import Geometry
-from blocksuite.vecgen.program import SkillCall
-from blocksuite.vecgen.skills.flip import Flip
-from blocksuite.vecgen.skills.pnp import MAX_REACH_RADIUS, Pick, Place
-from blocksuite.vecgen.skills.rotate import Rotate
+from toyblocks.vecgen.engine import EngineConfig
+from toyblocks.vecgen.geometry import Geometry
+from toyblocks.vecgen.program import SkillCall
+from toyblocks.vecgen.skills.flip import Flip
+from toyblocks.vecgen.skills.pnp import MAX_REACH_RADIUS, Pick, Place
+from toyblocks.vecgen.skills.rotate import Rotate
 
 if TYPE_CHECKING:
     from collections.abc import Callable

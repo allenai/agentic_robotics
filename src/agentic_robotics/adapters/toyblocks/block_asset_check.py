@@ -5,7 +5,7 @@ USD spawned it. So a task package built against one glyph asset library and a ch
 against another produce a run that boots and executes every skill on blocks the policy has never
 seen. The libraries differ in appearance (glyph style and color, picture faces, wood), not in size:
 every spawned block takes its edge length from the task's `block_sizes`, which overrides the
-library's `usd_scale` (`blocksuite.utils.rigid_objects.create_toy_block`).
+library's `usd_scale` (`toyblocks.utils.rigid_objects.create_toy_block`).
 
 The library is chosen at codegen time by `--usd_library`, which defaults to `train_blocks`, and
 nothing else downstream compares the two. Both sides are on disk and neither needs Isaac:

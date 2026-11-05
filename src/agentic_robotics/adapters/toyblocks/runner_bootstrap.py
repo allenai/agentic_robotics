@@ -60,13 +60,13 @@ def toyblocks_root() -> Path:
     repo cloned under a ToyBlocks checkout) is tried next, and only a machine where neither holds
     is an error. The answer is cached, so the lookup runs once per process.
 
-    :return: The checkout root, the directory holding `src/blocksuite`
+    :return: The checkout root, the directory holding `src/toyblocks`
     :raises SystemExit: If neither route finds one
     """
-    spec = importlib.util.find_spec("blocksuite")
+    spec = importlib.util.find_spec("toyblocks")
     if spec is not None and spec.origin is not None:
         return Path(spec.origin).resolve().parents[2]
-    if (NESTED_TOYBLOCKS_ROOT / "src/blocksuite").is_dir():
+    if (NESTED_TOYBLOCKS_ROOT / "src/toyblocks").is_dir():
         return NESTED_TOYBLOCKS_ROOT
     raise SystemExit(
         "Cannot find the ToyBlocks checkout. It is neither importable from this interpreter "
@@ -77,7 +77,7 @@ def toyblocks_root() -> Path:
 
 def domain_path() -> Path:
     """The blocks PDDL domain directory inside the ToyBlocks checkout."""
-    return toyblocks_root() / "src/blocksuite/tamp/blocks"
+    return toyblocks_root() / "src/toyblocks/tamp/blocks"
 
 
 TASKS_DIR = AGENTIC_ROBOTICS_ROOT / "data/tasks"
@@ -129,21 +129,21 @@ def resolve_isaac_python(explicit: str | Path | None = None) -> Path:
     if from_env:
         return Path(from_env)
 
-    if importlib.util.find_spec("blocksuite") is not None:
+    if importlib.util.find_spec("toyblocks") is not None:
         return Path(sys.executable)
 
     for candidate in HEAVY_PYTHON_CANDIDATES:
         if not candidate.is_file():
             continue
         probe = subprocess.run(
-            [str(candidate), "-c", "import blocksuite"], capture_output=True, check=False
+            [str(candidate), "-c", "import toyblocks"], capture_output=True, check=False
         )
         if probe.returncode == 0:
             return candidate
 
     tried = ", ".join(str(c) for c in (Path(sys.executable), *HEAVY_PYTHON_CANDIDATES))
     raise SystemExit(
-        f"No interpreter found that can import blocksuite (tried {tried}). "
+        f"No interpreter found that can import toyblocks (tried {tried}). "
         f"Pass --python, or set {CODEGEN_PYTHON_ENV_VAR}."
     )
 
@@ -257,9 +257,9 @@ def stage_1_command(
     ``--domain_path`` is passed **relative to** :func:`toyblocks_root`, which is the cwd
     :func:`ensure_task_package` runs this under. That is not cosmetic: Stage 1 turns it into a
     module name with ``resolve_module_from_path``, which walks the path parts for the first one
-    already in ``sys.modules``. The absolute form of a checkout named ``blocksuite`` has that
-    name as a path part, which *is* the imported ``blocksuite`` package, so it resolves to the
-    unimportable ``blocksuite.src.blocksuite.tamp.blocks``, every predicate class silently fails
+    already in ``sys.modules``. The absolute form of a checkout named ``toyblocks`` has that
+    name as a path part, which *is* the imported ``toyblocks`` package, so it resolves to the
+    unimportable ``toyblocks.src.toyblocks.tamp.blocks``, every predicate class silently fails
     to load, and the sampled reset states come out as the codegen spawn layout.
 
     ``--pddl`` is absolute instead, and has to be: a problem file living in this repo has no path

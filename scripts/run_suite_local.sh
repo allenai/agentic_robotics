@@ -41,7 +41,7 @@ done
 
 export OMNI_KIT_ACCEPT_EULA=YES ACCEPT_EULA=Y
 command -v nvidia-smi >/dev/null && nvidia-smi --query-gpu=name --format=csv,noheader | head -1 | sed 's/^/GPU: /'
-"$PYTHON" -c "import blocksuite" 2>/dev/null || { echo "$PYTHON cannot import blocksuite; set AGENTIC_ROBOTICS_PYTHON" >&2; exit 2; }
+"$PYTHON" -c "import toyblocks" 2>/dev/null || { echo "$PYTHON cannot import toyblocks; set AGENTIC_ROBOTICS_PYTHON" >&2; exit 2; }
 
 cd "$REPO_ROOT"
 mkdir -p "$SUITE_DIR"
