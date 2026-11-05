@@ -399,10 +399,13 @@ _PAGE = """<!doctype html>
   body {
     background: var(--bg); color: var(--text); font: 14px/1.55 system-ui, sans-serif;
     display: grid; grid-template-columns: minmax(0,1fr) 400px;
+    overflow: hidden;  /* only #scroll and #panel scroll, never the page */
   }
-  #left { display: flex; flex-direction: column; min-width: 0; }
+  /* Grid children default to min-height:auto, which lets a long conversation grow #left past the
+     window and drag #right (and the composer at its foot) down with it. Let them shrink. */
+  #left { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
   #right { display: flex; flex-direction: column; border-left: 1px solid var(--edge);
-           background: var(--panel); min-width: 0; }
+           background: var(--panel); min-width: 0; min-height: 0; }
 
   #status { padding: 8px 12px; border-bottom: 1px solid var(--edge); background: var(--panel);
             display: flex; align-items: center; gap: 8px; font-size: 12px; flex: none; }
@@ -415,8 +418,15 @@ _PAGE = """<!doctype html>
   #obswrap { padding: 12px; flex: none; }
   #views { display: flex; gap: 12px; align-items: flex-start; }
   #obspane, #viserpane { flex: 1 1 0; min-width: 0; }
+  #obsbox { position: relative; }
   #obs { display: block; width: 100%; border: 1px solid var(--edge); border-radius: 6px;
          cursor: crosshair; background: #111; }
+  /* The chosen pixel: a ring with a dot, placed by percentage so it survives resizes. */
+  #mark { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; display: none;
+          border: 2px solid var(--accent); border-radius: 50%; pointer-events: none;
+          box-shadow: 0 0 0 1px #000; }
+  #mark::after { content: ""; position: absolute; left: 5px; top: 5px; width: 4px; height: 4px;
+                 border-radius: 50%; background: var(--accent); }
 
   /* The iframe matches the observation's 16:9 so the two panes end level. */
   #viserbox { position: relative; aspect-ratio: 16 / 9; border: 1px solid var(--edge);
@@ -494,7 +504,10 @@ _PAGE = """<!doctype html>
   <div id="obswrap">
     <div id="views">
       <div id="obspane">
-        <img id="obs" alt="the observation the model would be shown">
+        <div id="obsbox">
+          <img id="obs" alt="the observation the model would be shown">
+          <div id="mark"></div>
+        </div>
         <div id="where">click the image to set a pixel</div>
       </div>
       <div id="viserpane">
@@ -579,10 +592,11 @@ const CLS={"user":"user","assistant":"assistant","system":"system",
 
 $("obs").addEventListener("click",(e)=>{
   const r=e.target.getBoundingClientRect();
-  pixel={u:Math.round((e.clientX-r.left)/r.width*e.target.naturalWidth),
-         v:Math.round((e.clientY-r.top)/r.height*e.target.naturalHeight)};
+  const fx=(e.clientX-r.left)/r.width, fy=(e.clientY-r.top)/r.height;
+  pixel={u:Math.round(fx*e.target.naturalWidth), v:Math.round(fy*e.target.naturalHeight)};
   $("where").innerHTML=`pixel <b>(${pixel.u}, ${pixel.v})</b> of `
     +`${e.target.naturalWidth}x${e.target.naturalHeight}`;
+  const m=$("mark"); m.style.left=`${fx*100}%`; m.style.top=`${fy*100}%`; m.style.display="block";
 });
 $("lightbox").onclick=()=>$("lightbox").style.display="none";
 function zoom(src){ $("lightbox").querySelector("img").src=src;
@@ -602,10 +616,18 @@ function renderTools(){
           if(!pixel){ $("where").innerHTML="<b>click the image first</b>"; return; }
           args[k]=pixel;
         } else {
-          const v=window.prompt(`${t.name}.${k}`
-            +(spec.description?` \u2014 ${spec.description}`:""));
+          // A Literal-typed argument arrives as an enum: offer its values, accept only one of them.
+          const choices=spec.enum||(spec.anyOf||[]).flatMap(a=>a.enum||[]);
+          const label=`${t.name}.${k}`
+            +(choices.length?` (one of: ${choices.join(", ")})`:"")
+            +(spec.description?` \u2014 ${spec.description}`:"");
+          let v=window.prompt(label);
           if(v===null) return;
-          args[k]=(spec.type==="number"||spec.type==="integer")?Number(v):v;
+          while(choices.length && !choices.includes(v.trim())){
+            v=window.prompt(`"${v}" is not one of ${choices.join(", ")}.\n${label}`);
+            if(v===null) return;
+          }
+          args[k]=(spec.type==="number"||spec.type==="integer")?Number(v):v.trim();
         }
       }
       queue.push({name:t.name,arguments:args}); renderQueue();
@@ -625,7 +647,7 @@ function renderQueue(){
   });
 }
 function renderTurn(t){
-  turn=t; queue=[]; pixel=null;
+  turn=t; queue=[]; pixel=null; $("mark").style.display="none";
   $("status-dot").className="turn"; $("status-text").textContent="your turn";
   $("instr").textContent=t.instructions||"";
   $("where").textContent="click the image to set a pixel";
