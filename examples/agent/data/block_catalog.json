@@ -1,0 +1,715 @@
+{
+  "provenance": {
+    "source": "assets/objects/train_blocks/usd (symlink to .toyblocks/.../20260527)",
+    "method": "Read primvars:st off each USD's decals mesh; the 4096x4096 decal atlas is a 12x12 cell grid, and each block uses one 3x2 group of cells. Blocks sharing a cell group are the same physical block with a different face rotated forward.",
+    "usd_files": 38,
+    "distinct_blocks": 19,
+    "primary_glyphs_note": "Exact: taken from the USD filenames, which name the two colour-square glyphs on each block.",
+    "other_faces_note": "Each block also carries one outline letter, one outline digit and two pictures, read by eye off the atlas and NOT recorded here. Whether the outline letters count as spellable glyphs is a domain decision, and it would raise letters-per-block from 2 to 3."
+  },
+  "blocks": [
+    {
+      "block_id": "A_N",
+      "usd_names": [
+        "A",
+        "N"
+      ],
+      "primary_glyphs": [
+        "A",
+        "N"
+      ],
+      "atlas_cells": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "block_id": "B_O",
+      "usd_names": [
+        "B",
+        "O"
+      ],
+      "primary_glyphs": [
+        "B",
+        "O"
+      ],
+      "atlas_cells": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    {
+      "block_id": "C_P",
+      "usd_names": [
+        "C",
+        "P"
+      ],
+      "primary_glyphs": [
+        "C",
+        "P"
+      ],
+      "atlas_cells": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ]
+      ]
+    },
+    {
+      "block_id": "D_Q",
+      "usd_names": [
+        "D",
+        "Q"
+      ],
+      "primary_glyphs": [
+        "D",
+        "Q"
+      ],
+      "atlas_cells": [
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          11
+        ]
+      ]
+    },
+    {
+      "block_id": "E_R",
+      "usd_names": [
+        "E",
+        "R"
+      ],
+      "primary_glyphs": [
+        "E",
+        "R"
+      ],
+      "atlas_cells": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "block_id": "F_S",
+      "usd_names": [
+        "F",
+        "S"
+      ],
+      "primary_glyphs": [
+        "F",
+        "S"
+      ],
+      "atlas_cells": [
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ]
+    },
+    {
+      "block_id": "G_T",
+      "usd_names": [
+        "G",
+        "T"
+      ],
+      "primary_glyphs": [
+        "G",
+        "T"
+      ],
+      "atlas_cells": [
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ]
+      ]
+    },
+    {
+      "block_id": "H_U",
+      "usd_names": [
+        "H",
+        "U"
+      ],
+      "primary_glyphs": [
+        "H",
+        "U"
+      ],
+      "atlas_cells": [
+        [
+          2,
+          9
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          11
+        ]
+      ]
+    },
+    {
+      "block_id": "I_V",
+      "usd_names": [
+        "I",
+        "V"
+      ],
+      "primary_glyphs": [
+        "I",
+        "V"
+      ],
+      "atlas_cells": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ]
+      ]
+    },
+    {
+      "block_id": "J_W",
+      "usd_names": [
+        "J",
+        "W"
+      ],
+      "primary_glyphs": [
+        "J",
+        "W"
+      ],
+      "atlas_cells": [
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "block_id": "K_X",
+      "usd_names": [
+        "K",
+        "X"
+      ],
+      "primary_glyphs": [
+        "K",
+        "X"
+      ],
+      "atlas_cells": [
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ]
+      ]
+    },
+    {
+      "block_id": "L_Y",
+      "usd_names": [
+        "L",
+        "Y"
+      ],
+      "primary_glyphs": [
+        "L",
+        "Y"
+      ],
+      "atlas_cells": [
+        [
+          4,
+          9
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          5,
+          11
+        ]
+      ]
+    },
+    {
+      "block_id": "M_Z",
+      "usd_names": [
+        "M",
+        "Z"
+      ],
+      "primary_glyphs": [
+        "M",
+        "Z"
+      ],
+      "atlas_cells": [
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "block_id": "1_5",
+      "usd_names": [
+        "1",
+        "5"
+      ],
+      "primary_glyphs": [
+        "1",
+        "5"
+      ],
+      "atlas_cells": [
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          7,
+          5
+        ]
+      ]
+    },
+    {
+      "block_id": "2_6",
+      "usd_names": [
+        "2",
+        "6"
+      ],
+      "primary_glyphs": [
+        "2",
+        "6"
+      ],
+      "atlas_cells": [
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          7,
+          8
+        ]
+      ]
+    },
+    {
+      "block_id": "3_7",
+      "usd_names": [
+        "3",
+        "7"
+      ],
+      "primary_glyphs": [
+        "3",
+        "7"
+      ],
+      "atlas_cells": [
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ]
+    },
+    {
+      "block_id": "4_8",
+      "usd_names": [
+        "4",
+        "8"
+      ],
+      "primary_glyphs": [
+        "4",
+        "8"
+      ],
+      "atlas_cells": [
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          2
+        ]
+      ]
+    },
+    {
+      "block_id": "9_=",
+      "usd_names": [
+        "9",
+        "="
+      ],
+      "primary_glyphs": [
+        "9",
+        "="
+      ],
+      "atlas_cells": [
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          5
+        ]
+      ]
+    },
+    {
+      "block_id": "+_-",
+      "usd_names": [
+        "+",
+        "-"
+      ],
+      "primary_glyphs": [
+        "+",
+        "-"
+      ],
+      "atlas_cells": [
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          8
+        ]
+      ]
+    }
+  ]
+}

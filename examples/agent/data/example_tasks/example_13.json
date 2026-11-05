@@ -1,0 +1,273 @@
+{
+ "task": "There are various letters and symbols on the faces of the blocks on the table. Your task is to use the blocks to spell the word 'AI2' in a tower, with 'A' on top and '2' on bottom, with all three letters upright and facing the camera.",
+ "motor_call_budget": 60,
+ "state": {
+  "robot_base_pose": {
+   "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   },
+   "orientation": {
+    "w": 1.0,
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   },
+   "parent_frame": "world"
+  },
+  "robot_configuration": {
+   "joint_names": [
+    "panda_joint1",
+    "panda_joint2",
+    "panda_joint3",
+    "panda_joint4",
+    "panda_joint5",
+    "panda_joint6",
+    "panda_joint7",
+    "finger_joint",
+    "left_inner_finger_joint",
+    "right_outer_knuckle_joint",
+    "right_inner_finger_joint",
+    "left_inner_knuckle_joint",
+    "right_inner_knuckle_joint"
+   ],
+   "joint_types": [
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute"
+   ],
+   "joint_values": [
+    0.0,
+    -0.7854,
+    0.0,
+    -2.3562,
+    0.0,
+    1.5708,
+    0.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0
+   ]
+  },
+  "objects": [
+   {
+    "name": "block_2",
+    "pose": {
+     "position": {
+      "x": 0.5195,
+      "y": 0.1242,
+      "z": 0.1039
+     },
+     "orientation": {
+      "w": 0.1121,
+      "x": -0.0002,
+      "y": -0.0002,
+      "z": 0.9937
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_a",
+    "pose": {
+     "position": {
+      "x": 0.5196,
+      "y": 0.1243,
+      "z": 0.0284
+     },
+     "orientation": {
+      "w": 0.7046,
+      "x": -0.7046,
+      "y": 0.0592,
+      "z": -0.0593
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_blue",
+    "pose": {
+     "position": {
+      "x": 0.3895,
+      "y": -0.0158,
+      "z": 0.0295
+     },
+     "orientation": {
+      "w": 0.6186,
+      "x": -0.0001,
+      "y": 0.0001,
+      "z": -0.7857
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_blue4",
+    "pose": {
+     "position": {
+      "x": 0.3895,
+      "y": -0.0158,
+      "z": 0.0695
+     },
+     "orientation": {
+      "w": -0.0004,
+      "x": 0.0943,
+      "y": 0.9955,
+      "z": 0.0005
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_cyan2",
+    "pose": {
+     "position": {
+      "x": 0.4613,
+      "y": -0.2605,
+      "z": 0.0295
+     },
+     "orientation": {
+      "w": 0.0562,
+      "x": -0.7049,
+      "y": -0.0562,
+      "z": -0.7049
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_green2",
+    "pose": {
+     "position": {
+      "x": 0.3895,
+      "y": -0.0158,
+      "z": 0.1095
+     },
+     "orientation": {
+      "w": 0.9888,
+      "x": 0.0004,
+      "y": 0.0004,
+      "z": -0.1495
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_i",
+    "pose": {
+     "position": {
+      "x": 0.5195,
+      "y": 0.1243,
+      "z": 0.0661
+     },
+     "orientation": {
+      "w": 0.441,
+      "x": 0.5528,
+      "y": 0.4411,
+      "z": -0.5527
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_n",
+    "pose": {
+     "position": {
+      "x": 0.5199,
+      "y": 0.1241,
+      "z": 0.1418
+     },
+     "orientation": {
+      "w": 0.7017,
+      "x": 0.0875,
+      "y": 0.7017,
+      "z": -0.0873
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_q",
+    "pose": {
+     "position": {
+      "x": 0.5251,
+      "y": -0.0362,
+      "z": 0.0287
+     },
+     "orientation": {
+      "w": -0.0,
+      "x": -0.1438,
+      "y": 0.9896,
+      "z": 0.0
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_red1",
+    "pose": {
+     "position": {
+      "x": 0.4326,
+      "y": -0.1537,
+      "z": 0.0295
+     },
+     "orientation": {
+      "w": 0.5514,
+      "x": -0.5514,
+      "y": -0.4427,
+      "z": 0.4427
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_red5",
+    "pose": {
+     "position": {
+      "x": 0.3889,
+      "y": -0.259,
+      "z": 0.0669
+     },
+     "orientation": {
+      "w": 0.0,
+      "x": -0.9783,
+      "y": -0.2073,
+      "z": 0.0
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_v",
+    "pose": {
+     "position": {
+      "x": 0.3889,
+      "y": -0.259,
+      "z": 0.0282
+     },
+     "orientation": {
+      "w": 0.1214,
+      "x": 0.6966,
+      "y": -0.1214,
+      "z": 0.6966
+     },
+     "parent_frame": "world"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,806 @@
+<!doctype html>
+<!-- Front end for server.py. Served with {{VISER_URL}} substituted; all state arrives on the /ws
+     websocket. Styling follows Ai2's Strata design system (allenai/design, strata/DESIGN.md) on
+     its reversed -- dark -- surface. The one external dependency is the webfont pair Strata names;
+     it falls back to Arial and the system monospace when the browser cannot reach Google Fonts, so
+     the page still works over a bare port-forward. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>agentic_robotics — chat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    /* Strata primitives, kept under their own names so a value here can be checked against
+       strata/DESIGN.md. Product code below uses the semantic aliases, not these. */
+    --extra-dark-teal: #032629; --dark-teal: #0a3235; --teal-60: #6e9291;
+    --cream: #faf2e9; --pink: #f0529c; --pink-60: #f492bb; --green: #0fcb8c;
+    --error-red: #fd4645; --error-red-dark: #d02f2e; --warning-orange: #ffa31c;
+    /* Alpha primitives. Depth here is tonal layering rather than shadow, and on a dark surface
+       the overlay tone flips to cream. */
+    --cream-10: #faf2e91a; --cream-20: #faf2e933; --cream-50: #faf2e980; --cream-70: #faf2e9b3;
+
+    /* Semantic aliases. This page is the reversed surface, so background and text flip. */
+    --bg: var(--extra-dark-teal);
+    --surface: var(--dark-teal);
+    --edge: var(--cream-20);
+    --text: var(--cream);
+    --dim: var(--cream-70);
+    --faint: var(--cream-50);
+    --accent: var(--pink);        /* interactive-primary: the CTA, and the live-process mark */
+    --interactive: var(--teal-60);/* interactive-default: focus rings, neutral controls */
+    --user: var(--green);         /* interactive-secondary: the human's own turns */
+    --err: var(--error-red);
+
+    --ui: "Manrope", Arial, sans-serif;
+    --mono: "Roboto Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+    /* 8px base unit; every gap and padding below snaps to it. */
+    --space-2xs: 8px; --space-xs: 12px; --space-md: 16px; --space-xl: 20px;
+    --radius: 4px;  /* rounded.3xs on every control, per Strata's "avoid mixing radii" */
+
+    --chat-width: 460px;  /* Overwritten by the divider drag, and restored from localStorage */
+    --divider-width: 6px;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font: 400 14px/1.5 var(--ui);
+    display: grid; grid-template-columns: 1fr var(--divider-width) var(--chat-width);
+    overflow: hidden;  /* Only #messages scrolls, never the page */
+  }
+  /* Grid/flex children default to min-height:auto, which lets a long chat push the pane taller
+     than the window (scrolling the page instead of the messages). Let them shrink. */
+  #viser-pane, #chat-pane, #messages { min-height: 0; }
+
+  /* ------------------------------ viser pane ------------------------------ */
+  #viser-pane { display: flex; flex-direction: column; min-width: 0; }
+  #viser-body { flex: 1; position: relative; }
+  #viser-overlay {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: var(--bg); color: var(--dim); font-size: 13px; text-align: center;
+    padding: var(--space-xl);
+  }
+  #viser-overlay.hidden { display: none; }
+  #viser-bar {
+    display: flex; align-items: center; gap: var(--space-2xs);
+    padding: var(--space-2xs) var(--space-xs); border-bottom: 1px solid var(--edge);
+    background: var(--surface); font-size: 12px; color: var(--dim);
+  }
+  #viser-frame { width: 100%; height: 100%; border: 0; background: var(--bg); }
+  #viser-overlay .spinner {
+    width: 28px; height: 28px; border-radius: 50%; margin: 0 auto 14px;
+    border: 3px solid var(--edge); border-top-color: var(--accent);
+    animation: spin 0.9s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #viser-overlay .loading-title { color: var(--text); font-size: 14px; margin-bottom: 4px; }
+
+  /* Budget sits here rather than over the transcript: it measures the task's progress, not the
+     conversation's state, and on the robot it is also the minutes left in the room. */
+  #budget {
+    margin-left: auto; flex: none; color: var(--dim); font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+  }
+  #budget.low { color: var(--warning-orange); }
+
+  /* Top-left task menu: a button in the bar, a dropdown panel under it */
+  #task-menu { position: relative; flex: none; }
+  #task-menu-btn {
+    font: 500 12px var(--ui); padding: 6px var(--space-xs); border-radius: var(--radius);
+    cursor: pointer; background: transparent; color: var(--text); border: 1px solid var(--edge);
+    height: 32px;
+    transition: background-color 150ms ease-in-out, border-color 150ms ease-in-out;
+  }
+  #task-menu-btn:hover, #task-menu.open #task-menu-btn {
+    background: var(--cream-10); border-color: var(--cream-50);
+  }
+  #task-menu-btn:disabled { color: var(--faint); cursor: default; background: transparent; }
+  #task-menu-panel {
+    display: none; position: absolute; top: calc(100% + 6px); left: 0; z-index: 10;
+    min-width: 360px; max-width: 520px; max-height: 70vh; overflow-y: auto;
+    background: var(--surface); border: 1px solid var(--edge); border-radius: var(--radius);
+    padding: var(--space-2xs);
+  }
+  #task-menu.open #task-menu-panel { display: block; }
+  .task-item {
+    display: block; width: 100%; text-align: left; font: inherit; cursor: pointer;
+    padding: var(--space-2xs) var(--space-xs); border: 0; border-radius: var(--radius);
+    background: transparent; color: var(--text);
+  }
+  .task-item:hover { background: var(--cream-10); }
+  .task-item:disabled { color: var(--faint); cursor: default; background: transparent; }
+  .task-item.current { outline: 1px solid var(--accent); }
+  .task-item .name { font-weight: 600; }
+  .task-item .desc { display: block; color: var(--dim); font-size: 12px; margin-top: 2px; }
+  /* Why a greyed-out task cannot be loaded here: no package, or blocks the policy never saw. */
+  .task-item .why { display: block; color: var(--faint); font-size: 11px; margin-top: 2px; }
+  /* Numbered variant buttons under a task's description. The description draws a variant at
+     random; these name one. Buttons cannot nest, so the entry is a div around both. */
+  .task-variants {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 4px;
+    padding: 0 var(--space-xs) var(--space-2xs);
+  }
+  .task-variants .label { color: var(--faint); font-size: 11px; margin-right: 2px; }
+  .variant-btn {
+    font: 400 12px/1 var(--mono); cursor: pointer; padding: 6px var(--space-2xs);
+    border-radius: var(--radius); background: transparent; color: var(--dim);
+    border: 1px solid var(--edge);
+    transition: background-color 150ms ease-in-out, border-color 150ms ease-in-out;
+  }
+  .variant-btn:hover { background: var(--cream-10); color: var(--text); }
+  .variant-btn:disabled { color: var(--faint); cursor: default; background: transparent; }
+  .variant-btn.current { border-color: var(--accent); color: var(--text); }
+  #current-task {
+    color: var(--dim); font-size: 12px; overflow: hidden; text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* -------------------------------- divider ------------------------------- */
+  /* Drag to re-proportion the two panes. */
+  #divider {
+    cursor: col-resize; background: var(--edge);
+    transition: background-color 150ms ease-in-out;
+  }
+  #divider:hover, body.dragging #divider { background: var(--interactive); }
+  /* A cross-origin iframe swallows pointer events, so a drag that crosses into the 3D view would
+     stick without this. */
+  body.dragging { cursor: col-resize; user-select: none; }
+  body.dragging #viser-frame { pointer-events: none; }
+
+  /* ------------------------------- chat pane ------------------------------ */
+  #chat-pane { display: flex; flex-direction: column; min-width: 0; }
+
+  #messages { flex: 1; overflow-y: auto; padding: var(--space-xs); }
+  .msg { margin: 0 0 var(--space-xs); white-space: pre-wrap; overflow-wrap: break-word; }
+  /* Strata reserves mono for model output, so the model's turns and every tool payload are mono
+     and everything the interface says for itself is not. */
+  .msg.assistant {
+    font-family: var(--mono); font-size: 14px; line-height: 1.6;
+    border-left: 3px solid var(--interactive); padding-left: var(--space-2xs);
+  }
+  .msg.user {
+    border-left: 3px solid var(--user); padding-left: var(--space-2xs); color: var(--text);
+  }
+  .msg.user::before { content: "> "; color: var(--dim); }
+  .msg.meta { color: var(--faint); font-size: 12px; }
+  .msg.error { color: var(--err); }
+
+  /* The live turn, shown as the tail of the conversation and removed when the turn ends. */
+  .msg.activity {
+    display: flex; align-items: center; gap: 6px; color: var(--dim); font-size: 13px;
+    padding-left: var(--space-2xs); border-left: 3px solid transparent;
+  }
+  .msg.activity .mark { color: var(--accent); animation: pulse 1.6s ease-in-out infinite; }
+  .msg.activity code { font-family: var(--mono); font-size: 13px; color: var(--text); }
+  .msg.activity .dots { display: inline-flex; gap: 3px; margin-left: 2px; }
+  .msg.activity .dots i {
+    width: 3px; height: 3px; border-radius: 50%; background: var(--accent);
+    animation: blink 1.2s ease-in-out infinite;
+  }
+  .msg.activity .dots i:nth-child(2) { animation-delay: 0.2s; }
+  .msg.activity .dots i:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes blink { 0%, 80%, 100% { opacity: 0.2; } 40% { opacity: 1; } }
+
+  details.reasoning, details.tool { margin: 0 0 var(--space-xs); }
+  details.reasoning summary, details.tool summary {
+    cursor: pointer; color: var(--dim); font-size: 13px; list-style: none;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details.reasoning .body {
+    color: var(--faint); font-family: var(--mono); font-style: italic; white-space: pre-wrap;
+    padding: 4px 0 0 14px; font-size: 13px;
+  }
+  details.tool summary .name { color: var(--text); font-family: var(--mono); }
+  details.tool summary .args { font-family: var(--mono); }
+  details.tool .body {
+    margin: 6px 0 0 14px; padding: var(--space-2xs); background: var(--surface);
+    border: 1px solid var(--edge); border-radius: var(--radius);
+    font-family: var(--mono); font-size: 12px; color: var(--dim); white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+  .result {
+    margin: -6px 0 var(--space-xs) 14px; font-family: var(--mono); font-size: 13px;
+    color: var(--dim); white-space: pre-wrap;
+  }
+  .result img {
+    display: block; max-width: 240px; margin-top: 6px; border: 1px solid var(--edge);
+    border-radius: var(--radius); cursor: zoom-in;
+  }
+
+  #lightbox {
+    position: fixed; inset: 0; background: rgba(3,38,41,0.9); display: none;
+    align-items: center; justify-content: center; cursor: zoom-out; z-index: 10;
+  }
+  #lightbox img { max-width: 95vw; max-height: 95vh; }
+
+  /* Session state that no conversation item carries: whether the socket is up, whether a scene is
+     loaded, whether the loop is held. The turn in flight is in the feed above, not here. */
+  #status-strip {
+    display: flex; align-items: center; gap: var(--space-2xs);
+    padding: var(--space-2xs) var(--space-xs); border-top: 1px solid var(--edge);
+    font-size: 12px; color: var(--dim); background: var(--bg);
+  }
+  #status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--faint); flex: none; }
+  #status-dot.busy { background: var(--accent); animation: pulse 1.2s infinite; }
+  #status-dot.dead { background: var(--err); }
+  @keyframes pulse { 50% { opacity: 0.35; } }
+  #status-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  #composer {
+    border-top: 1px solid var(--edge); background: var(--surface);
+    padding: var(--space-xs);
+  }
+  #composer-row { display: flex; gap: var(--space-2xs); align-items: flex-end; }
+  #input {
+    flex: 1; resize: none; background: var(--bg); color: var(--text);
+    border: 1px solid var(--edge); border-radius: var(--radius);
+    padding: var(--space-2xs) var(--space-xs);
+    font: 400 14px/1.5 var(--ui); min-height: 36px; max-height: 160px; outline: none;
+    transition: border-color 150ms ease-in-out;
+  }
+  #input:focus { border-color: var(--interactive); }
+  /* Outlined-on-reversed: transparent until hovered, then the lightest tonal fill. */
+  button {
+    font: 500 14px var(--ui); border-radius: var(--radius); border: 1px solid var(--edge);
+    background: transparent; color: var(--text); padding: var(--space-2xs) var(--space-md);
+    cursor: pointer;
+    transition: background-color 150ms ease-in-out, border-color 150ms ease-in-out;
+  }
+  button:hover { background: var(--cream-10); }
+  /* The one primary action on the page; Strata keeps pink for exactly one per view. */
+  #send {
+    background: var(--accent); border-color: var(--accent); color: var(--extra-dark-teal);
+    font-weight: 600; height: 36px;
+  }
+  #send:hover { background: var(--pink-60); border-color: var(--pink-60); }
+  #hint { font-size: 12px; color: var(--faint); margin-top: 6px; }
+
+  /* Interjection: queued messages and the budget prompt. */
+  .msg.queued { color: var(--user); font-size: 12px; }
+  #controls {
+    display: flex; gap: var(--space-2xs); align-items: center; margin-bottom: var(--space-2xs);
+  }
+  #pause, #stop, #reset-episode {
+    flex: none; font-size: 12px; padding: var(--space-2xs); height: 36px;
+  }
+  /* Status colours are for system feedback, which is what halting the arm is. */
+  #stop { color: var(--err); border-color: var(--error-red-dark); }
+  #stop:hover { background: rgba(253,70,69,0.12); border-color: var(--err); }
+  #pause.held { background: var(--cream-10); border-color: var(--accent); color: var(--accent); }
+  #grant {
+    display: none; margin: 0 0 var(--space-xs); padding: var(--space-2xs) var(--space-xs);
+    border: 1px solid var(--accent); border-radius: var(--radius); background: var(--surface);
+    font-size: 13px;
+  }
+  #grant.visible { display: block; }
+  #grant-row {
+    display: flex; gap: var(--space-2xs); align-items: center; margin-top: var(--space-2xs);
+  }
+  #grant-count {
+    width: 70px; background: var(--bg); color: var(--text); border: 1px solid var(--edge);
+    border-radius: var(--radius); padding: 6px var(--space-2xs);
+    font: 400 14px var(--mono); height: 32px;
+  }
+  #grant button { height: 32px; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div id="viser-pane">
+  <div id="viser-bar">
+    <div id="task-menu">
+      <button id="task-menu-btn" disabled title="Scenes this process can build">☰ Tasks</button>
+      <div id="task-menu-panel"></div>
+    </div>
+    <span id="current-task">no task loaded</span>
+    <div id="budget" title="Tool calls remaining in this episode's budget"></div>
+  </div>
+  <div id="viser-body">
+    <iframe id="viser-frame" title="viser 3D view"></iframe>
+    <div id="viser-overlay">checking viser…</div>
+  </div>
+</div>
+
+<div id="divider" title="Drag to resize"></div>
+
+<div id="chat-pane">
+  <div id="messages"></div>
+  <div id="status-strip">
+    <div id="status-dot"></div>
+    <div id="status-text">connecting…</div>
+  </div>
+  <div id="grant">
+    <div>The agent has spent its tool-call budget. Grant more, or end the episode?</div>
+    <div id="grant-row">
+      <input id="grant-count" type="number" min="1" step="1" value="25">
+      <button id="grant-more">Grant</button>
+      <button id="grant-none">End episode</button>
+    </div>
+  </div>
+  <div id="composer">
+    <div id="controls">
+      <button id="stop" title="Halt the arm now, drop the queued calls, and hold the loop">■ Stop</button>
+      <button id="pause" title="Hold the loop between turns while you type">‖ Pause</button>
+      <button id="reset-episode" title="Reset the scene and the conversation together">
+        ↺ Reset episode
+      </button>
+    </div>
+    <div id="composer-row">
+      <textarea id="input" placeholder="Say something to the agent…" rows="1"></textarea>
+      <button id="send">Send</button>
+    </div>
+    <div id="hint">
+      Enter to send · Shift+Enter for a newline · Esc to pause. A message is delivered
+      before the agent's next turn; the skill in flight finishes first.
+    </div>
+  </div>
+</div>
+
+<div id="lightbox"><img alt="expanded tool result"></div>
+
+<script>
+"use strict";
+
+// The server hands us its configured viser URL, but "localhost" in it means the *server's*
+// machine — when this page is viewed from another machine, dial that host instead.
+const CONFIGURED_VISER_URL = "{{VISER_URL}}";
+function localizeViserUrl(url) {
+  return ["localhost", "127.0.0.1"].includes(location.hostname)
+    ? url
+    : url.replace("//localhost", "//" + location.hostname)
+         .replace("//127.0.0.1", "//" + location.hostname);
+}
+let VISER_URL = localizeViserUrl(CONFIGURED_VISER_URL);
+
+// Probe viser with a bare websocket (its HTTP server is a websocket server, and websockets are
+// not subject to CORS): load the iframe only once the port answers, and until then say exactly
+// which URL is unreachable instead of showing a silently blank pane.
+const viserFrame = document.getElementById("viser-frame");
+const viserOverlay = document.getElementById("viser-overlay");
+let sceneLoading = null;  // Name of the scene being built, or null
+function showLoading(name) {
+  viserOverlay.classList.remove("hidden");
+  viserOverlay.textContent = "";
+  const spin = document.createElement("div"); spin.className = "spinner";
+  const title = document.createElement("div"); title.className = "loading-title";
+  title.textContent = "Building scene " + name + "…";
+  const sub = document.createElement("div");
+  sub.textContent = "Isaac is loading the environment, warming up the planner and starting viser. About half a minute.";
+  const wrap = document.createElement("div"); wrap.append(spin, title, sub);
+  viserOverlay.append(wrap);
+}
+
+function pointViserAt(url) {
+  VISER_URL = localizeViserUrl(url);
+  viserFrame.removeAttribute("src");
+  probeViser();
+}
+
+function probeViser() {
+  let settled = false;
+  let probe = null;
+  const fail = (why) => {
+    if (settled) return;
+    settled = true;
+    if (probe) try { probe.close(); } catch (e) {}
+    if (sceneLoading) { setTimeout(probeViser, 3000); return; }  // The loading overlay owns the pane
+    viserOverlay.classList.remove("hidden");
+    viserOverlay.textContent =
+      "viser is not reachable at " + VISER_URL + " from this browser (" + why + ") — retrying…\n\n" +
+      "This page came from " + location.host + ". If you port-forwarded " +
+      (location.port || "80") + " to get here, forward 8080 the same way.";
+    setTimeout(probeViser, 3000);
+  };
+  try {
+    probe = new WebSocket(VISER_URL.replace(/^http/, "ws"));
+  } catch (e) {
+    fail(e.name);  // e.g. SecurityError: ws: from an https: page
+    return;
+  }
+  const timer = setTimeout(() => fail("connection is hanging"), 4000);
+  probe.onopen = () => {
+    settled = true;
+    clearTimeout(timer);
+    probe.close();
+    viserOverlay.classList.add("hidden");
+    // Always (re)load: a viser server that was restarted under an open iframe leaves the old
+    // client showing its last frame forever, so a fresh probe means a fresh iframe.
+    viserFrame.src = VISER_URL;
+  };
+  probe.onerror = () => { clearTimeout(timer); fail("connection failed"); };
+}
+probeViser();
+
+const messagesEl = document.getElementById("messages");
+const statusDot = document.getElementById("status-dot");
+const statusText = document.getElementById("status-text");
+const budgetEl = document.getElementById("budget");
+const inputEl = document.getElementById("input");
+const sendBtn = document.getElementById("send");
+const pauseBtn = document.getElementById("pause");
+const stopBtn = document.getElementById("stop");
+const grantEl = document.getElementById("grant");
+const lightbox = document.getElementById("lightbox");
+
+let ws = null;
+// Whether the loop is held, tracked locally so the button reads right the moment it is clicked;
+// the server's own status events correct it if a pause lands late.
+let held = false;
+
+// What the strip says. The turn in flight is not in here: it is the activity row in the feed.
+const STATUS_TEXT = {
+  idle: "ready",
+  waiting: "waiting for a task — type it below and press Send",
+  no_task: "no task loaded — pick one from the menu and load it",
+  loading_task: "loading TOOL — Isaac is rebuilding the scene, about a minute…",
+  task_load_queued: "switching to TOOL — ending the current episode…",
+  thinking: "episode running",
+  tool_running: "episode running",
+  pause_requested: "pausing after this turn…",
+  stopping: "stopping — the arm is halting where it is",
+  paused: "paused — the loop is holding between turns",
+  reset_queued: "episode reset queued…",
+  disconnected: "disconnected — retrying…",
+  done: "episode over",
+};
+
+function setStatus(state, detail) {
+  if (state === "loading_task") { sceneLoading = detail || "scene"; showLoading(sceneLoading); }
+  const busy = (state === "thinking" || state === "tool_running" || state === "pause_requested"
+                || state === "loading_task");
+  statusDot.className = busy ? "busy" : (state === "disconnected" ? "dead" : "");
+  const text = STATUS_TEXT[state] || state;
+  statusText.textContent = detail ? text.replace("TOOL", detail) : text.replace("TOOL", "tool");
+
+  // The live turn reads as the last thing in the conversation, the way a chat interface says it,
+  // and leaves as soon as the turn does. Every other state ends it.
+  if (state === "thinking") setActivity("Thinking");
+  else if (state === "tool_running") setActivity("Running", detail);
+  else clearActivity();
+}
+
+function setHeld(nowHeld) {
+  held = nowHeld;
+  pauseBtn.classList.toggle("held", held);
+  pauseBtn.textContent = held ? "▶ Resume" : "‖ Pause";
+}
+
+function atBottom() {
+  return messagesEl.scrollHeight - messagesEl.scrollTop - messagesEl.clientHeight < 60;
+}
+
+// Whether the view follows new messages, set by the reader's own scrolling rather than measured
+// when a message lands: a result image finishes loading after its row is added and grows the list
+// below the view without firing a scroll event, and a measurement at the next message would read
+// that growth as the reader having scrolled up.
+let following = true;
+messagesEl.addEventListener("scroll", () => { following = atBottom(); });
+
+function scrollToEnd() {
+  if (following) messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+let activityEl = null;  // The live-turn row, while a turn is in flight
+
+function addNode(node) {
+  messagesEl.appendChild(node);
+  // Whatever arrives, the live row stays at the tail; it is the turn still happening.
+  if (activityEl && node !== activityEl) messagesEl.appendChild(activityEl);
+  scrollToEnd();
+}
+
+function setActivity(label, toolName) {
+  if (!activityEl) {
+    activityEl = document.createElement("div");
+    activityEl.className = "msg activity";
+    const mark = document.createElement("span"); mark.className = "mark"; mark.textContent = "✻";
+    const text = document.createElement("span"); text.className = "label";
+    const name = document.createElement("code");
+    const dots = document.createElement("span"); dots.className = "dots";
+    dots.append(document.createElement("i"), document.createElement("i"), document.createElement("i"));
+    activityEl.append(mark, text, name, dots);
+    addNode(activityEl);
+  }
+  activityEl.querySelector(".label").textContent = label;
+  activityEl.querySelector("code").textContent = toolName || "";
+}
+
+function clearActivity() {
+  if (!activityEl) return;
+  activityEl.remove();
+  activityEl = null;
+}
+
+function clearMessages() {
+  activityEl = null;  // Dropped with everything else; a live turn re-announces itself
+  messagesEl.textContent = "";
+}
+
+function addMsg(cls, text) {
+  const div = document.createElement("div");
+  div.className = "msg " + cls;
+  div.textContent = text;
+  addNode(div);
+}
+
+function addToolCall(ev) {
+  const det = document.createElement("details");
+  det.className = "tool";
+  const args = ev.arguments || "{}";
+  const brief = args.length > 80 ? args.slice(0, 77) + "…" : args;
+  const summary = document.createElement("summary");
+  summary.innerHTML = "⏺ <span class='name'></span> <span class='args'></span>";
+  summary.querySelector(".name").textContent = ev.name;
+  summary.querySelector(".args").textContent = brief;
+  const body = document.createElement("div");
+  body.className = "body";
+  body.textContent = args;
+  det.append(summary, body);
+  addNode(det);
+}
+
+function addToolResult(ev) {
+  const div = document.createElement("div");
+  div.className = "result";
+  if (ev.text) {
+    const t = ev.text.length > 500 ? ev.text.slice(0, 500) + " …" : ev.text;
+    div.append("⎿ " + t);
+  } else if (!(ev.images || []).length) {
+    div.append("⎿ (no text output)");
+  }
+  for (const url of ev.images || []) {
+    const img = document.createElement("img");
+    img.onload = scrollToEnd;
+    img.src = url;
+    img.onclick = () => { lightbox.querySelector("img").src = url; lightbox.style.display = "flex"; };
+    div.appendChild(img);
+  }
+  addNode(div);
+}
+
+function addReasoning(ev) {
+  const det = document.createElement("details");
+  det.className = "reasoning";
+  const summary = document.createElement("summary");
+  summary.textContent = "✻ thinking (" + ev.text.length + " chars)";
+  const body = document.createElement("div");
+  body.className = "body";
+  body.textContent = ev.text;
+  det.append(summary, body);
+  addNode(det);
+}
+
+function handleEvent(ev) {
+  switch (ev.type) {
+    case "status": setStatus(ev.state, ev.detail); break;
+    case "budget":
+      budgetEl.textContent = ev.remaining + " calls left of " + ev.granted;
+      budgetEl.classList.toggle("low", ev.remaining <= 5);
+      break;
+    case "user_message": addMsg("user", ev.text); break;
+    case "message_queued":
+      addMsg("queued", "⤴ queued for the next turn: " + ev.text);
+      break;
+    case "assistant_text": addMsg("assistant", ev.text); break;
+    case "reasoning": addReasoning(ev); break;
+    case "tool_call": addToolCall(ev); break;
+    case "tool_result": addToolResult(ev); break;
+    case "tool_skipped":
+      addMsg("meta", "⏹ skipped " + ev.name + (ev.reason === "task_switch"
+        ? " — you switched task before it ran" : ev.reason === "stop"
+        ? " — you stopped the arm before it ran" : " — you interjected before it ran"));
+      break;
+    case "episode_aborted": addMsg("meta", "■ episode ended — switching task"); setStatus("done"); break;
+    case "resumed": setHeld(false); break;
+    case "conversation_cleared": clearMessages(); break;  // The model's window was cleared; the human's follows it
+    case "episode_reset":
+      addMsg("meta", "↺ episode reset — scene and conversation history cleared");
+      break;
+    case "task_list": fillTaskMenu(ev.tasks); break;
+    case "task_loaded":
+      addMsg("meta", "⤓ loaded task " + ev.name + (ev.description ? " — " + ev.description : ""));
+      sceneLoading = null;
+      setCurrentTask(ev.name);
+      if (ev.viser_url) pointViserAt(ev.viser_url);
+      break;
+    case "error":
+      if (sceneLoading) { sceneLoading = null; probeViser(); }
+      addMsg("error", "✗ " + ev.text);
+      break;
+    case "budget_exhausted": grantEl.classList.add("visible"); setStatus("paused"); break;
+    case "budget_granted":
+      grantEl.classList.remove("visible");
+      addMsg("meta", ev.count > 0
+        ? "● granted " + ev.count + " more tool calls"
+        : "● no more tool calls granted — ending the episode");
+      break;
+    case "episode_done": addMsg("meta", "● episode over"); setStatus("done"); break;
+  }
+  if (ev.type === "status" && ev.state === "stopping") {
+    addMsg("meta", "■ stop — the arm is halting where it stands");
+  }
+  if (ev.type === "status" && ev.state === "paused") setHeld(true);
+}
+
+function connect() {
+  const proto = location.protocol === "https:" ? "wss:" : "ws:";
+  ws = new WebSocket(proto + "//" + location.host + "/ws");
+  ws.onopen = () => { clearMessages(); setStatus("idle"); probeViser(); };  // Log replays from scratch; viser may have restarted too
+  ws.onmessage = (m) => handleEvent(JSON.parse(m.data));
+  ws.onclose = () => { setStatus("disconnected"); setTimeout(connect, 2000); };
+}
+connect();
+
+function tell(message) {
+  if (ws && ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify(message));
+}
+
+function send() {
+  const text = inputEl.value.trim();
+  if (!text) return;
+  tell({ type: "user_message", text });
+  inputEl.value = "";
+  inputEl.style.height = "auto";
+}
+
+sendBtn.onclick = send;
+pauseBtn.onclick = () => {
+  if (held) { tell({ type: "resume" }); setHeld(false); }
+  else { tell({ type: "pause" }); setHeld(true); }
+};
+// Stop halts the arm mid-skill and holds the loop, so the button leaves the page in the held
+// state that Resume releases -- one latch, whichever control set it.
+stopBtn.onclick = () => { tell({ type: "stop" }); setHeld(true); };
+
+// Divider. The width is the viewer's to give away: a transcript full of zoomed crops wants more
+// room than the 3D view does, and which of the two matters changes within one episode.
+const divider = document.getElementById("divider");
+const MIN_CHAT_WIDTH = 320;
+const MIN_VISER_WIDTH = 360;
+const CHAT_WIDTH_KEY = "agenticRobotics.chatWidth";
+
+function setChatWidth(px) {
+  const limit = Math.max(MIN_CHAT_WIDTH, window.innerWidth - MIN_VISER_WIDTH);
+  const width = Math.min(Math.max(px, MIN_CHAT_WIDTH), limit);
+  document.documentElement.style.setProperty("--chat-width", width + "px");
+  return width;
+}
+
+// A refresh is how this page is reloaded after a scene swap, so a width that did not survive one
+// would have to be re-dragged every time.
+try {
+  const saved = parseInt(localStorage.getItem(CHAT_WIDTH_KEY), 10);
+  if (saved > 0) setChatWidth(saved);
+} catch (e) {}
+
+let dragging = false;
+divider.addEventListener("pointerdown", (e) => {
+  dragging = true;
+  divider.setPointerCapture(e.pointerId);
+  document.body.classList.add("dragging");
+  e.preventDefault();
+});
+divider.addEventListener("pointermove", (e) => {
+  if (dragging) setChatWidth(window.innerWidth - e.clientX);
+});
+// Both endings, because a cancelled pointer that left `dragging` set would leave the iframe with
+// pointer-events disabled -- a 3D view that silently stops taking clicks.
+function endDrag(e) {
+  if (!dragging) return;
+  dragging = false;
+  document.body.classList.remove("dragging");
+  const width = setChatWidth(window.innerWidth - e.clientX);
+  try {
+    localStorage.setItem(CHAT_WIDTH_KEY, String(width));
+  } catch (err) {}
+}
+divider.addEventListener("pointerup", endDrag);
+divider.addEventListener("pointercancel", endDrag);
+// A window narrow enough to violate either minimum re-clamps rather than letting a pane vanish.
+window.addEventListener("resize", () => {
+  const current = parseInt(getComputedStyle(document.documentElement)
+    .getPropertyValue("--chat-width"), 10);
+  if (current > 0) setChatWidth(current);
+});
+
+// Top-left task menu. Clicking an entry asks the server to build that scene.
+const taskMenu = document.getElementById("task-menu");
+const taskMenuBtn = document.getElementById("task-menu-btn");
+const taskMenuPanel = document.getElementById("task-menu-panel");
+const currentTaskEl = document.getElementById("current-task");
+let currentTask = null;
+function setCurrentTask(name) {
+  currentTask = name;
+  currentTaskEl.textContent = name ? "scene: " + name : "no task loaded";
+  for (const el of taskMenuPanel.querySelectorAll(".task-item, .variant-btn")) {
+    el.classList.toggle("current", el.dataset.name === name);
+  }
+}
+// A task key and a variant slug travel in the same field; the server resolves which it got.
+function loadTask(name) {
+  taskMenu.classList.remove("open");
+  tell({ type: "load_task", name: name });
+}
+function fillTaskMenu(tasks) {
+  taskMenuPanel.textContent = "";
+  for (const t of tasks) {
+    const entry = document.createElement("div");
+    entry.className = "task-entry";
+    const item = document.createElement("button");
+    item.className = "task-item";
+    item.dataset.name = t.name;
+    item.disabled = !t.available;
+    item.title = "Load a random variant of this task";
+    const name = document.createElement("span"); name.className = "name";
+    name.textContent = t.name;
+    const desc = document.createElement("span"); desc.className = "desc";
+    desc.textContent = t.description || "";
+    item.append(name, desc);
+    if (!t.available) {
+      const why = document.createElement("span"); why.className = "why";
+      why.textContent = "unavailable: " + (t.reason || "no package or saved copy here");
+      item.append(why);
+    }
+    item.onclick = () => loadTask(t.name);
+    entry.append(item);
+    // Only when there is a choice to make: for a single-variant task the button would do exactly
+    // what clicking the description does.
+    const variants = t.variants || [];
+    if (variants.length > 1) {
+      const row = document.createElement("div");
+      row.className = "task-variants";
+      const label = document.createElement("span");
+      label.className = "label";
+      label.textContent = "variant";
+      row.append(label);
+      for (const v of variants) {
+        const btn = document.createElement("button");
+        btn.className = "variant-btn";
+        btn.dataset.name = v.slug;
+        btn.textContent = v.label;
+        btn.disabled = !v.available;
+        btn.title = v.available ? v.slug : v.slug + " — " + (v.reason || "no package or saved copy here");
+        btn.onclick = () => loadTask(v.slug);
+        row.append(btn);
+      }
+      entry.append(row);
+    }
+    taskMenuPanel.append(entry);
+  }
+  taskMenuBtn.disabled = tasks.length === 0;
+  setCurrentTask(currentTask);
+}
+taskMenuBtn.onclick = (e) => { e.stopPropagation(); taskMenu.classList.toggle("open"); };
+document.addEventListener("click", (e) => { if (!taskMenu.contains(e.target)) taskMenu.classList.remove("open"); });
+document.getElementById("reset-episode").onclick = () => {
+  if (confirm("Reset the scene and clear the agent's conversation history?")) {
+    tell({ type: "reset_episode" });
+  }
+};
+document.getElementById("grant-more").onclick = () => {
+  const count = parseInt(document.getElementById("grant-count").value, 10);
+  tell({ type: "grant_tool_calls", count: count > 0 ? count : 25 });
+};
+document.getElementById("grant-none").onclick = () => {
+  tell({ type: "grant_tool_calls", count: 0 });
+};
+lightbox.onclick = () => { lightbox.style.display = "none"; };
+
+inputEl.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
+});
+inputEl.addEventListener("input", () => {
+  inputEl.style.height = "auto";
+  inputEl.style.height = Math.min(inputEl.scrollHeight, 160) + "px";
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !held) { tell({ type: "pause" }); setHeld(true); }
+});
+</script>
+</body>
+</html>

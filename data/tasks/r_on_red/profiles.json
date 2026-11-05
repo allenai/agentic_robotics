@@ -1,0 +1,284 @@
+{
+  "num_profiles": 8,
+  "block_names": [
+    "block_r",
+    "block_red1",
+    "block_blue",
+    "block_blue2",
+    "block_blue3"
+  ],
+  "profiles": [
+    {
+      "profile_id": 0,
+      "block_sizes": {
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue3": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 1,
+      "block_sizes": {
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue3": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 2,
+      "block_sizes": {
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue3": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 3,
+      "block_sizes": {
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue3": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 4,
+      "block_sizes": {
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue3": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 5,
+      "block_sizes": {
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue3": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 6,
+      "block_sizes": {
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue3": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 7,
+      "block_sizes": {
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue3": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    }
+  ]
+}

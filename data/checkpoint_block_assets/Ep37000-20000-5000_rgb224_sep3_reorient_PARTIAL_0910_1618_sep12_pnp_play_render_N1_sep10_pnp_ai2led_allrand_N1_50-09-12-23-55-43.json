@@ -1,0 +1,58 @@
+{
+ "checkpoint": "Ep37000-20000-5000_rgb224_sep3_reorient_PARTIAL_0910_1618_sep12_pnp_play_render_N1_sep10_pnp_ai2led_allrand_N1_50-09-12-23-55-43",
+ "training_env_pys": [
+  "unmerged/sep3_ai2_reorient_fixed/envs/problem_letter_color_10_20260903_174015_619630_4499/env.py",
+  "unmerged/sep12_pnp_play/envs/problem_letter_color_10_20260912_003343_961884_1654/env.py",
+  "unmerged/sep10_random_grasp_pick_and_place_ai2led/envs/problem_letter_color_10_20260910_154146_240290_1654/env.py"
+ ],
+ "assets": {
+  "block_2": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_a": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_d": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_e": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_i": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_l": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ]
+ }
+}

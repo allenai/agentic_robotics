@@ -1,0 +1,571 @@
+{
+  "num_profiles": 8,
+  "block_names": [
+    "block_a",
+    "block_i",
+    "block_2",
+    "block_r",
+    "block_t",
+    "block_j",
+    "block_red1",
+    "block_green",
+    "block_blue",
+    "block_yellow",
+    "block_orange",
+    "block_purple"
+  ],
+  "profiles": [
+    {
+      "profile_id": 0,
+      "block_sizes": {
+        "block_a": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_i": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_t": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_j": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_green": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_yellow": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_orange": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_purple": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 1,
+      "block_sizes": {
+        "block_a": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_i": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_t": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_j": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_green": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_yellow": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_orange": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_purple": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 2,
+      "block_sizes": {
+        "block_a": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_i": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_t": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_j": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_green": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_yellow": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_orange": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_purple": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 3,
+      "block_sizes": {
+        "block_a": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_i": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_t": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_j": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_green": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_yellow": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_orange": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_purple": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 4,
+      "block_sizes": {
+        "block_a": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_i": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_t": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_j": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_green": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_yellow": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_orange": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_purple": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 5,
+      "block_sizes": {
+        "block_a": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_i": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_t": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_j": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_green": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_yellow": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_orange": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_purple": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 6,
+      "block_sizes": {
+        "block_a": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_i": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_t": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_j": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_green": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_yellow": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_orange": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_purple": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    },
+    {
+      "profile_id": 7,
+      "block_sizes": {
+        "block_a": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_i": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_2": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_r": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_t": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_j": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_red1": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_green": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_blue": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_yellow": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_orange": [
+          0.04,
+          0.04,
+          0.04
+        ],
+        "block_purple": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "table_height": 0.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.5,
+      "restitution": 0.0
+    }
+  ]
+}

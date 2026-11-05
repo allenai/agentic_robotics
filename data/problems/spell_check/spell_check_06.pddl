@@ -1,0 +1,57 @@
+(define (problem spell_check_06)
+    (:domain blocks-tamp)
+    (:objects
+    block_c block_h block_e block_c_2 block_k block_r block_s block_l block_u - block_letter
+    block_green block_yellow block_red1 - block
+    workspace_table - table
+    robot - gripper    )
+    (:init
+        (on_table block_c workspace_table)
+        (clear block_c)
+        (on_table block_h workspace_table)
+        (clear block_h)
+        (on_table block_e workspace_table)
+        (clear block_e)
+        (on_table block_c_2 workspace_table)
+        (clear block_c_2)
+        (on_table block_k workspace_table)
+        (clear block_k)
+        (on_table block_r workspace_table)
+        (clear block_r)
+        (on_table block_s workspace_table)
+        (clear block_s)
+        (on_table block_l workspace_table)
+        (clear block_l)
+        (on_table block_u workspace_table)
+        (clear block_u)
+        (on_table block_green workspace_table)
+        (clear block_green)
+        (on_table block_yellow workspace_table)
+        (clear block_yellow)
+        (on_table block_red1 workspace_table)
+        (clear block_red1)
+        (ori_of block_c o8)
+        (ori_of block_h o22)
+        (ori_of block_e o11)
+        (ori_of block_c_2 o5)
+        (ori_of block_k o22)
+        (ori_of block_r o3)
+        (ori_of block_s o22)
+        (ori_of block_l o20)
+        (ori_of block_u o1)
+        (ori_of block_green o14)
+        (ori_of block_yellow o5)
+        (ori_of block_red1 o11)
+        (handempty robot)
+        (gripper_at_init)
+    )
+    (:goal (and
+        (ori_of block_c o2)
+        (ori_of block_h o2)
+        (ori_of block_e o2)
+    ))
+
+    ;block_size_range = [0.03, 0.05]
+    ;table_height_range = [0, 0.04]
+    ;friction_range = [0.1, 0.4]
+)

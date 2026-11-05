@@ -1,0 +1,13 @@
+{
+ "slug": "spell_hen_unpatterned_1_feasible_0",
+ "family": "spell_hen_unpatterned_1_feasible",
+ "library": "eval_blocks_36_0",
+ "seed": 2179564398,
+ "attempt": 0,
+ "candidates": 8,
+ "kept_candidate": 0,
+ "closest_pair_m": 0.0794,
+ "closest_pair": "block_00015/block_00020",
+ "rejected": [],
+ "seconds": 43.9
+}

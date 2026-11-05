@@ -1,0 +1,80 @@
+{
+ "checkpoint": "rgb224_oct06_stack3_1000x32_50_25_abs_token_shared_rgb_mask0.1_sigma0.8_lang_t5-small_action_only_pause-10-17-10-28-48",
+ "training_env_pys": [
+  "unmerged/oct06_stack3_1000x32/envs/problem_declarative_10_20261006_175602_736625_4422/env.py"
+ ],
+ "assets": {
+  "block_1": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_3": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_5": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_h": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_j": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_l": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_p": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_q": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_u": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ]
+ }
+}

@@ -1,0 +1,385 @@
+{
+  "provenance": {
+    "source": "iNaturalist API v1",
+    "endpoint": "https://api.inaturalist.org/v1/taxa",
+    "params": {
+      "taxon_id": 1,
+      "rank": "species",
+      "order_by": "observations_count",
+      "order": "desc",
+      "per_page": 200,
+      "locale": "en",
+      "pages": 25
+    },
+    "pulled_at": "2026-09-02T22:27:00+00:00",
+    "species_returned": 5000,
+    "species_with_english_common_name": 4900,
+    "rule": "The word is the last whitespace-separated token of the English common name. Tokens holding anything outside A-Z are dropped, since `glyph_blocks.validate_text` accepts only those; words are merged case-insensitively; no length filter is applied here, and callers filter on import.",
+    "non_alphabetic_tokens_dropped": 172,
+    "review_status": "PARTIALLY REVIEWED -- the developer's cuts from the full list are preserved; this file has not itself been reviewed end to end.",
+    "notes": [
+      "species_count is how many of the pulled species share this head noun. A count of 1 is where the wrong-noun cases cluster (Cloak, from Mourning Cloak; Dasher, from Blue Dasher), but legitimate ones live there too (Bear, Fox, Eagle).",
+      "Colour words (Blue, Brown) and Human are present and are the clearest cases to cut."
+    ],
+    "sort": "Shortest first, and within a length the most-observed first, so review runs from the most familiar word downwards and can stop where the marginal word stops earning its place.",
+    "filters": {
+      "max_letters": 4,
+      "excluded_iconic_taxa": ["Insecta"],
+      "note": "Filtered down from the full pull so the whole file can be reviewed in one pass. Insects are excluded because colloquial 'animal' narrows toward vertebrates, which risks the agent not searching for an insect name even when the guaranteed letters spell one. Other invertebrates (Mollusca, Arachnida, unranked Animalia) are still here and are the same judgement call. Re-pull for a wider set; the endpoint and params above reproduce it.",
+      "words_before_filter": 1058
+    }
+  },
+  "words": [
+    {
+      "word": "Jay",
+      "letters": 3,
+      "species_count": 11,
+      "top_common_name": "Blue Jay",
+      "top_scientific_name": "Cyanocitta cristata",
+      "top_observations": 203789,
+      "top_iconic_taxon": "Aves"
+    },
+    {
+      "word": "Cat",
+      "letters": 3,
+      "species_count": 1,
+      "top_common_name": "Domestic Cat",
+      "top_scientific_name": "Felis catus",
+      "top_observations": 191427,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Fox",
+      "letters": 3,
+      "species_count": 4,
+      "top_common_name": "Red Fox",
+      "top_scientific_name": "Vulpes vulpes",
+      "top_observations": 156149,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Dog",
+      "letters": 3,
+      "species_count": 2,
+      "top_common_name": "Domestic Dog",
+      "top_scientific_name": "Canis familiaris",
+      "top_observations": 155146,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Owl",
+      "letters": 3,
+      "species_count": 13,
+      "top_common_name": "Great Horned Owl",
+      "top_scientific_name": "Bubo virginianus",
+      "top_observations": 92326,
+      "top_iconic_taxon": "Aves"
+    },
+    {
+      "word": "Rat",
+      "letters": 3,
+      "species_count": 3,
+      "top_common_name": "Brown Rat",
+      "top_scientific_name": "Rattus norvegicus",
+      "top_observations": 36781,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Emu",
+      "letters": 3,
+      "species_count": 1,
+      "top_common_name": "Emu",
+      "top_scientific_name": "Dromaius novaehollandiae",
+      "top_observations": 12575,
+      "top_iconic_taxon": "Aves"
+    },
+    {
+      "word": "Bat",
+      "letters": 3,
+      "species_count": 4,
+      "top_common_name": "Big Brown Bat",
+      "top_scientific_name": "Eptesicus fuscus",
+      "top_observations": 11802,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Boa",
+      "letters": 3,
+      "species_count": 2,
+      "top_common_name": "Central American Boa",
+      "top_scientific_name": "Boa imperator",
+      "top_observations": 8592,
+      "top_iconic_taxon": "Reptilia"
+    },
+    {
+      "word": "Pig",
+      "letters": 3,
+      "species_count": 1,
+      "top_common_name": "Domestic Guinea Pig",
+      "top_scientific_name": "Cavia porcellus",
+      "top_observations": 5445,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Deer",
+      "letters": 4,
+      "species_count": 7,
+      "top_common_name": "White-tailed Deer",
+      "top_scientific_name": "Odocoileus virginianus",
+      "top_observations": 418374,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Hawk",
+      "letters": 4,
+      "species_count": 21,
+      "top_common_name": "Red-tailed Hawk",
+      "top_scientific_name": "Buteo jamaicensis",
+      "top_observations": 356421,
+      "top_iconic_taxon": "Aves"
+    },
+    {
+      "word": "Dove",
+      "letters": 4,
+      "species_count": 19,
+      "top_common_name": "Mourning Dove",
+      "top_scientific_name": "Zenaida macroura",
+      "top_observations": 307214,
+      "top_iconic_taxon": "Aves"
+    },
+    {
+      "word": "Toad",
+      "letters": 4,
+      "species_count": 26,
+      "top_common_name": "American Toad",
+      "top_scientific_name": "Anaxyrus americanus",
+      "top_observations": 230612,
+      "top_iconic_taxon": "Amphibia"
+    },
+    {
+      "word": "Crow",
+      "letters": 4,
+      "species_count": 11,
+      "top_common_name": "American Crow",
+      "top_scientific_name": "Corvus brachyrhynchos",
+      "top_observations": 218875,
+      "top_iconic_taxon": "Aves"
+    },
+    {
+      "word": "Swan",
+      "letters": 4,
+      "species_count": 7,
+      "top_common_name": "Mute Swan",
+      "top_scientific_name": "Cygnus olor",
+      "top_observations": 185833,
+      "top_iconic_taxon": "Aves"
+    },
+    {
+      "word": "Gull",
+      "letters": 4,
+      "species_count": 32,
+      "top_common_name": "Black-headed Gull",
+      "top_scientific_name": "Chroicocephalus ridibundus",
+      "top_observations": 184240,
+      "top_iconic_taxon": "Aves"
+    },
+    {
+      "word": "Frog",
+      "letters": 4,
+      "species_count": 60,
+      "top_common_name": "Green Frog",
+      "top_scientific_name": "Lithobates clamitans",
+      "top_observations": 164323,
+      "top_iconic_taxon": "Amphibia"
+    },
+    {
+      "word": "Duck",
+      "letters": 4,
+      "species_count": 18,
+      "top_common_name": "Wood Duck",
+      "top_scientific_name": "Aix sponsa",
+      "top_observations": 122786,
+      "top_iconic_taxon": "Aves"
+    },
+    {
+      "word": "Wren",
+      "letters": 4,
+      "species_count": 11,
+      "top_common_name": "Carolina Wren",
+      "top_scientific_name": "Thryothorus ludovicianus",
+      "top_observations": 107454,
+      "top_iconic_taxon": "Aves"
+    },
+    {
+      "word": "Bear",
+      "letters": 4,
+      "species_count": 2,
+      "top_common_name": "American Black Bear",
+      "top_scientific_name": "Ursus americanus",
+      "top_observations": 93492,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Newt",
+      "letters": 4,
+      "species_count": 9,
+      "top_common_name": "Eastern Newt",
+      "top_scientific_name": "Notophthalmus viridescens",
+      "top_observations": 84837,
+      "top_iconic_taxon": "Amphibia"
+    },
+    {
+      "word": "Slug",
+      "letters": 4,
+      "species_count": 17,
+      "top_common_name": "Leopard Slug",
+      "top_scientific_name": "Limax maximus",
+      "top_observations": 75884,
+      "top_iconic_taxon": "Mollusca"
+    },
+    {
+      "word": "Seal",
+      "letters": 4,
+      "species_count": 5,
+      "top_common_name": "Harbor Seal",
+      "top_scientific_name": "Phoca vitulina",
+      "top_observations": 72606,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Boar",
+      "letters": 4,
+      "species_count": 1,
+      "top_common_name": "Wild Boar",
+      "top_scientific_name": "Sus scrofa",
+      "top_observations": 71474,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Loon",
+      "letters": 4,
+      "species_count": 4,
+      "top_common_name": "Common Loon",
+      "top_scientific_name": "Gavia immer",
+      "top_observations": 68890,
+      "top_iconic_taxon": "Aves"
+    },
+    {
+      "word": "Hare",
+      "letters": 4,
+      "species_count": 3,
+      "top_common_name": "Brown Hare",
+      "top_scientific_name": "Lepus europaeus",
+      "top_observations": 50629,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Crab",
+      "letters": 4,
+      "species_count": 41,
+      "top_common_name": "European Green Crab",
+      "top_scientific_name": "Carcinus maenas",
+      "top_observations": 44057,
+      "top_iconic_taxon": "Animalia"
+    },
+    {
+      "word": "Bass",
+      "letters": 4,
+      "species_count": 5,
+      "top_common_name": "Largemouth Bass",
+      "top_scientific_name": "Micropterus nigricans",
+      "top_observations": 43676,
+      "top_iconic_taxon": "Actinopterygii"
+    },
+    {
+      "word": "Lion",
+      "letters": 4,
+      "species_count": 6,
+      "top_common_name": "California Sea Lion",
+      "top_scientific_name": "Zalophus californianus",
+      "top_observations": 42357,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Carp",
+      "letters": 4,
+      "species_count": 3,
+      "top_common_name": "European Carp",
+      "top_scientific_name": "Cyprinus carpio",
+      "top_observations": 35655,
+      "top_iconic_taxon": "Actinopterygii"
+    },
+    {
+      "word": "Lark",
+      "letters": 4,
+      "species_count": 3,
+      "top_common_name": "Horned Lark",
+      "top_scientific_name": "Eremophila alpestris",
+      "top_observations": 31466,
+      "top_iconic_taxon": "Aves"
+    },
+    {
+      "word": "Clam",
+      "letters": 4,
+      "species_count": 3,
+      "top_common_name": "Asian Clam",
+      "top_scientific_name": "Corbicula fluminea",
+      "top_observations": 31100,
+      "top_iconic_taxon": "Mollusca"
+    },
+    {
+      "word": "Goat",
+      "letters": 4,
+      "species_count": 2,
+      "top_common_name": "Domestic Goat",
+      "top_scientific_name": "Capra hircus",
+      "top_observations": 30087,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Mole",
+      "letters": 4,
+      "species_count": 2,
+      "top_common_name": "European Mole",
+      "top_scientific_name": "Talpa europaea",
+      "top_observations": 24547,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Wolf",
+      "letters": 4,
+      "species_count": 1,
+      "top_common_name": "Gray Wolf",
+      "top_scientific_name": "Canis lupus",
+      "top_observations": 23135,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Pike",
+      "letters": 4,
+      "species_count": 1,
+      "top_common_name": "Northern Pike",
+      "top_scientific_name": "Esox lucius",
+      "top_observations": 15117,
+      "top_iconic_taxon": "Actinopterygii"
+    },
+    {
+      "word": "Orca",
+      "letters": 4,
+      "species_count": 1,
+      "top_common_name": "Orca",
+      "top_scientific_name": "Orcinus orca",
+      "top_observations": 11115,
+      "top_iconic_taxon": "Mammalia"
+    },
+    {
+      "word": "Vole",
+      "letters": 4,
+      "species_count": 2,
+      "top_common_name": "Bank Vole",
+      "top_scientific_name": "Clethrionomys glareolus",
+      "top_observations": 9024,
+      "top_iconic_taxon": "Mammalia"
+    }
+  ]
+}

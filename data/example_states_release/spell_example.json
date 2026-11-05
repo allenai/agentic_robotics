@@ -1,0 +1,201 @@
+{
+ "robot_base_pose": {
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  },
+  "orientation": {
+   "w": 1.0,
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  },
+  "parent_frame": "world"
+ },
+ "robot_configuration": {
+  "joint_names": [
+   "panda_joint1",
+   "panda_joint2",
+   "panda_joint3",
+   "panda_joint4",
+   "panda_joint5",
+   "panda_joint6",
+   "panda_joint7",
+   "finger_joint",
+   "left_inner_finger_joint",
+   "right_outer_knuckle_joint",
+   "right_inner_finger_joint",
+   "left_inner_knuckle_joint",
+   "right_inner_knuckle_joint"
+  ],
+  "joint_types": [
+   "revolute",
+   "revolute",
+   "revolute",
+   "revolute",
+   "revolute",
+   "revolute",
+   "revolute",
+   "revolute",
+   "revolute",
+   "revolute",
+   "revolute",
+   "revolute",
+   "revolute"
+  ],
+  "joint_values": [
+   0.0,
+   -0.7854,
+   0.0,
+   -2.3562,
+   0.0,
+   1.5708,
+   0.0,
+   -0.0,
+   -0.0,
+   -0.0,
+   -0.0,
+   -0.0,
+   -0.0
+  ]
+ },
+ "objects": [
+  {
+   "name": "block_c",
+   "pose": {
+    "position": {
+     "x": 0.4394,
+     "y": -0.2925,
+     "z": 0.0689
+    },
+    "orientation": {
+     "w": 0.4236,
+     "x": -0.4236,
+     "y": -0.5662,
+     "z": 0.5662
+    },
+    "parent_frame": "world"
+   }
+  },
+  {
+   "name": "block_d",
+   "pose": {
+    "position": {
+     "x": 0.4036,
+     "y": -0.0171,
+     "z": 0.0693
+    },
+    "orientation": {
+     "w": -0.0,
+     "x": -0.9731,
+     "y": 0.2303,
+     "z": -0.0
+    },
+    "parent_frame": "world"
+   }
+  },
+  {
+   "name": "block_h",
+   "pose": {
+    "position": {
+     "x": 0.4321,
+     "y": 0.1566,
+     "z": 0.1118
+    },
+    "orientation": {
+     "w": 0.4395,
+     "x": -0.554,
+     "y": -0.4394,
+     "z": -0.554
+    },
+    "parent_frame": "world"
+   }
+  },
+  {
+   "name": "block_k",
+   "pose": {
+    "position": {
+     "x": 0.4536,
+     "y": 0.2865,
+     "z": 0.0689
+    },
+    "orientation": {
+     "w": 0.3962,
+     "x": -0.3963,
+     "y": -0.5857,
+     "z": 0.5856
+    },
+    "parent_frame": "world"
+   }
+  },
+  {
+   "name": "block_l",
+   "pose": {
+    "position": {
+     "x": 0.4535,
+     "y": 0.2865,
+     "z": 0.1123
+    },
+    "orientation": {
+     "w": 0.0002,
+     "x": -0.2296,
+     "y": 0.9733,
+     "z": -0.0001
+    },
+    "parent_frame": "world"
+   }
+  },
+  {
+   "name": "block_n",
+   "pose": {
+    "position": {
+     "x": 0.5072,
+     "y": 0.0434,
+     "z": 0.0689
+    },
+    "orientation": {
+     "w": 0.7001,
+     "x": -0.7001,
+     "y": -0.0993,
+     "z": 0.0993
+    },
+    "parent_frame": "world"
+   }
+  },
+  {
+   "name": "block_red1",
+   "pose": {
+    "position": {
+     "x": 0.4394,
+     "y": -0.2925,
+     "z": 0.1132
+    },
+    "orientation": {
+     "w": 0.5931,
+     "x": -0.3851,
+     "y": -0.593,
+     "z": -0.3851
+    },
+    "parent_frame": "world"
+   }
+  },
+  {
+   "name": "block_u",
+   "pose": {
+    "position": {
+     "x": 0.4321,
+     "y": 0.1566,
+     "z": 0.0689
+    },
+    "orientation": {
+     "w": 0.4904,
+     "x": -0.4904,
+     "y": 0.5095,
+     "z": -0.5094
+    },
+    "parent_frame": "world"
+   }
+  }
+ ]
+}

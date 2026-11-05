@@ -1,0 +1,13 @@
+{
+ "slug": "spell_hen_patterned_2_feasible_0",
+ "family": "spell_hen_patterned_2_feasible",
+ "library": "train_blocks_large",
+ "seed": 2706547479,
+ "attempt": 0,
+ "candidates": 8,
+ "kept_candidate": 0,
+ "closest_pair_m": 0.0787,
+ "closest_pair": "block_blue/block_purple",
+ "rejected": [],
+ "seconds": 43.6
+}

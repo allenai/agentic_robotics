@@ -1,0 +1,13 @@
+{
+ "slug": "spell_jay_patterned_1_infeasible_0",
+ "family": "spell_jay_patterned_1_infeasible",
+ "library": "train_blocks_large",
+ "seed": 1751016043,
+ "attempt": 0,
+ "candidates": 8,
+ "kept_candidate": 0,
+ "closest_pair_m": 0.0842,
+ "closest_pair": "block_i/block_red1",
+ "rejected": [],
+ "seconds": 43.1
+}

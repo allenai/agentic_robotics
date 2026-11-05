@@ -1,0 +1,1072 @@
+{
+ "library": "usd",
+ "source": "objects/train_blocks_large/usd/20260909",
+ "blocks": {
+  "block_a": {
+   "usd": "A.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "a",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "A",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_b": {
+   "usd": "B.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "b",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "B",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_c": {
+   "usd": "C.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "c",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "C",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_d": {
+   "usd": "D.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "d",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "D",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_e": {
+   "usd": "E.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "e",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "E",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_f": {
+   "usd": "F.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "f",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "F",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_g": {
+   "usd": "G.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "g",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "G",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_h": {
+   "usd": "H.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "h",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "H",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_i": {
+   "usd": "I.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "i",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "I",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_j": {
+   "usd": "J.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "j",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "J",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_k": {
+   "usd": "K.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "k",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "K",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_l": {
+   "usd": "L.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "l",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "L",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_m": {
+   "usd": "M.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "m",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "M",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_n": {
+   "usd": "N.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "n",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "N",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_o": {
+   "usd": "O.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "o",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "O",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_p": {
+   "usd": "P.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "p",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "P",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_q": {
+   "usd": "Q.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "q",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "Q",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_r": {
+   "usd": "R.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "r",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "R",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_s": {
+   "usd": "S.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "s",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "S",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_t": {
+   "usd": "T.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "t",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "T",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_u": {
+   "usd": "U.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "u",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "U",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_v": {
+   "usd": "V.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "v",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "V",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_w": {
+   "usd": "W.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "w",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "W",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_x": {
+   "usd": "X.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "x",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "X",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_y": {
+   "usd": "Y.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "y",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "Y",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_z": {
+   "usd": "Z.usda",
+   "faces": {
+    "-z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "picture",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "z",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "Z",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  }
+ }
+}

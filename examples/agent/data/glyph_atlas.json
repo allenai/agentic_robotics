@@ -1,0 +1,204 @@
+{
+  "provenance": {
+    "derived_from": "assets/objects/train_blocks/usd, drop 20260527",
+    "method": "For each USD the decal quad extreme along +y carries the glyph the file is named for. Bijectivity narrows the front axis to four candidates; +y is picked because -y then recovers the block pairing exactly as an involution (A's back face is N's front face and vice versa), and because +y agrees with a visual read of the atlas.",
+    "atlas": "Textures/alphabet_block_decals_albedotransparency.png, 4096x4096, 12x12 cells",
+    "cell_convention": "(row, col), row 0 at the TOP of the image",
+    "blank_cells": "rows 10-11 are fully transparent (alpha 0), so a face aimed there is blank",
+    "front_axis": "+y"
+  },
+  "glyph_cells": {
+    "+": [
+      9,
+      7
+    ],
+    "-": [
+      8,
+      6
+    ],
+    "1": [
+      7,
+      4
+    ],
+    "2": [
+      7,
+      7
+    ],
+    "3": [
+      7,
+      10
+    ],
+    "4": [
+      9,
+      1
+    ],
+    "5": [
+      6,
+      3
+    ],
+    "6": [
+      6,
+      6
+    ],
+    "7": [
+      6,
+      9
+    ],
+    "8": [
+      8,
+      0
+    ],
+    "9": [
+      9,
+      4
+    ],
+    "=": [
+      8,
+      3
+    ],
+    "A": [
+      1,
+      1
+    ],
+    "B": [
+      1,
+      4
+    ],
+    "C": [
+      1,
+      7
+    ],
+    "D": [
+      1,
+      10
+    ],
+    "E": [
+      3,
+      1
+    ],
+    "F": [
+      3,
+      4
+    ],
+    "G": [
+      3,
+      7
+    ],
+    "H": [
+      3,
+      10
+    ],
+    "I": [
+      5,
+      1
+    ],
+    "J": [
+      5,
+      4
+    ],
+    "K": [
+      5,
+      7
+    ],
+    "L": [
+      5,
+      10
+    ],
+    "M": [
+      7,
+      1
+    ],
+    "N": [
+      0,
+      0
+    ],
+    "O": [
+      0,
+      3
+    ],
+    "P": [
+      0,
+      6
+    ],
+    "Q": [
+      0,
+      9
+    ],
+    "R": [
+      2,
+      0
+    ],
+    "S": [
+      2,
+      3
+    ],
+    "T": [
+      2,
+      6
+    ],
+    "U": [
+      2,
+      9
+    ],
+    "V": [
+      4,
+      0
+    ],
+    "W": [
+      4,
+      3
+    ],
+    "X": [
+      4,
+      6
+    ],
+    "Y": [
+      4,
+      9
+    ],
+    "Z": [
+      6,
+      0
+    ]
+  },
+  "block_pairs": {
+    "+": "-",
+    "-": "+",
+    "1": "5",
+    "2": "6",
+    "3": "7",
+    "4": "8",
+    "5": "1",
+    "6": "2",
+    "7": "3",
+    "8": "4",
+    "9": "=",
+    "=": "9",
+    "A": "N",
+    "B": "O",
+    "C": "P",
+    "D": "Q",
+    "E": "R",
+    "F": "S",
+    "G": "T",
+    "H": "U",
+    "I": "V",
+    "J": "W",
+    "K": "X",
+    "L": "Y",
+    "M": "Z",
+    "N": "A",
+    "O": "B",
+    "P": "C",
+    "Q": "D",
+    "R": "E",
+    "S": "F",
+    "T": "G",
+    "U": "H",
+    "V": "I",
+    "W": "J",
+    "X": "K",
+    "Y": "L",
+    "Z": "M"
+  }
+}

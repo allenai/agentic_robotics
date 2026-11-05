@@ -1,0 +1,943 @@
+{
+ "task": "spell_hen_unpatterned",
+ "word": "HEN",
+ "collection": "unpatterned",
+ "library": "eval_blocks_36_0",
+ "specification": {
+  "scene_blocks": 10,
+  "letter_blocks_range": [
+   6,
+   8
+  ],
+  "stacks_range": [
+   1,
+   5
+  ],
+  "min_separation_m": 0.07,
+  "block_size_range": [
+   0.035,
+   0.05
+  ],
+  "table_height_range": [
+   -0.05,
+   0.05
+  ],
+  "friction_range": [
+   0.5,
+   0.5
+  ]
+ },
+ "families": {
+  "spell_hen_unpatterned_0_feasible": {
+   "slug": "spell_hen_unpatterned_0_feasible",
+   "word": "HEN",
+   "collection": "unpatterned",
+   "library": "eval_blocks_36_0",
+   "inventory": 0,
+   "feasibility": "feasible",
+   "absent_letter": null,
+   "targets": [
+    "block_00002",
+    "block_00012",
+    "block_00015"
+   ],
+   "blocks": {
+    "block_00002": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00002.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "H",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00012": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00012.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "j",
+       "up": "-z"
+      },
+      "+z": {
+       "glyph": "E",
+       "up": "-y"
+      },
+      "-z": {
+       "glyph": "Q",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00013": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00013.usda",
+     "letter_faces": {
+      "+y": {
+       "glyph": "F",
+       "up": "+x"
+      },
+      "+z": {
+       "glyph": "h",
+       "up": "-x"
+      }
+     }
+    },
+    "block_00015": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00015.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "N",
+       "up": "-x"
+      }
+     }
+    },
+    "block_00020": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00020.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "k",
+       "up": "-x"
+      },
+      "-y": {
+       "glyph": "n",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00032": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00032.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "W",
+       "up": "-x"
+      },
+      "+x": {
+       "glyph": "K",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "e",
+       "up": "-z"
+      }
+     }
+    },
+    "block_yellow": {
+     "kind": "color",
+     "type": "block_yellow",
+     "letter_faces": {}
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    },
+    "block_orange": {
+     "kind": "color",
+     "type": "block_orange",
+     "letter_faces": {}
+    },
+    "block_blue": {
+     "kind": "color",
+     "type": "block_blue",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_00032": "block_00015",
+    "block_blue": "block_00020",
+    "block_00002": "block_yellow"
+   },
+   "on_table": [
+    "block_00012",
+    "block_00013",
+    "block_00015",
+    "block_00020",
+    "block_yellow",
+    "block_red1",
+    "block_orange"
+   ],
+   "ori": {
+    "block_00002": "o8",
+    "block_00012": "o15",
+    "block_00013": "o17",
+    "block_00015": "o22",
+    "block_00020": "o24",
+    "block_00032": "o24",
+    "block_yellow": "o8",
+    "block_red1": "o17",
+    "block_orange": "o16",
+    "block_blue": "o14"
+   },
+   "instances": [
+    "spell_hen_unpatterned_0_feasible_0",
+    "spell_hen_unpatterned_0_feasible_1"
+   ]
+  },
+  "spell_hen_unpatterned_0_infeasible": {
+   "slug": "spell_hen_unpatterned_0_infeasible",
+   "word": "HEN",
+   "collection": "unpatterned",
+   "library": "eval_blocks_36_0",
+   "inventory": 0,
+   "feasibility": "infeasible",
+   "absent_letter": "H",
+   "targets": [
+    "block_00029",
+    "block_00012",
+    "block_00015"
+   ],
+   "blocks": {
+    "block_00029": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00029.usda",
+     "letter_faces": {
+      "-x": {
+       "glyph": "I",
+       "up": "-z"
+      }
+     }
+    },
+    "block_00012": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00012.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "j",
+       "up": "-z"
+      },
+      "+z": {
+       "glyph": "E",
+       "up": "-y"
+      },
+      "-z": {
+       "glyph": "Q",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00010": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00010.usda",
+     "letter_faces": {
+      "-z": {
+       "glyph": "w",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00015": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00015.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "N",
+       "up": "-x"
+      }
+     }
+    },
+    "block_00020": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00020.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "k",
+       "up": "-x"
+      },
+      "-y": {
+       "glyph": "n",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00032": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00032.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "W",
+       "up": "-x"
+      },
+      "+x": {
+       "glyph": "K",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "e",
+       "up": "-z"
+      }
+     }
+    },
+    "block_yellow": {
+     "kind": "color",
+     "type": "block_yellow",
+     "letter_faces": {}
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    },
+    "block_orange": {
+     "kind": "color",
+     "type": "block_orange",
+     "letter_faces": {}
+    },
+    "block_blue": {
+     "kind": "color",
+     "type": "block_blue",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_00032": "block_00015",
+    "block_blue": "block_00020",
+    "block_00029": "block_yellow"
+   },
+   "on_table": [
+    "block_00012",
+    "block_00010",
+    "block_00015",
+    "block_00020",
+    "block_yellow",
+    "block_red1",
+    "block_orange"
+   ],
+   "ori": {
+    "block_00029": "o24",
+    "block_00012": "o15",
+    "block_00010": "o14",
+    "block_00015": "o22",
+    "block_00020": "o24",
+    "block_00032": "o24",
+    "block_yellow": "o8",
+    "block_red1": "o17",
+    "block_orange": "o16",
+    "block_blue": "o14"
+   },
+   "instances": [
+    "spell_hen_unpatterned_0_infeasible_0",
+    "spell_hen_unpatterned_0_infeasible_1"
+   ]
+  },
+  "spell_hen_unpatterned_1_feasible": {
+   "slug": "spell_hen_unpatterned_1_feasible",
+   "word": "HEN",
+   "collection": "unpatterned",
+   "library": "eval_blocks_36_0",
+   "inventory": 1,
+   "feasibility": "feasible",
+   "absent_letter": null,
+   "targets": [
+    "block_00013",
+    "block_00032",
+    "block_00020"
+   ],
+   "blocks": {
+    "block_00002": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00002.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "H",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00012": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00012.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "j",
+       "up": "-z"
+      },
+      "+z": {
+       "glyph": "E",
+       "up": "-y"
+      },
+      "-z": {
+       "glyph": "Q",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00013": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00013.usda",
+     "letter_faces": {
+      "+y": {
+       "glyph": "F",
+       "up": "+x"
+      },
+      "+z": {
+       "glyph": "h",
+       "up": "-x"
+      }
+     }
+    },
+    "block_00015": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00015.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "N",
+       "up": "-x"
+      }
+     }
+    },
+    "block_00020": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00020.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "k",
+       "up": "-x"
+      },
+      "-y": {
+       "glyph": "n",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00032": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00032.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "W",
+       "up": "-x"
+      },
+      "+x": {
+       "glyph": "K",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "e",
+       "up": "-z"
+      }
+     }
+    },
+    "block_00014": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00014.usda",
+     "letter_faces": {}
+    },
+    "block_yellow": {
+     "kind": "color",
+     "type": "block_yellow",
+     "letter_faces": {}
+    },
+    "block_blue": {
+     "kind": "color",
+     "type": "block_blue",
+     "letter_faces": {}
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_red1": "block_00020",
+    "block_00002": "block_blue",
+    "block_yellow": "block_00012"
+   },
+   "on_table": [
+    "block_00012",
+    "block_00013",
+    "block_00015",
+    "block_00020",
+    "block_00032",
+    "block_00014",
+    "block_blue"
+   ],
+   "ori": {
+    "block_00002": "o14",
+    "block_00012": "o1",
+    "block_00013": "o10",
+    "block_00015": "o2",
+    "block_00020": "o14",
+    "block_00032": "o7",
+    "block_00014": "o22",
+    "block_yellow": "o14",
+    "block_blue": "o11",
+    "block_red1": "o24"
+   },
+   "instances": [
+    "spell_hen_unpatterned_1_feasible_0",
+    "spell_hen_unpatterned_1_feasible_1"
+   ]
+  },
+  "spell_hen_unpatterned_1_infeasible": {
+   "slug": "spell_hen_unpatterned_1_infeasible",
+   "word": "HEN",
+   "collection": "unpatterned",
+   "library": "eval_blocks_36_0",
+   "inventory": 1,
+   "feasibility": "infeasible",
+   "absent_letter": "E",
+   "targets": [
+    "block_00013",
+    "block_00003",
+    "block_00020"
+   ],
+   "blocks": {
+    "block_00002": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00002.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "H",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00024": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00024.usda",
+     "letter_faces": {}
+    },
+    "block_00013": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00013.usda",
+     "letter_faces": {
+      "+y": {
+       "glyph": "F",
+       "up": "+x"
+      },
+      "+z": {
+       "glyph": "h",
+       "up": "-x"
+      }
+     }
+    },
+    "block_00015": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00015.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "N",
+       "up": "-x"
+      }
+     }
+    },
+    "block_00020": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00020.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "k",
+       "up": "-x"
+      },
+      "-y": {
+       "glyph": "n",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00003": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00003.usda",
+     "letter_faces": {}
+    },
+    "block_00014": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00014.usda",
+     "letter_faces": {}
+    },
+    "block_yellow": {
+     "kind": "color",
+     "type": "block_yellow",
+     "letter_faces": {}
+    },
+    "block_blue": {
+     "kind": "color",
+     "type": "block_blue",
+     "letter_faces": {}
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_red1": "block_00020",
+    "block_00002": "block_blue",
+    "block_yellow": "block_00024"
+   },
+   "on_table": [
+    "block_00024",
+    "block_00013",
+    "block_00015",
+    "block_00020",
+    "block_00003",
+    "block_00014",
+    "block_blue"
+   ],
+   "ori": {
+    "block_00002": "o14",
+    "block_00024": "o13",
+    "block_00013": "o10",
+    "block_00015": "o2",
+    "block_00020": "o14",
+    "block_00003": "o2",
+    "block_00014": "o22",
+    "block_yellow": "o14",
+    "block_blue": "o11",
+    "block_red1": "o24"
+   },
+   "instances": [
+    "spell_hen_unpatterned_1_infeasible_0",
+    "spell_hen_unpatterned_1_infeasible_1"
+   ]
+  },
+  "spell_hen_unpatterned_2_feasible": {
+   "slug": "spell_hen_unpatterned_2_feasible",
+   "word": "HEN",
+   "collection": "unpatterned",
+   "library": "eval_blocks_36_0",
+   "inventory": 2,
+   "feasibility": "feasible",
+   "absent_letter": null,
+   "targets": [
+    "block_00013",
+    "block_00032",
+    "block_00015"
+   ],
+   "blocks": {
+    "block_00002": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00002.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "H",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00012": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00012.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "j",
+       "up": "-z"
+      },
+      "+z": {
+       "glyph": "E",
+       "up": "-y"
+      },
+      "-z": {
+       "glyph": "Q",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00013": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00013.usda",
+     "letter_faces": {
+      "+y": {
+       "glyph": "F",
+       "up": "+x"
+      },
+      "+z": {
+       "glyph": "h",
+       "up": "-x"
+      }
+     }
+    },
+    "block_00015": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00015.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "N",
+       "up": "-x"
+      }
+     }
+    },
+    "block_00020": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00020.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "k",
+       "up": "-x"
+      },
+      "-y": {
+       "glyph": "n",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00032": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00032.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "W",
+       "up": "-x"
+      },
+      "+x": {
+       "glyph": "K",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "e",
+       "up": "-z"
+      }
+     }
+    },
+    "block_00028": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00028.usda",
+     "letter_faces": {}
+    },
+    "block_00007": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00007.usda",
+     "letter_faces": {}
+    },
+    "block_blue": {
+     "kind": "color",
+     "type": "block_blue",
+     "letter_faces": {}
+    },
+    "block_purple": {
+     "kind": "color",
+     "type": "block_purple",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_00028": "block_00015",
+    "block_00020": "block_purple",
+    "block_00007": "block_blue"
+   },
+   "on_table": [
+    "block_00002",
+    "block_00012",
+    "block_00013",
+    "block_00015",
+    "block_00032",
+    "block_blue",
+    "block_purple"
+   ],
+   "ori": {
+    "block_00002": "o20",
+    "block_00012": "o20",
+    "block_00013": "o12",
+    "block_00015": "o18",
+    "block_00020": "o1",
+    "block_00032": "o7",
+    "block_00028": "o12",
+    "block_00007": "o16",
+    "block_blue": "o10",
+    "block_purple": "o4"
+   },
+   "instances": [
+    "spell_hen_unpatterned_2_feasible_0",
+    "spell_hen_unpatterned_2_feasible_1"
+   ]
+  },
+  "spell_hen_unpatterned_2_infeasible": {
+   "slug": "spell_hen_unpatterned_2_infeasible",
+   "word": "HEN",
+   "collection": "unpatterned",
+   "library": "eval_blocks_36_0",
+   "inventory": 2,
+   "feasibility": "infeasible",
+   "absent_letter": "N",
+   "targets": [
+    "block_00013",
+    "block_00032",
+    "block_00022"
+   ],
+   "blocks": {
+    "block_00002": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00002.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "H",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00012": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00012.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "j",
+       "up": "-z"
+      },
+      "+z": {
+       "glyph": "E",
+       "up": "-y"
+      },
+      "-z": {
+       "glyph": "Q",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00013": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00013.usda",
+     "letter_faces": {
+      "+y": {
+       "glyph": "F",
+       "up": "+x"
+      },
+      "+z": {
+       "glyph": "h",
+       "up": "-x"
+      }
+     }
+    },
+    "block_00022": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00022.usda",
+     "letter_faces": {}
+    },
+    "block_00026": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00026.usda",
+     "letter_faces": {
+      "+x": {
+       "glyph": "i",
+       "up": "-z"
+      },
+      "-z": {
+       "glyph": "C",
+       "up": "-y"
+      },
+      "-y": {
+       "glyph": "v",
+       "up": "+z"
+      }
+     }
+    },
+    "block_00032": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00032.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "W",
+       "up": "-x"
+      },
+      "+x": {
+       "glyph": "K",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "e",
+       "up": "-z"
+      }
+     }
+    },
+    "block_00028": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00028.usda",
+     "letter_faces": {}
+    },
+    "block_00007": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00007.usda",
+     "letter_faces": {}
+    },
+    "block_blue": {
+     "kind": "color",
+     "type": "block_blue",
+     "letter_faces": {}
+    },
+    "block_purple": {
+     "kind": "color",
+     "type": "block_purple",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_00028": "block_00022",
+    "block_00026": "block_purple",
+    "block_00007": "block_blue"
+   },
+   "on_table": [
+    "block_00002",
+    "block_00012",
+    "block_00013",
+    "block_00022",
+    "block_00032",
+    "block_blue",
+    "block_purple"
+   ],
+   "ori": {
+    "block_00002": "o20",
+    "block_00012": "o20",
+    "block_00013": "o12",
+    "block_00022": "o16",
+    "block_00026": "o21",
+    "block_00032": "o7",
+    "block_00028": "o12",
+    "block_00007": "o16",
+    "block_blue": "o10",
+    "block_purple": "o4"
+   },
+   "instances": [
+    "spell_hen_unpatterned_2_infeasible_0",
+    "spell_hen_unpatterned_2_infeasible_1"
+   ]
+  }
+ }
+}

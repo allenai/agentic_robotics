@@ -1,0 +1,13 @@
+{
+ "slug": "spell_auk_unpatterned_1_feasible_1",
+ "family": "spell_auk_unpatterned_1_feasible",
+ "library": "eval_blocks_36_0",
+ "seed": 1762213137,
+ "attempt": 0,
+ "candidates": 8,
+ "kept_candidate": 0,
+ "closest_pair_m": 0.0922,
+ "closest_pair": "block_00006/block_00021",
+ "rejected": [],
+ "seconds": 44.3
+}

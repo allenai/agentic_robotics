@@ -1,0 +1,1028 @@
+{
+ "task": "spell_jay_patterned",
+ "word": "JAY",
+ "collection": "patterned",
+ "library": "train_blocks_large",
+ "specification": {
+  "scene_blocks": 10,
+  "letter_blocks_range": [
+   6,
+   8
+  ],
+  "stacks_range": [
+   1,
+   5
+  ],
+  "min_separation_m": 0.07,
+  "block_size_range": [
+   0.035,
+   0.05
+  ],
+  "table_height_range": [
+   -0.05,
+   0.05
+  ],
+  "friction_range": [
+   0.5,
+   0.5
+  ]
+ },
+ "families": {
+  "spell_jay_patterned_0_feasible": {
+   "slug": "spell_jay_patterned_0_feasible",
+   "word": "JAY",
+   "collection": "patterned",
+   "library": "train_blocks_large",
+   "inventory": 0,
+   "feasibility": "feasible",
+   "absent_letter": null,
+   "targets": [
+    "block_j",
+    "block_a",
+    "block_y"
+   ],
+   "blocks": {
+    "block_j": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "J.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "j",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "J",
+       "up": "+z"
+      }
+     }
+    },
+    "block_a": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "A.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "a",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "A",
+       "up": "+z"
+      }
+     }
+    },
+    "block_y": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "Y.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "y",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "Y",
+       "up": "+z"
+      }
+     }
+    },
+    "block_k": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "K.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "k",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "K",
+       "up": "+z"
+      }
+     }
+    },
+    "block_x": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "X.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "x",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "X",
+       "up": "+z"
+      }
+     }
+    },
+    "block_i": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "I.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "i",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "I",
+       "up": "+z"
+      }
+     }
+    },
+    "block_orange": {
+     "kind": "color",
+     "type": "block_orange",
+     "letter_faces": {}
+    },
+    "block_blue": {
+     "kind": "color",
+     "type": "block_blue",
+     "letter_faces": {}
+    },
+    "block_purple": {
+     "kind": "color",
+     "type": "block_purple",
+     "letter_faces": {}
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_j": "block_a",
+    "block_k": "block_purple",
+    "block_orange": "block_y",
+    "block_i": "block_x",
+    "block_red1": "block_blue"
+   },
+   "on_table": [
+    "block_a",
+    "block_y",
+    "block_x",
+    "block_blue",
+    "block_purple"
+   ],
+   "ori": {
+    "block_j": "o1",
+    "block_a": "o19",
+    "block_y": "o17",
+    "block_k": "o6",
+    "block_x": "o22",
+    "block_i": "o19",
+    "block_orange": "o3",
+    "block_blue": "o6",
+    "block_purple": "o22",
+    "block_red1": "o7"
+   },
+   "instances": [
+    "spell_jay_patterned_0_feasible_0",
+    "spell_jay_patterned_0_feasible_1"
+   ]
+  },
+  "spell_jay_patterned_0_infeasible": {
+   "slug": "spell_jay_patterned_0_infeasible",
+   "word": "JAY",
+   "collection": "patterned",
+   "library": "train_blocks_large",
+   "inventory": 0,
+   "feasibility": "infeasible",
+   "absent_letter": "J",
+   "targets": [
+    "block_n",
+    "block_a",
+    "block_y"
+   ],
+   "blocks": {
+    "block_n": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "N.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "n",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "N",
+       "up": "+z"
+      }
+     }
+    },
+    "block_a": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "A.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "a",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "A",
+       "up": "+z"
+      }
+     }
+    },
+    "block_y": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "Y.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "y",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "Y",
+       "up": "+z"
+      }
+     }
+    },
+    "block_k": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "K.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "k",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "K",
+       "up": "+z"
+      }
+     }
+    },
+    "block_x": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "X.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "x",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "X",
+       "up": "+z"
+      }
+     }
+    },
+    "block_i": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "I.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "i",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "I",
+       "up": "+z"
+      }
+     }
+    },
+    "block_orange": {
+     "kind": "color",
+     "type": "block_orange",
+     "letter_faces": {}
+    },
+    "block_blue": {
+     "kind": "color",
+     "type": "block_blue",
+     "letter_faces": {}
+    },
+    "block_purple": {
+     "kind": "color",
+     "type": "block_purple",
+     "letter_faces": {}
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_n": "block_a",
+    "block_k": "block_purple",
+    "block_orange": "block_y",
+    "block_i": "block_x",
+    "block_red1": "block_blue"
+   },
+   "on_table": [
+    "block_a",
+    "block_y",
+    "block_x",
+    "block_blue",
+    "block_purple"
+   ],
+   "ori": {
+    "block_n": "o6",
+    "block_a": "o19",
+    "block_y": "o17",
+    "block_k": "o6",
+    "block_x": "o22",
+    "block_i": "o19",
+    "block_orange": "o3",
+    "block_blue": "o6",
+    "block_purple": "o22",
+    "block_red1": "o7"
+   },
+   "instances": [
+    "spell_jay_patterned_0_infeasible_0",
+    "spell_jay_patterned_0_infeasible_1"
+   ]
+  },
+  "spell_jay_patterned_1_feasible": {
+   "slug": "spell_jay_patterned_1_feasible",
+   "word": "JAY",
+   "collection": "patterned",
+   "library": "train_blocks_large",
+   "inventory": 1,
+   "feasibility": "feasible",
+   "absent_letter": null,
+   "targets": [
+    "block_j",
+    "block_a",
+    "block_y"
+   ],
+   "blocks": {
+    "block_j": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "J.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "j",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "J",
+       "up": "+z"
+      }
+     }
+    },
+    "block_a": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "A.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "a",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "A",
+       "up": "+z"
+      }
+     }
+    },
+    "block_y": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "Y.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "y",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "Y",
+       "up": "+z"
+      }
+     }
+    },
+    "block_f": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "F.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "f",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "F",
+       "up": "+z"
+      }
+     }
+    },
+    "block_o": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "O.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "o",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "O",
+       "up": "+z"
+      }
+     }
+    },
+    "block_p": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "P.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "p",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "P",
+       "up": "+z"
+      }
+     }
+    },
+    "block_i": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "I.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "i",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "I",
+       "up": "+z"
+      }
+     }
+    },
+    "block_green": {
+     "kind": "color",
+     "type": "block_green",
+     "letter_faces": {}
+    },
+    "block_blue": {
+     "kind": "color",
+     "type": "block_blue",
+     "letter_faces": {}
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_f": "block_i",
+    "block_j": "block_red1",
+    "block_blue": "block_green",
+    "block_y": "block_o",
+    "block_a": "block_p"
+   },
+   "on_table": [
+    "block_o",
+    "block_p",
+    "block_i",
+    "block_green",
+    "block_red1"
+   ],
+   "ori": {
+    "block_j": "o11",
+    "block_a": "o5",
+    "block_y": "o11",
+    "block_f": "o10",
+    "block_o": "o7",
+    "block_p": "o9",
+    "block_i": "o3",
+    "block_green": "o15",
+    "block_blue": "o5",
+    "block_red1": "o9"
+   },
+   "instances": [
+    "spell_jay_patterned_1_feasible_0",
+    "spell_jay_patterned_1_feasible_1"
+   ]
+  },
+  "spell_jay_patterned_1_infeasible": {
+   "slug": "spell_jay_patterned_1_infeasible",
+   "word": "JAY",
+   "collection": "patterned",
+   "library": "train_blocks_large",
+   "inventory": 1,
+   "feasibility": "infeasible",
+   "absent_letter": "A",
+   "targets": [
+    "block_j",
+    "block_x",
+    "block_y"
+   ],
+   "blocks": {
+    "block_j": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "J.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "j",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "J",
+       "up": "+z"
+      }
+     }
+    },
+    "block_x": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "X.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "x",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "X",
+       "up": "+z"
+      }
+     }
+    },
+    "block_y": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "Y.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "y",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "Y",
+       "up": "+z"
+      }
+     }
+    },
+    "block_f": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "F.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "f",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "F",
+       "up": "+z"
+      }
+     }
+    },
+    "block_o": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "O.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "o",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "O",
+       "up": "+z"
+      }
+     }
+    },
+    "block_p": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "P.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "p",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "P",
+       "up": "+z"
+      }
+     }
+    },
+    "block_i": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "I.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "i",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "I",
+       "up": "+z"
+      }
+     }
+    },
+    "block_green": {
+     "kind": "color",
+     "type": "block_green",
+     "letter_faces": {}
+    },
+    "block_blue": {
+     "kind": "color",
+     "type": "block_blue",
+     "letter_faces": {}
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_f": "block_i",
+    "block_j": "block_red1",
+    "block_blue": "block_green",
+    "block_y": "block_o",
+    "block_x": "block_p"
+   },
+   "on_table": [
+    "block_o",
+    "block_p",
+    "block_i",
+    "block_green",
+    "block_red1"
+   ],
+   "ori": {
+    "block_j": "o11",
+    "block_x": "o6",
+    "block_y": "o11",
+    "block_f": "o10",
+    "block_o": "o7",
+    "block_p": "o9",
+    "block_i": "o3",
+    "block_green": "o15",
+    "block_blue": "o5",
+    "block_red1": "o9"
+   },
+   "instances": [
+    "spell_jay_patterned_1_infeasible_0",
+    "spell_jay_patterned_1_infeasible_1"
+   ]
+  },
+  "spell_jay_patterned_2_feasible": {
+   "slug": "spell_jay_patterned_2_feasible",
+   "word": "JAY",
+   "collection": "patterned",
+   "library": "train_blocks_large",
+   "inventory": 2,
+   "feasibility": "feasible",
+   "absent_letter": null,
+   "targets": [
+    "block_j",
+    "block_a",
+    "block_y"
+   ],
+   "blocks": {
+    "block_j": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "J.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "j",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "J",
+       "up": "+z"
+      }
+     }
+    },
+    "block_a": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "A.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "a",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "A",
+       "up": "+z"
+      }
+     }
+    },
+    "block_y": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "Y.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "y",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "Y",
+       "up": "+z"
+      }
+     }
+    },
+    "block_f": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "F.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "f",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "F",
+       "up": "+z"
+      }
+     }
+    },
+    "block_c": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "C.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "c",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "C",
+       "up": "+z"
+      }
+     }
+    },
+    "block_r": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "R.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "r",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "R",
+       "up": "+z"
+      }
+     }
+    },
+    "block_i": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "I.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "i",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "I",
+       "up": "+z"
+      }
+     }
+    },
+    "block_n": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "N.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "n",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "N",
+       "up": "+z"
+      }
+     }
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    },
+    "block_orange": {
+     "kind": "color",
+     "type": "block_orange",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_y": "block_a",
+    "block_n": "block_c",
+    "block_f": "block_r",
+    "block_orange": "block_i",
+    "block_j": "block_red1"
+   },
+   "on_table": [
+    "block_a",
+    "block_c",
+    "block_r",
+    "block_i",
+    "block_red1"
+   ],
+   "ori": {
+    "block_j": "o9",
+    "block_a": "o3",
+    "block_y": "o5",
+    "block_f": "o7",
+    "block_c": "o11",
+    "block_r": "o12",
+    "block_i": "o10",
+    "block_n": "o8",
+    "block_red1": "o15",
+    "block_orange": "o14"
+   },
+   "instances": [
+    "spell_jay_patterned_2_feasible_0",
+    "spell_jay_patterned_2_feasible_1"
+   ]
+  },
+  "spell_jay_patterned_2_infeasible": {
+   "slug": "spell_jay_patterned_2_infeasible",
+   "word": "JAY",
+   "collection": "patterned",
+   "library": "train_blocks_large",
+   "inventory": 2,
+   "feasibility": "infeasible",
+   "absent_letter": "Y",
+   "targets": [
+    "block_j",
+    "block_a",
+    "block_h"
+   ],
+   "blocks": {
+    "block_j": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "J.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "j",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "J",
+       "up": "+z"
+      }
+     }
+    },
+    "block_a": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "A.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "a",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "A",
+       "up": "+z"
+      }
+     }
+    },
+    "block_h": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "H.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "h",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "H",
+       "up": "+z"
+      }
+     }
+    },
+    "block_f": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "F.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "f",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "F",
+       "up": "+z"
+      }
+     }
+    },
+    "block_c": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "C.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "c",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "C",
+       "up": "+z"
+      }
+     }
+    },
+    "block_r": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "R.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "r",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "R",
+       "up": "+z"
+      }
+     }
+    },
+    "block_i": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "I.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "i",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "I",
+       "up": "+z"
+      }
+     }
+    },
+    "block_n": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "N.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "n",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "N",
+       "up": "+z"
+      }
+     }
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    },
+    "block_orange": {
+     "kind": "color",
+     "type": "block_orange",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_h": "block_a",
+    "block_n": "block_c",
+    "block_f": "block_r",
+    "block_orange": "block_i",
+    "block_j": "block_red1"
+   },
+   "on_table": [
+    "block_a",
+    "block_c",
+    "block_r",
+    "block_i",
+    "block_red1"
+   ],
+   "ori": {
+    "block_j": "o9",
+    "block_a": "o3",
+    "block_h": "o20",
+    "block_f": "o7",
+    "block_c": "o11",
+    "block_r": "o12",
+    "block_i": "o10",
+    "block_n": "o8",
+    "block_red1": "o15",
+    "block_orange": "o14"
+   },
+   "instances": [
+    "spell_jay_patterned_2_infeasible_0",
+    "spell_jay_patterned_2_infeasible_1"
+   ]
+  }
+ }
+}

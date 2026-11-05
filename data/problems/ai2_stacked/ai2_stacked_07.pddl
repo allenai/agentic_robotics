@@ -1,0 +1,51 @@
+(define (problem ai2_stacked_07)
+    (:domain blocks-tamp)
+    (:objects
+    block_a block_i block_m block_f - block_letter
+    block_2 block_cyan block_red2 block_red3 block_orange2 block_red4 block_green3 - block
+    block_o - block_o_b
+    workspace_table - table
+    robot - gripper    )
+    (:init
+        (on_table block_a workspace_table)
+        (on_table block_i workspace_table)
+        (on block_2 block_i)
+        (on_table block_m workspace_table)
+        (on block_f block_green3)
+        (on block_o block_2)
+        (on block_cyan block_red4)
+        (on_table block_red2 workspace_table)
+        (on_table block_red3 workspace_table)
+        (on block_orange2 block_f)
+        (on block_red4 block_m)
+        (on block_green3 block_red2)
+        (clear block_a)
+        (clear block_o)
+        (clear block_cyan)
+        (clear block_red3)
+        (clear block_orange2)
+        (handempty robot)
+
+        (ori_of block_a o10)
+        (ori_of block_i o14)
+        (ori_of block_2 o5)
+        (ori_of block_m o18)
+        (ori_of block_f o4)
+        (ori_of block_o o19)
+        (ori_of block_cyan o10)
+        (ori_of block_red2 o18)
+        (ori_of block_red3 o22)
+        (ori_of block_orange2 o6)
+        (ori_of block_red4 o4)
+        (ori_of block_green3 o19)
+
+        (gripper_at_init)
+    )
+    (:goal (and
+        (on block_a block_i)
+        (on block_i block_2)
+        (ori_of block_a o2)
+        (ori_of block_i o2)
+        (ori_of block_2 o2)
+    ))
+)

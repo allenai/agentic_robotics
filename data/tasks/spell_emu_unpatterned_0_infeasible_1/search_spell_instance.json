@@ -1,0 +1,13 @@
+{
+ "slug": "spell_emu_unpatterned_0_infeasible_1",
+ "family": "spell_emu_unpatterned_0_infeasible",
+ "library": "eval_blocks_36_0",
+ "seed": 1685614377,
+ "attempt": 0,
+ "candidates": 8,
+ "kept_candidate": 0,
+ "closest_pair_m": 0.0735,
+ "closest_pair": "block_00011/block_yellow",
+ "rejected": [],
+ "seconds": 43.1
+}

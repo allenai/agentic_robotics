@@ -1,0 +1,13 @@
+{
+ "slug": "spell_moa_patterned_3_feasible_0",
+ "family": "spell_moa_patterned_3_feasible",
+ "library": "train_blocks_large",
+ "seed": 2818990354,
+ "attempt": 0,
+ "candidates": 8,
+ "kept_candidate": 0,
+ "closest_pair_m": 0.0815,
+ "closest_pair": "block_f/block_o",
+ "rejected": [],
+ "seconds": 44.3
+}

@@ -1,0 +1,1017 @@
+{
+ "task": "spell_auk_unpatterned",
+ "word": "AUK",
+ "collection": "unpatterned",
+ "library": "eval_blocks_36_0",
+ "specification": {
+  "scene_blocks": 10,
+  "letter_blocks_range": [
+   6,
+   8
+  ],
+  "stacks_range": [
+   1,
+   5
+  ],
+  "min_separation_m": 0.07,
+  "block_size_range": [
+   0.035,
+   0.05
+  ],
+  "table_height_range": [
+   -0.05,
+   0.05
+  ],
+  "friction_range": [
+   0.5,
+   0.5
+  ]
+ },
+ "families": {
+  "spell_auk_unpatterned_0_feasible": {
+   "slug": "spell_auk_unpatterned_0_feasible",
+   "word": "AUK",
+   "collection": "unpatterned",
+   "library": "eval_blocks_36_0",
+   "inventory": 0,
+   "feasibility": "feasible",
+   "absent_letter": null,
+   "targets": [
+    "block_00027",
+    "block_00034",
+    "block_00032"
+   ],
+   "blocks": {
+    "block_00020": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00020.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "k",
+       "up": "-x"
+      },
+      "-y": {
+       "glyph": "n",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00021": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00021.usda",
+     "letter_faces": {
+      "+y": {
+       "glyph": "A",
+       "up": "-x"
+      },
+      "+z": {
+       "glyph": "X",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00027": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00027.usda",
+     "letter_faces": {
+      "-x": {
+       "glyph": "a",
+       "up": "+z"
+      },
+      "+x": {
+       "glyph": "r",
+       "up": "+y"
+      }
+     }
+    },
+    "block_00030": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00030.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "p",
+       "up": "-x"
+      },
+      "+z": {
+       "glyph": "u",
+       "up": "+y"
+      },
+      "+x": {
+       "glyph": "o",
+       "up": "+y"
+      }
+     }
+    },
+    "block_00032": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00032.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "W",
+       "up": "-x"
+      },
+      "+x": {
+       "glyph": "K",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "e",
+       "up": "-z"
+      }
+     }
+    },
+    "block_00034": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00034.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "U",
+       "up": "+z"
+      }
+     }
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    },
+    "block_yellow": {
+     "kind": "color",
+     "type": "block_yellow",
+     "letter_faces": {}
+    },
+    "block_orange": {
+     "kind": "color",
+     "type": "block_orange",
+     "letter_faces": {}
+    },
+    "block_blue": {
+     "kind": "color",
+     "type": "block_blue",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_00027": "block_00021",
+    "block_00032": "block_blue"
+   },
+   "on_table": [
+    "block_00020",
+    "block_00021",
+    "block_00030",
+    "block_00034",
+    "block_red1",
+    "block_yellow",
+    "block_orange",
+    "block_blue"
+   ],
+   "ori": {
+    "block_00020": "o16",
+    "block_00021": "o15",
+    "block_00027": "o19",
+    "block_00030": "o16",
+    "block_00032": "o9",
+    "block_00034": "o19",
+    "block_red1": "o9",
+    "block_yellow": "o15",
+    "block_orange": "o7",
+    "block_blue": "o3"
+   },
+   "instances": [
+    "spell_auk_unpatterned_0_feasible_0",
+    "spell_auk_unpatterned_0_feasible_1"
+   ]
+  },
+  "spell_auk_unpatterned_0_infeasible": {
+   "slug": "spell_auk_unpatterned_0_infeasible",
+   "word": "AUK",
+   "collection": "unpatterned",
+   "library": "eval_blocks_36_0",
+   "inventory": 0,
+   "feasibility": "infeasible",
+   "absent_letter": "A",
+   "targets": [
+    "block_00022",
+    "block_00034",
+    "block_00032"
+   ],
+   "blocks": {
+    "block_00020": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00020.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "k",
+       "up": "-x"
+      },
+      "-y": {
+       "glyph": "n",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00001": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00001.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "O",
+       "up": "+x"
+      },
+      "-x": {
+       "glyph": "Y",
+       "up": "+z"
+      }
+     }
+    },
+    "block_00022": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00022.usda",
+     "letter_faces": {}
+    },
+    "block_00030": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00030.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "p",
+       "up": "-x"
+      },
+      "+z": {
+       "glyph": "u",
+       "up": "+y"
+      },
+      "+x": {
+       "glyph": "o",
+       "up": "+y"
+      }
+     }
+    },
+    "block_00032": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00032.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "W",
+       "up": "-x"
+      },
+      "+x": {
+       "glyph": "K",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "e",
+       "up": "-z"
+      }
+     }
+    },
+    "block_00034": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00034.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "U",
+       "up": "+z"
+      }
+     }
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    },
+    "block_yellow": {
+     "kind": "color",
+     "type": "block_yellow",
+     "letter_faces": {}
+    },
+    "block_orange": {
+     "kind": "color",
+     "type": "block_orange",
+     "letter_faces": {}
+    },
+    "block_blue": {
+     "kind": "color",
+     "type": "block_blue",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_00022": "block_00001",
+    "block_00032": "block_blue"
+   },
+   "on_table": [
+    "block_00020",
+    "block_00001",
+    "block_00030",
+    "block_00034",
+    "block_red1",
+    "block_yellow",
+    "block_orange",
+    "block_blue"
+   ],
+   "ori": {
+    "block_00020": "o16",
+    "block_00001": "o18",
+    "block_00022": "o6",
+    "block_00030": "o16",
+    "block_00032": "o9",
+    "block_00034": "o19",
+    "block_red1": "o9",
+    "block_yellow": "o15",
+    "block_orange": "o7",
+    "block_blue": "o3"
+   },
+   "instances": [
+    "spell_auk_unpatterned_0_infeasible_0",
+    "spell_auk_unpatterned_0_infeasible_1"
+   ]
+  },
+  "spell_auk_unpatterned_1_feasible": {
+   "slug": "spell_auk_unpatterned_1_feasible",
+   "word": "AUK",
+   "collection": "unpatterned",
+   "library": "eval_blocks_36_0",
+   "inventory": 1,
+   "feasibility": "feasible",
+   "absent_letter": null,
+   "targets": [
+    "block_00027",
+    "block_00030",
+    "block_00020"
+   ],
+   "blocks": {
+    "block_00020": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00020.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "k",
+       "up": "-x"
+      },
+      "-y": {
+       "glyph": "n",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00021": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00021.usda",
+     "letter_faces": {
+      "+y": {
+       "glyph": "A",
+       "up": "-x"
+      },
+      "+z": {
+       "glyph": "X",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00027": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00027.usda",
+     "letter_faces": {
+      "-x": {
+       "glyph": "a",
+       "up": "+z"
+      },
+      "+x": {
+       "glyph": "r",
+       "up": "+y"
+      }
+     }
+    },
+    "block_00030": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00030.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "p",
+       "up": "-x"
+      },
+      "+z": {
+       "glyph": "u",
+       "up": "+y"
+      },
+      "+x": {
+       "glyph": "o",
+       "up": "+y"
+      }
+     }
+    },
+    "block_00032": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00032.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "W",
+       "up": "-x"
+      },
+      "+x": {
+       "glyph": "K",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "e",
+       "up": "-z"
+      }
+     }
+    },
+    "block_00034": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00034.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "U",
+       "up": "+z"
+      }
+     }
+    },
+    "block_00006": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00006.usda",
+     "letter_faces": {
+      "+x": {
+       "glyph": "z",
+       "up": "+y"
+      },
+      "-x": {
+       "glyph": "b",
+       "up": "+y"
+      },
+      "+y": {
+       "glyph": "s",
+       "up": "-z"
+      }
+     }
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    },
+    "block_yellow": {
+     "kind": "color",
+     "type": "block_yellow",
+     "letter_faces": {}
+    },
+    "block_purple": {
+     "kind": "color",
+     "type": "block_purple",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_00006": "block_red1",
+    "block_purple": "block_00027"
+   },
+   "on_table": [
+    "block_00020",
+    "block_00021",
+    "block_00027",
+    "block_00030",
+    "block_00032",
+    "block_00034",
+    "block_red1",
+    "block_yellow"
+   ],
+   "ori": {
+    "block_00020": "o15",
+    "block_00021": "o4",
+    "block_00027": "o21",
+    "block_00030": "o12",
+    "block_00032": "o21",
+    "block_00034": "o11",
+    "block_00006": "o16",
+    "block_red1": "o17",
+    "block_yellow": "o7",
+    "block_purple": "o17"
+   },
+   "instances": [
+    "spell_auk_unpatterned_1_feasible_0",
+    "spell_auk_unpatterned_1_feasible_1"
+   ]
+  },
+  "spell_auk_unpatterned_1_infeasible": {
+   "slug": "spell_auk_unpatterned_1_infeasible",
+   "word": "AUK",
+   "collection": "unpatterned",
+   "library": "eval_blocks_36_0",
+   "inventory": 1,
+   "feasibility": "infeasible",
+   "absent_letter": "U",
+   "targets": [
+    "block_00027",
+    "block_00026",
+    "block_00020"
+   ],
+   "blocks": {
+    "block_00020": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00020.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "k",
+       "up": "-x"
+      },
+      "-y": {
+       "glyph": "n",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00021": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00021.usda",
+     "letter_faces": {
+      "+y": {
+       "glyph": "A",
+       "up": "-x"
+      },
+      "+z": {
+       "glyph": "X",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00027": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00027.usda",
+     "letter_faces": {
+      "-x": {
+       "glyph": "a",
+       "up": "+z"
+      },
+      "+x": {
+       "glyph": "r",
+       "up": "+y"
+      }
+     }
+    },
+    "block_00026": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00026.usda",
+     "letter_faces": {
+      "+x": {
+       "glyph": "i",
+       "up": "-z"
+      },
+      "-z": {
+       "glyph": "C",
+       "up": "-y"
+      },
+      "-y": {
+       "glyph": "v",
+       "up": "+z"
+      }
+     }
+    },
+    "block_00032": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00032.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "W",
+       "up": "-x"
+      },
+      "+x": {
+       "glyph": "K",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "e",
+       "up": "-z"
+      }
+     }
+    },
+    "block_00024": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00024.usda",
+     "letter_faces": {}
+    },
+    "block_00006": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00006.usda",
+     "letter_faces": {
+      "+x": {
+       "glyph": "z",
+       "up": "+y"
+      },
+      "-x": {
+       "glyph": "b",
+       "up": "+y"
+      },
+      "+y": {
+       "glyph": "s",
+       "up": "-z"
+      }
+     }
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    },
+    "block_yellow": {
+     "kind": "color",
+     "type": "block_yellow",
+     "letter_faces": {}
+    },
+    "block_purple": {
+     "kind": "color",
+     "type": "block_purple",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_00006": "block_red1",
+    "block_purple": "block_00027"
+   },
+   "on_table": [
+    "block_00020",
+    "block_00021",
+    "block_00027",
+    "block_00026",
+    "block_00032",
+    "block_00024",
+    "block_red1",
+    "block_yellow"
+   ],
+   "ori": {
+    "block_00020": "o15",
+    "block_00021": "o4",
+    "block_00027": "o21",
+    "block_00026": "o17",
+    "block_00032": "o21",
+    "block_00024": "o19",
+    "block_00006": "o16",
+    "block_red1": "o17",
+    "block_yellow": "o7",
+    "block_purple": "o17"
+   },
+   "instances": [
+    "spell_auk_unpatterned_1_infeasible_0",
+    "spell_auk_unpatterned_1_infeasible_1"
+   ]
+  },
+  "spell_auk_unpatterned_2_feasible": {
+   "slug": "spell_auk_unpatterned_2_feasible",
+   "word": "AUK",
+   "collection": "unpatterned",
+   "library": "eval_blocks_36_0",
+   "inventory": 2,
+   "feasibility": "feasible",
+   "absent_letter": null,
+   "targets": [
+    "block_00021",
+    "block_00030",
+    "block_00020"
+   ],
+   "blocks": {
+    "block_00020": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00020.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "k",
+       "up": "-x"
+      },
+      "-y": {
+       "glyph": "n",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00021": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00021.usda",
+     "letter_faces": {
+      "+y": {
+       "glyph": "A",
+       "up": "-x"
+      },
+      "+z": {
+       "glyph": "X",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00027": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00027.usda",
+     "letter_faces": {
+      "-x": {
+       "glyph": "a",
+       "up": "+z"
+      },
+      "+x": {
+       "glyph": "r",
+       "up": "+y"
+      }
+     }
+    },
+    "block_00030": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00030.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "p",
+       "up": "-x"
+      },
+      "+z": {
+       "glyph": "u",
+       "up": "+y"
+      },
+      "+x": {
+       "glyph": "o",
+       "up": "+y"
+      }
+     }
+    },
+    "block_00032": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00032.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "W",
+       "up": "-x"
+      },
+      "+x": {
+       "glyph": "K",
+       "up": "+z"
+      },
+      "+y": {
+       "glyph": "e",
+       "up": "-z"
+      }
+     }
+    },
+    "block_00034": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00034.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "U",
+       "up": "+z"
+      }
+     }
+    },
+    "block_00004": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00004.usda",
+     "letter_faces": {
+      "-x": {
+       "glyph": "T",
+       "up": "-z"
+      }
+     }
+    },
+    "block_00002": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00002.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "H",
+       "up": "+x"
+      }
+     }
+    },
+    "block_orange": {
+     "kind": "color",
+     "type": "block_orange",
+     "letter_faces": {}
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_orange": "block_red1",
+    "block_00021": "block_00030"
+   },
+   "on_table": [
+    "block_00020",
+    "block_00027",
+    "block_00030",
+    "block_00032",
+    "block_00034",
+    "block_00004",
+    "block_00002",
+    "block_red1"
+   ],
+   "ori": {
+    "block_00020": "o10",
+    "block_00021": "o9",
+    "block_00027": "o11",
+    "block_00030": "o16",
+    "block_00032": "o13",
+    "block_00034": "o6",
+    "block_00004": "o21",
+    "block_00002": "o14",
+    "block_orange": "o12",
+    "block_red1": "o8"
+   },
+   "instances": [
+    "spell_auk_unpatterned_2_feasible_0",
+    "spell_auk_unpatterned_2_feasible_1"
+   ]
+  },
+  "spell_auk_unpatterned_2_infeasible": {
+   "slug": "spell_auk_unpatterned_2_infeasible",
+   "word": "AUK",
+   "collection": "unpatterned",
+   "library": "eval_blocks_36_0",
+   "inventory": 2,
+   "feasibility": "infeasible",
+   "absent_letter": "K",
+   "targets": [
+    "block_00021",
+    "block_00030",
+    "block_00009"
+   ],
+   "blocks": {
+    "block_00009": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00009.usda",
+     "letter_faces": {}
+    },
+    "block_00021": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00021.usda",
+     "letter_faces": {
+      "+y": {
+       "glyph": "A",
+       "up": "-x"
+      },
+      "+z": {
+       "glyph": "X",
+       "up": "+x"
+      }
+     }
+    },
+    "block_00027": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00027.usda",
+     "letter_faces": {
+      "-x": {
+       "glyph": "a",
+       "up": "+z"
+      },
+      "+x": {
+       "glyph": "r",
+       "up": "+y"
+      }
+     }
+    },
+    "block_00030": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00030.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "p",
+       "up": "-x"
+      },
+      "+z": {
+       "glyph": "u",
+       "up": "+y"
+      },
+      "+x": {
+       "glyph": "o",
+       "up": "+y"
+      }
+     }
+    },
+    "block_00005": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00005.usda",
+     "letter_faces": {
+      "+x": {
+       "glyph": "G",
+       "up": "+y"
+      },
+      "-y": {
+       "glyph": "D",
+       "up": "-z"
+      }
+     }
+    },
+    "block_00034": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00034.usda",
+     "letter_faces": {
+      "-y": {
+       "glyph": "U",
+       "up": "+z"
+      }
+     }
+    },
+    "block_00004": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00004.usda",
+     "letter_faces": {
+      "-x": {
+       "glyph": "T",
+       "up": "-z"
+      }
+     }
+    },
+    "block_00002": {
+     "kind": "letter",
+     "type": "block_letter",
+     "usd": "block_00002.usda",
+     "letter_faces": {
+      "+z": {
+       "glyph": "H",
+       "up": "+x"
+      }
+     }
+    },
+    "block_orange": {
+     "kind": "color",
+     "type": "block_orange",
+     "letter_faces": {}
+    },
+    "block_red1": {
+     "kind": "color",
+     "type": "block_red",
+     "letter_faces": {}
+    }
+   },
+   "on": {
+    "block_orange": "block_red1",
+    "block_00021": "block_00030"
+   },
+   "on_table": [
+    "block_00009",
+    "block_00027",
+    "block_00030",
+    "block_00005",
+    "block_00034",
+    "block_00004",
+    "block_00002",
+    "block_red1"
+   ],
+   "ori": {
+    "block_00009": "o14",
+    "block_00021": "o9",
+    "block_00027": "o11",
+    "block_00030": "o16",
+    "block_00005": "o21",
+    "block_00034": "o6",
+    "block_00004": "o21",
+    "block_00002": "o14",
+    "block_orange": "o12",
+    "block_red1": "o8"
+   },
+   "instances": [
+    "spell_auk_unpatterned_2_infeasible_0",
+    "spell_auk_unpatterned_2_infeasible_1"
+   ]
+  }
+ }
+}

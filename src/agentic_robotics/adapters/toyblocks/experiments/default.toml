@@ -1,0 +1,21 @@
+# The settings every run uses unless `--experiment <name>` names another file in this directory
+# (or a path to one). Each key is a field of `experiment.ExperimentSettings`; a command-line flag
+# overrides its value for one run, and the resolved result is written to the run directory as
+# config.json.
+
+task = "ai2_stacked"          # key into the task table, run when --task is not given
+model = "fable-5.1"           # key into OPENAI_API_MODEL_CONFIGS
+skill_backend = "oracle"      # "oracle" (scripted skills, cuRobo) or "maniflow" (policy server)
+maniflow = "LEA"              # key into MANIFLOW_CONFIGS: the checkpoint `serve` and the ManiFlow skills use
+viewer = true
+camera_name = "front_camera"
+rng_seed = 1612
+action_horizon = 25
+
+[oracle]                      # the scripted skills' parameters (config.OracleConfig)
+settle_steps = 10
+max_samples = 12
+retract_height_m = 0.05
+pointing_error_ratio = 1.2
+rl_max_steps = 100
+rl_settle_steps = 10

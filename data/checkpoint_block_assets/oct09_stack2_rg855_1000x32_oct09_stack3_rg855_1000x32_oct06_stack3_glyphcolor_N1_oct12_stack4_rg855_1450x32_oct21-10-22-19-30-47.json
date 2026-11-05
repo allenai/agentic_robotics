@@ -1,0 +1,72 @@
+{
+ "checkpoint": "oct09_stack2_rg855_1000x32_oct09_stack3_rg855_1000x32_oct06_stack3_glyphcolor_N1_oct12_stack4_rg855_1450x32_oct21-10-22-19-30-47",
+ "training_env_pys": [
+  "unmerged/oct09_stack2_rg855_1000x32/envs/problem_declarative_10_20261009_172057_616432_2448/env.py"
+ ],
+ "assets": {
+  "block_4": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_c": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_e": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_f": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_g": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_m": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_s": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_w": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ]
+ }
+}

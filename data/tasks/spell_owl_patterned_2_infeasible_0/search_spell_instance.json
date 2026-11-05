@@ -1,0 +1,13 @@
+{
+ "slug": "spell_owl_patterned_2_infeasible_0",
+ "family": "spell_owl_patterned_2_infeasible",
+ "library": "train_blocks_large",
+ "seed": 2527843194,
+ "attempt": 0,
+ "candidates": 8,
+ "kept_candidate": 0,
+ "closest_pair_m": 0.0865,
+ "closest_pair": "block_m/block_w",
+ "rejected": [],
+ "seconds": 43.7
+}

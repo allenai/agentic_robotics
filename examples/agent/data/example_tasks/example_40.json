@@ -1,0 +1,120 @@
+{
+ "task": "Stack the three blocks to spell 'AI2' from top to bottom, with each letter upright and facing the camera.",
+ "motor_call_budget": 30,
+ "state": {
+  "robot_base_pose": {
+   "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   },
+   "orientation": {
+    "w": 1.0,
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+   },
+   "parent_frame": "world"
+  },
+  "robot_configuration": {
+   "joint_names": [
+    "panda_joint1",
+    "panda_joint2",
+    "panda_joint3",
+    "panda_joint4",
+    "panda_joint5",
+    "panda_joint6",
+    "panda_joint7",
+    "finger_joint",
+    "left_inner_finger_joint",
+    "right_outer_knuckle_joint",
+    "right_inner_finger_joint",
+    "left_inner_knuckle_joint",
+    "right_inner_knuckle_joint"
+   ],
+   "joint_types": [
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute",
+    "revolute"
+   ],
+   "joint_values": [
+    0.0,
+    -0.7854,
+    0.0,
+    -2.3562,
+    0.0,
+    1.5708,
+    0.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0
+   ]
+  },
+  "objects": [
+   {
+    "name": "block_a",
+    "pose": {
+     "position": {
+      "x": 0.20343,
+      "y": 0.09278,
+      "z": 0.0282
+     },
+     "orientation": {
+      "w": 0.37855,
+      "x": -0.59724,
+      "y": -0.37855,
+      "z": -0.59725
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_i",
+    "pose": {
+     "position": {
+      "x": 0.20374,
+      "y": 0.02453,
+      "z": 0.06702
+     },
+     "orientation": {
+      "w": 0.82361,
+      "x": 3e-05,
+      "y": -0.0001,
+      "z": -0.56715
+     },
+     "parent_frame": "world"
+    }
+   },
+   {
+    "name": "block_2",
+    "pose": {
+     "position": {
+      "x": 0.20375,
+      "y": 0.02453,
+      "z": 0.02867
+     },
+     "orientation": {
+      "w": 0.85637,
+      "x": -1e-05,
+      "y": -2e-05,
+      "z": -0.51636
+     },
+     "parent_frame": "world"
+    }
+   }
+  ]
+ }
+}

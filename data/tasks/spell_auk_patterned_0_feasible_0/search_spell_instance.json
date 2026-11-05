@@ -1,0 +1,13 @@
+{
+ "slug": "spell_auk_patterned_0_feasible_0",
+ "family": "spell_auk_patterned_0_feasible",
+ "library": "train_blocks_large",
+ "seed": 1332308661,
+ "attempt": 0,
+ "candidates": 8,
+ "kept_candidate": 0,
+ "closest_pair_m": 0.0856,
+ "closest_pair": "block_blue/block_d",
+ "rejected": [],
+ "seconds": 43.2
+}

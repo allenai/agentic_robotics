@@ -1,0 +1,49 @@
+(define (problem spell_jay_unpatterned_1_feasible_1)
+    (:domain blocks-tamp)
+    (:objects
+    block_00000 block_00001 block_00012 block_00016 block_00021 block_00027 block_00011 - block_letter
+    block_green - block_green
+    block_blue - block_blue
+    block_red1 - block_red
+    workspace_table - table
+    robot - gripper    )
+    (:init
+        (on block_00000 block_red1)
+        (on block_00001 block_00027)
+        (on block_00012 block_00021)
+        (on block_00016 block_00011)
+        (on_table block_00021 workspace_table)
+        (on_table block_00027 workspace_table)
+        (on_table block_00011 workspace_table)
+        (on_table block_green workspace_table)
+        (on block_blue block_green)
+        (on_table block_red1 workspace_table)
+        (clear block_00000)
+        (clear block_00001)
+        (clear block_00012)
+        (clear block_00016)
+        (clear block_blue)
+        (ori_of block_00000 o5)
+        (ori_of block_00001 o1)
+        (ori_of block_00012 o17)
+        (ori_of block_00016 o2)
+        (ori_of block_00021 o8)
+        (ori_of block_00027 o24)
+        (ori_of block_00011 o5)
+        (ori_of block_green o19)
+        (ori_of block_blue o16)
+        (ori_of block_red1 o10)
+        (handempty robot)
+        (gripper_at_init)
+    )
+    (:goal (and
+        (on_table block_00016 workspace_table)
+        (on block_00027 block_00016)
+        (on block_00012 block_00027)
+        (clear block_00012)
+    ))
+
+    ;block_size_range = [0.035, 0.05]
+    ;table_height_range = [-0.05, 0.05]
+    ;friction_range = [0.5, 0.5]
+)

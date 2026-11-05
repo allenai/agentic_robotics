@@ -1,0 +1,13 @@
+{
+ "slug": "spell_emu_unpatterned_1_feasible_0",
+ "family": "spell_emu_unpatterned_1_feasible",
+ "library": "eval_blocks_36_0",
+ "seed": 1149906777,
+ "attempt": 0,
+ "candidates": 8,
+ "kept_candidate": 0,
+ "closest_pair_m": 0.1122,
+ "closest_pair": "block_00034/block_green",
+ "rejected": [],
+ "seconds": 44.2
+}

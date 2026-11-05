@@ -1,0 +1,1482 @@
+{
+ "library": "usd",
+ "source": "objects/eval_blocks_36_0/usd/20261020",
+ "blocks": {
+  "block_00000": {
+   "usd": "block_00000.usda",
+   "faces": {
+    "+z": {
+     "glyph": "volcano",
+     "type": "symbol",
+     "up": "+x",
+     "right": "-y"
+    },
+    "-x": {
+     "glyph": "J",
+     "type": "character",
+     "up": "-z",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "lemon",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+x": {
+     "glyph": "multiply_green",
+     "type": "symbol",
+     "up": "-z",
+     "right": "-y"
+    },
+    "-y": {
+     "glyph": "peas",
+     "type": "symbol",
+     "up": "+x",
+     "right": "-z"
+    },
+    "+y": {
+     "glyph": "P",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_00001": {
+   "usd": "block_00001.usda",
+   "faces": {
+    "-z": {
+     "glyph": "9_blue",
+     "type": "character",
+     "up": "+x",
+     "right": "+y"
+    },
+    "+x": {
+     "glyph": "strawberry",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "+z": {
+     "glyph": "O",
+     "type": "character",
+     "up": "+x",
+     "right": "-y"
+    },
+    "-x": {
+     "glyph": "Y",
+     "type": "character",
+     "up": "+z",
+     "right": "-y"
+    },
+    "-y": {
+     "glyph": "3_circle_blue",
+     "type": "symbol",
+     "up": "-x",
+     "right": "+z"
+    },
+    "+y": {
+     "glyph": "7_toucan",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+z"
+    }
+   }
+  },
+  "block_00002": {
+   "usd": "block_00002.usda",
+   "faces": {
+    "-y": {
+     "glyph": "8_green",
+     "type": "character",
+     "up": "+x",
+     "right": "-z"
+    },
+    "-x": {
+     "glyph": "2_blue",
+     "type": "character",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+y": {
+     "glyph": "5_zebra",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+z"
+    },
+    "+x": {
+     "glyph": "eggplant",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "quail",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "H",
+     "type": "character",
+     "up": "+x",
+     "right": "-y"
+    }
+   }
+  },
+  "block_00003": {
+   "usd": "block_00003.usda",
+   "faces": {
+    "-z": {
+     "glyph": "10_blue",
+     "type": "character",
+     "up": "-x",
+     "right": "-y"
+    },
+    "-y": {
+     "glyph": "ice_cream",
+     "type": "symbol",
+     "up": "-z",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "unicorn",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-x"
+    },
+    "+y": {
+     "glyph": "0_circle_skyblue",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+z"
+    },
+    "-x": {
+     "glyph": "watermelon",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-y"
+    },
+    "+x": {
+     "glyph": "fox",
+     "type": "symbol",
+     "up": "-y",
+     "right": "+z"
+    }
+   }
+  },
+  "block_00004": {
+   "usd": "block_00004.usda",
+   "faces": {
+    "+y": {
+     "glyph": "house",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-x"
+    },
+    "+x": {
+     "glyph": "umbrella",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "-y": {
+     "glyph": "5_circle_blue",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "T",
+     "type": "character",
+     "up": "-z",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "6_orange",
+     "type": "character",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "hands_7",
+     "type": "symbol",
+     "up": "-x",
+     "right": "+y"
+    }
+   }
+  },
+  "block_00005": {
+   "usd": "block_00005.usda",
+   "faces": {
+    "+y": {
+     "glyph": "3_circle_green",
+     "type": "symbol",
+     "up": "-z",
+     "right": "+x"
+    },
+    "+x": {
+     "glyph": "G",
+     "type": "character",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "D",
+     "type": "character",
+     "up": "-z",
+     "right": "-x"
+    },
+    "-x": {
+     "glyph": "turtle",
+     "type": "symbol",
+     "up": "-z",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "hands_3",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "plus_blue",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-x"
+    }
+   }
+  },
+  "block_00006": {
+   "usd": "block_00006.usda",
+   "faces": {
+    "+x": {
+     "glyph": "z",
+     "type": "character",
+     "up": "+y",
+     "right": "-z"
+    },
+    "+z": {
+     "glyph": "tiger",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "b",
+     "type": "character",
+     "up": "+y",
+     "right": "+z"
+    },
+    "-z": {
+     "glyph": "gift",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+y"
+    },
+    "-y": {
+     "glyph": "4_circle_skyblue",
+     "type": "symbol",
+     "up": "+x",
+     "right": "-z"
+    },
+    "+y": {
+     "glyph": "s",
+     "type": "character",
+     "up": "-z",
+     "right": "+x"
+    }
+   }
+  },
+  "block_00007": {
+   "usd": "block_00007.usda",
+   "faces": {
+    "-y": {
+     "glyph": "island",
+     "type": "symbol",
+     "up": "+x",
+     "right": "-z"
+    },
+    "-x": {
+     "glyph": "hedgehog",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-y"
+    },
+    "+y": {
+     "glyph": "star_face",
+     "type": "symbol",
+     "up": "-x",
+     "right": "-z"
+    },
+    "+x": {
+     "glyph": "cloud",
+     "type": "symbol",
+     "up": "-z",
+     "right": "-y"
+    },
+    "-z": {
+     "glyph": "hands_9",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+y"
+    },
+    "+z": {
+     "glyph": "octagon",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-x"
+    }
+   }
+  },
+  "block_00008": {
+   "usd": "block_00008.usda",
+   "faces": {
+    "+z": {
+     "glyph": "star",
+     "type": "symbol",
+     "up": "+x",
+     "right": "-y"
+    },
+    "+y": {
+     "glyph": "hands_6",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-x"
+    },
+    "-z": {
+     "glyph": "L",
+     "type": "character",
+     "up": "+x",
+     "right": "+y"
+    },
+    "-y": {
+     "glyph": "apple",
+     "type": "symbol",
+     "up": "-x",
+     "right": "+z"
+    },
+    "-x": {
+     "glyph": "zipper",
+     "type": "symbol",
+     "up": "-z",
+     "right": "+y"
+    },
+    "+x": {
+     "glyph": "hands_5",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    }
+   }
+  },
+  "block_00009": {
+   "usd": "block_00009.usda",
+   "faces": {
+    "-x": {
+     "glyph": "0_circle_green",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-y"
+    },
+    "+z": {
+     "glyph": "9_circle_green",
+     "type": "symbol",
+     "up": "-x",
+     "right": "+y"
+    },
+    "+x": {
+     "glyph": "wool",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "rabbit",
+     "type": "symbol",
+     "up": "-y",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "hexagon",
+     "type": "symbol",
+     "up": "-x",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "triangle_face",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+x"
+    }
+   }
+  },
+  "block_00010": {
+   "usd": "block_00010.usda",
+   "faces": {
+    "+y": {
+     "glyph": "zebra",
+     "type": "symbol",
+     "up": "-z",
+     "right": "+x"
+    },
+    "+z": {
+     "glyph": "3_snake",
+     "type": "symbol",
+     "up": "+x",
+     "right": "-y"
+    },
+    "-y": {
+     "glyph": "grasshopper",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+x"
+    },
+    "-z": {
+     "glyph": "w",
+     "type": "character",
+     "up": "+x",
+     "right": "+y"
+    },
+    "+x": {
+     "glyph": "triangle",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "-x": {
+     "glyph": "9_lion",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    }
+   }
+  },
+  "block_00011": {
+   "usd": "block_00011.usda",
+   "faces": {
+    "-y": {
+     "glyph": "banana",
+     "type": "symbol",
+     "up": "-z",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "1_circle_red",
+     "type": "symbol",
+     "up": "+x",
+     "right": "-y"
+    },
+    "+y": {
+     "glyph": "M",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    },
+    "-z": {
+     "glyph": "pentagon",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "-x": {
+     "glyph": "c",
+     "type": "character",
+     "up": "-z",
+     "right": "+y"
+    },
+    "+x": {
+     "glyph": "bear",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    }
+   }
+  },
+  "block_00012": {
+   "usd": "block_00012.usda",
+   "faces": {
+    "-y": {
+     "glyph": "j",
+     "type": "character",
+     "up": "-z",
+     "right": "-x"
+    },
+    "+x": {
+     "glyph": "panda",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "+y": {
+     "glyph": "dog",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+z"
+    },
+    "-x": {
+     "glyph": "vegetables",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-z"
+    },
+    "+z": {
+     "glyph": "E",
+     "type": "character",
+     "up": "-y",
+     "right": "-x"
+    },
+    "-z": {
+     "glyph": "Q",
+     "type": "character",
+     "up": "+x",
+     "right": "+y"
+    }
+   }
+  },
+  "block_00013": {
+   "usd": "block_00013.usda",
+   "faces": {
+    "+y": {
+     "glyph": "F",
+     "type": "character",
+     "up": "+x",
+     "right": "+z"
+    },
+    "-x": {
+     "glyph": "airplane",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "8_red",
+     "type": "character",
+     "up": "+x",
+     "right": "-z"
+    },
+    "+x": {
+     "glyph": "7_red",
+     "type": "character",
+     "up": "+y",
+     "right": "-z"
+    },
+    "+z": {
+     "glyph": "h",
+     "type": "character",
+     "up": "-x",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "4_green",
+     "type": "character",
+     "up": "+x",
+     "right": "+y"
+    }
+   }
+  },
+  "block_00014": {
+   "usd": "block_00014.usda",
+   "faces": {
+    "+y": {
+     "glyph": "quilt",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+z"
+    },
+    "+z": {
+     "glyph": "1_snake",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-x"
+    },
+    "-y": {
+     "glyph": "cherries",
+     "type": "symbol",
+     "up": "+x",
+     "right": "-z"
+    },
+    "-z": {
+     "glyph": "zucchini",
+     "type": "symbol",
+     "up": "-x",
+     "right": "-y"
+    },
+    "+x": {
+     "glyph": "7_circle_red",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "-x": {
+     "glyph": "tomato",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-z"
+    }
+   }
+  },
+  "block_00015": {
+   "usd": "block_00015.usda",
+   "faces": {
+    "+y": {
+     "glyph": "hippo",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-x"
+    },
+    "+x": {
+     "glyph": "hands_4",
+     "type": "symbol",
+     "up": "-z",
+     "right": "-y"
+    },
+    "-y": {
+     "glyph": "N",
+     "type": "character",
+     "up": "-x",
+     "right": "+z"
+    },
+    "-x": {
+     "glyph": "2_elephant",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-z"
+    },
+    "-z": {
+     "glyph": "key",
+     "type": "symbol",
+     "up": "-y",
+     "right": "+x"
+    },
+    "+z": {
+     "glyph": "juice",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-x"
+    }
+   }
+  },
+  "block_00016": {
+   "usd": "block_00016.usda",
+   "faces": {
+    "+z": {
+     "glyph": "rocket",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-x"
+    },
+    "-y": {
+     "glyph": "yak",
+     "type": "symbol",
+     "up": "-z",
+     "right": "-x"
+    },
+    "-z": {
+     "glyph": "9_circle_blue",
+     "type": "symbol",
+     "up": "-y",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "mouse",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-x"
+    },
+    "+x": {
+     "glyph": "7_circle_orange",
+     "type": "symbol",
+     "up": "-z",
+     "right": "-y"
+    },
+    "-x": {
+     "glyph": "y",
+     "type": "character",
+     "up": "-y",
+     "right": "-z"
+    }
+   }
+  },
+  "block_00017": {
+   "usd": "block_00017.usda",
+   "faces": {
+    "-z": {
+     "glyph": "f",
+     "type": "character",
+     "up": "-x",
+     "right": "-y"
+    },
+    "+x": {
+     "glyph": "equals_red",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "+z": {
+     "glyph": "3_green",
+     "type": "character",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "lion",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "-y": {
+     "glyph": "4_red",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "igloo",
+     "type": "symbol",
+     "up": "-z",
+     "right": "+x"
+    }
+   }
+  },
+  "block_00018": {
+   "usd": "block_00018.usda",
+   "faces": {
+    "+z": {
+     "glyph": "owl",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-x"
+    },
+    "+x": {
+     "glyph": "lobster",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "R",
+     "type": "character",
+     "up": "-x",
+     "right": "-y"
+    },
+    "-x": {
+     "glyph": "2_circle_blue",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-z"
+    },
+    "+y": {
+     "glyph": "divide_blue",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-x"
+    },
+    "-y": {
+     "glyph": "10_bear",
+     "type": "symbol",
+     "up": "-z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_00019": {
+   "usd": "block_00019.usda",
+   "faces": {
+    "-z": {
+     "glyph": "hands_1",
+     "type": "symbol",
+     "up": "-x",
+     "right": "-y"
+    },
+    "+x": {
+     "glyph": "dolphin",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "+z": {
+     "glyph": "S",
+     "type": "character",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "circle",
+     "type": "symbol",
+     "up": "-z",
+     "right": "+y"
+    },
+    "-y": {
+     "glyph": "q",
+     "type": "character",
+     "up": "-z",
+     "right": "-x"
+    },
+    "+y": {
+     "glyph": "orange",
+     "type": "symbol",
+     "up": "-x",
+     "right": "-z"
+    }
+   }
+  },
+  "block_00020": {
+   "usd": "block_00020.usda",
+   "faces": {
+    "-z": {
+     "glyph": "2_circle_orange",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+y"
+    },
+    "-x": {
+     "glyph": "bee",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-y"
+    },
+    "+z": {
+     "glyph": "k",
+     "type": "character",
+     "up": "-x",
+     "right": "+y"
+    },
+    "+x": {
+     "glyph": "flamingo",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-z"
+    },
+    "+y": {
+     "glyph": "5_blue",
+     "type": "character",
+     "up": "-z",
+     "right": "+x"
+    },
+    "-y": {
+     "glyph": "n",
+     "type": "character",
+     "up": "+x",
+     "right": "-z"
+    }
+   }
+  },
+  "block_00021": {
+   "usd": "block_00021.usda",
+   "faces": {
+    "+y": {
+     "glyph": "A",
+     "type": "character",
+     "up": "-x",
+     "right": "-z"
+    },
+    "-x": {
+     "glyph": "8_pig",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "9_orange",
+     "type": "character",
+     "up": "+x",
+     "right": "-z"
+    },
+    "+x": {
+     "glyph": "8_circle_orange",
+     "type": "symbol",
+     "up": "-z",
+     "right": "-y"
+    },
+    "+z": {
+     "glyph": "X",
+     "type": "character",
+     "up": "+x",
+     "right": "-y"
+    },
+    "-z": {
+     "glyph": "circle_face",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+y"
+    }
+   }
+  },
+  "block_00022": {
+   "usd": "block_00022.usda",
+   "faces": {
+    "+z": {
+     "glyph": "yoyo",
+     "type": "symbol",
+     "up": "+x",
+     "right": "-y"
+    },
+    "+x": {
+     "glyph": "hands_10",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "hands_8",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+y"
+    },
+    "-x": {
+     "glyph": "3_red",
+     "type": "character",
+     "up": "-y",
+     "right": "-z"
+    },
+    "+y": {
+     "glyph": "mushroom",
+     "type": "symbol",
+     "up": "-x",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "6_giraffe",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+x"
+    }
+   }
+  },
+  "block_00023": {
+   "usd": "block_00023.usda",
+   "faces": {
+    "+x": {
+     "glyph": "x",
+     "type": "character",
+     "up": "-y",
+     "right": "+z"
+    },
+    "-y": {
+     "glyph": "multiply_orange",
+     "type": "symbol",
+     "up": "+x",
+     "right": "-z"
+    },
+    "-x": {
+     "glyph": "frog",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-y"
+    },
+    "+y": {
+     "glyph": "mango",
+     "type": "symbol",
+     "up": "-x",
+     "right": "-z"
+    },
+    "-z": {
+     "glyph": "7_green",
+     "type": "character",
+     "up": "-y",
+     "right": "+x"
+    },
+    "+z": {
+     "glyph": "minus_blue",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    }
+   }
+  },
+  "block_00024": {
+   "usd": "block_00024.usda",
+   "faces": {
+    "+x": {
+     "glyph": "elephant",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "-y": {
+     "glyph": "8_circle_blue",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "1_blue",
+     "type": "character",
+     "up": "-y",
+     "right": "-z"
+    },
+    "+y": {
+     "glyph": "nut",
+     "type": "symbol",
+     "up": "-x",
+     "right": "-z"
+    },
+    "-z": {
+     "glyph": "dinosaur",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "2_orange",
+     "type": "character",
+     "up": "-x",
+     "right": "+y"
+    }
+   }
+  },
+  "block_00025": {
+   "usd": "block_00025.usda",
+   "faces": {
+    "+y": {
+     "glyph": "t",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    },
+    "+x": {
+     "glyph": "xmas_tree",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "-y": {
+     "glyph": "g",
+     "type": "character",
+     "up": "-z",
+     "right": "-x"
+    },
+    "-x": {
+     "glyph": "koala",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-z"
+    },
+    "-z": {
+     "glyph": "jet",
+     "type": "symbol",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+z": {
+     "glyph": "yatch",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    }
+   }
+  },
+  "block_00026": {
+   "usd": "block_00026.usda",
+   "faces": {
+    "+x": {
+     "glyph": "i",
+     "type": "character",
+     "up": "-z",
+     "right": "-y"
+    },
+    "-z": {
+     "glyph": "C",
+     "type": "character",
+     "up": "-y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "1_circle_orange",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+z": {
+     "glyph": "kiwi",
+     "type": "symbol",
+     "up": "+x",
+     "right": "-y"
+    },
+    "+y": {
+     "glyph": "octopus",
+     "type": "symbol",
+     "up": "-z",
+     "right": "+x"
+    },
+    "-y": {
+     "glyph": "v",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    }
+   }
+  },
+  "block_00027": {
+   "usd": "block_00027.usda",
+   "faces": {
+    "+z": {
+     "glyph": "4_rhinoceros",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-x": {
+     "glyph": "a",
+     "type": "character",
+     "up": "+z",
+     "right": "-y"
+    },
+    "-z": {
+     "glyph": "1_orange",
+     "type": "character",
+     "up": "-y",
+     "right": "+x"
+    },
+    "+x": {
+     "glyph": "r",
+     "type": "character",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-y": {
+     "glyph": "4_circle_green",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "ant",
+     "type": "symbol",
+     "up": "-x",
+     "right": "-z"
+    }
+   }
+  },
+  "block_00028": {
+   "usd": "block_00028.usda",
+   "faces": {
+    "+x": {
+     "glyph": "xylophone",
+     "type": "symbol",
+     "up": "-z",
+     "right": "-y"
+    },
+    "-y": {
+     "glyph": "cat",
+     "type": "symbol",
+     "up": "-x",
+     "right": "+z"
+    },
+    "-x": {
+     "glyph": "diamond",
+     "type": "symbol",
+     "up": "-z",
+     "right": "+y"
+    },
+    "+y": {
+     "glyph": "whale",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+z"
+    },
+    "-z": {
+     "glyph": "6_circle_red",
+     "type": "symbol",
+     "up": "-y",
+     "right": "+x"
+    },
+    "+z": {
+     "glyph": "oval",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-x"
+    }
+   }
+  },
+  "block_00029": {
+   "usd": "block_00029.usda",
+   "faces": {
+    "+y": {
+     "glyph": "xray",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-x"
+    },
+    "-x": {
+     "glyph": "I",
+     "type": "character",
+     "up": "-z",
+     "right": "+y"
+    },
+    "-y": {
+     "glyph": "rectangle",
+     "type": "symbol",
+     "up": "-z",
+     "right": "-x"
+    },
+    "+x": {
+     "glyph": "10_orange",
+     "type": "character",
+     "up": "-y",
+     "right": "+z"
+    },
+    "+z": {
+     "glyph": "nest",
+     "type": "symbol",
+     "up": "-x",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "squirrel",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+y"
+    }
+   }
+  },
+  "block_00030": {
+   "usd": "block_00030.usda",
+   "faces": {
+    "-y": {
+     "glyph": "p",
+     "type": "character",
+     "up": "-x",
+     "right": "+z"
+    },
+    "-z": {
+     "glyph": "divide_orange",
+     "type": "symbol",
+     "up": "+x",
+     "right": "+y"
+    },
+    "+y": {
+     "glyph": "heart_face",
+     "type": "symbol",
+     "up": "-z",
+     "right": "+x"
+    },
+    "+z": {
+     "glyph": "u",
+     "type": "character",
+     "up": "+y",
+     "right": "+x"
+    },
+    "+x": {
+     "glyph": "o",
+     "type": "character",
+     "up": "+y",
+     "right": "-z"
+    },
+    "-x": {
+     "glyph": "square",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    }
+   }
+  },
+  "block_00031": {
+   "usd": "block_00031.usda",
+   "faces": {
+    "+y": {
+     "glyph": "d",
+     "type": "character",
+     "up": "+x",
+     "right": "+z"
+    },
+    "-z": {
+     "glyph": "5_orange",
+     "type": "character",
+     "up": "-y",
+     "right": "+x"
+    },
+    "-y": {
+     "glyph": "egg",
+     "type": "symbol",
+     "up": "-x",
+     "right": "+z"
+    },
+    "+z": {
+     "glyph": "night",
+     "type": "symbol",
+     "up": "-x",
+     "right": "+y"
+    },
+    "-x": {
+     "glyph": "grapes",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-z"
+    },
+    "+x": {
+     "glyph": "Z",
+     "type": "character",
+     "up": "+z",
+     "right": "+y"
+    }
+   }
+  },
+  "block_00032": {
+   "usd": "block_00032.usda",
+   "faces": {
+    "-x": {
+     "glyph": "6_blue",
+     "type": "character",
+     "up": "+z",
+     "right": "-y"
+    },
+    "+z": {
+     "glyph": "W",
+     "type": "character",
+     "up": "-x",
+     "right": "+y"
+    },
+    "+x": {
+     "glyph": "K",
+     "type": "character",
+     "up": "+z",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "plus_orange",
+     "type": "symbol",
+     "up": "-y",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "e",
+     "type": "character",
+     "up": "-z",
+     "right": "+x"
+    },
+    "-y": {
+     "glyph": "star_shape",
+     "type": "symbol",
+     "up": "-x",
+     "right": "+z"
+    }
+   }
+  },
+  "block_00033": {
+   "usd": "block_00033.usda",
+   "faces": {
+    "-x": {
+     "glyph": "hands_2",
+     "type": "symbol",
+     "up": "-z",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "m",
+     "type": "character",
+     "up": "+y",
+     "right": "-x"
+    },
+    "+x": {
+     "glyph": "6_circle_skyblue",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "+z": {
+     "glyph": "violin",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+x"
+    },
+    "-y": {
+     "glyph": "jellyfish",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+x"
+    },
+    "+y": {
+     "glyph": "square_face",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-x"
+    }
+   }
+  },
+  "block_00034": {
+   "usd": "block_00034.usda",
+   "faces": {
+    "-x": {
+     "glyph": "penguin",
+     "type": "symbol",
+     "up": "+y",
+     "right": "+z"
+    },
+    "+z": {
+     "glyph": "uniform",
+     "type": "symbol",
+     "up": "-x",
+     "right": "+y"
+    },
+    "+x": {
+     "glyph": "pentagon_face",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "equals_green",
+     "type": "symbol",
+     "up": "-x",
+     "right": "-y"
+    },
+    "+y": {
+     "glyph": "rainbow",
+     "type": "symbol",
+     "up": "+z",
+     "right": "-x"
+    },
+    "-y": {
+     "glyph": "U",
+     "type": "character",
+     "up": "+z",
+     "right": "+x"
+    }
+   }
+  },
+  "block_00035": {
+   "usd": "block_00035.usda",
+   "faces": {
+    "-y": {
+     "glyph": "V",
+     "type": "character",
+     "up": "-z",
+     "right": "-x"
+    },
+    "-x": {
+     "glyph": "l",
+     "type": "character",
+     "up": "+z",
+     "right": "-y"
+    },
+    "+y": {
+     "glyph": "B",
+     "type": "character",
+     "up": "+z",
+     "right": "-x"
+    },
+    "+x": {
+     "glyph": "5_circle_pink",
+     "type": "symbol",
+     "up": "+z",
+     "right": "+y"
+    },
+    "-z": {
+     "glyph": "minus_red",
+     "type": "symbol",
+     "up": "-y",
+     "right": "+x"
+    },
+    "+z": {
+     "glyph": "queen",
+     "type": "symbol",
+     "up": "-y",
+     "right": "-x"
+    }
+   }
+  }
+ }
+}
