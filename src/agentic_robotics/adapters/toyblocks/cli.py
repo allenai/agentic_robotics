@@ -1244,8 +1244,8 @@ def parse_args() -> argparse.Namespace:
         "--physx-scale",
         type=int,
         default=1,
-        help="Divide the PhysX GPU buffer capacities by this; 16 takes an agent process from "
-        "8.4 GB to 6.1 GB on the Rao scenes so four fit on the workstation (2026-10-14). "
+        help="Divide the PhysX GPU buffer capacities by this; 16 takes an agent process on a "
+        "six-block scene from about 8.4 GB to 6.1 GB of GPU memory, so four fit on one 32 GB GPU. "
         "1 leaves them as ToyBlocks sets them",
     )
     parser.add_argument(
