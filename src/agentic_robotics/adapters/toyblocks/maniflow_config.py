@@ -84,6 +84,15 @@ DATASET_ROOT = Path(os.environ.get("TOYBLOCKS_DATASET_ROOT", "datasets"))
 provenance only: `$TOYBLOCKS_DATASET_ROOT`, or `datasets/` under the working directory."""
 
 MANIFLOW_CONFIGS: dict[str, ManiFlowConfig] = {
+    # The released checkpoint, https://huggingface.co/allenai/maniflow-tb, downloaded with
+    # `hf download allenai/maniflow-tb --local-dir $MANIFLOW_CHECKPOINT_ROOT/maniflow-tb`. Its
+    # config.yaml carries the LEA settings (rgb224, absolute actions, token target injection,
+    # shared RGB heatmap encoder, t5-small action-only language, pause on attempt, step 200000).
+    "maniflow-tb": ManiFlowConfig(
+        checkpoint_dir=CHECKPOINT_ROOT / "maniflow-tb",
+        safetensors_relative_path="checkpoints/steps_200000_model.safetensors",
+        observation_mode="state+rgb",
+    ),
     "DD": ManiFlowConfig(
         checkpoint_dir=CHECKPOINT_ROOT
         / Path(
