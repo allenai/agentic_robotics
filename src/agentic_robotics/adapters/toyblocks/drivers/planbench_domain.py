@@ -1,8 +1,8 @@
-"""The Rao problems as a PlanBench domain: its config schema, its PDDL, its text, its plan parser.
+"""The Blocksworld problems as a PlanBench domain: its config schema, its PDDL, its text, its plan parser.
 
 The domain implements PlanBench's interfaces rather than recreating their Blocksworld domain,
 except where the two are one to one, and those interfaces omit images entirely, because
-PlanBench's do not support them. The Rao skills are PlanBench's four Blocksworld
+PlanBench's do not support them. The skills are PlanBench's four Blocksworld
 operators one to one (`pick` = pick-up from the table or unstack from a block, `stack`,
 `place_on_table` = put-down), so the domain description is theirs verbatim and only the objects
 differ: six colors, one of them (purple) absent from PlanBench's twelve.
@@ -31,14 +31,14 @@ from collections import deque
 from dataclasses import dataclass
 from pathlib import Path
 
-from agentic_robotics.adapters.toyblocks.tasks.rao_problems import (
+from agentic_robotics.adapters.toyblocks.tasks.blocksworld_problems import (
     COLOURS,
+    BlocksworldProblem,
     Pair,
-    RaoProblem,
     all_problems,
 )
 
-DOMAIN_NAME = "blocksworld_rao"
+DOMAIN_NAME = "blocksworld"
 """Contains "blocksworld", which is what PlanBench's code branches on for this domain's text."""
 
 DOMAIN_INTRO = """I am playing with a set of blocks where I need to arrange the blocks into stacks. Here are the actions I can do
@@ -89,7 +89,7 @@ ENCODED_OBJECTS = {
     letter: f"{colour} block" for letter, colour in zip(LETTERS, COLOURS, strict=True)
 }
 """PDDL object name to text, alphabetical keys as PlanBench requires: a red, b blue, c green,
-d yellow, e purple, f orange (the Rao colour order)."""
+d yellow, e purple, f orange (PlanBench's colour order)."""
 LETTER_OF = {colour: letter for letter, colour in zip(LETTERS, COLOURS, strict=True)}
 
 DOMAIN_PDDL = """(define (domain blocksworld-4ops)
@@ -117,10 +117,10 @@ DOMAIN_PDDL = """(define (domain blocksworld-4ops)
 
 @dataclass(frozen=True)
 class Instance:
-    """One PlanBench instance: an id, the Rao problem behind it, and its atoms over letters."""
+    """One PlanBench instance: an id, the Blocksworld problem behind it, and its atoms over letters."""
 
     instance_id: int
-    problem: RaoProblem
+    problem: BlocksworldProblem
 
     def _atoms(self, on: tuple[Pair, ...], *, full_state: bool) -> list[tuple[str, ...]]:
         """Ground atoms as (predicate, *letters). The goal lists only `on`, as PlanBench's do."""
@@ -153,7 +153,7 @@ class Instance:
 
 
 def instances() -> list[Instance]:
-    """The six Rao problems as PlanBench instances 1-6, in `all_problems()` order."""
+    """The six Blocksworld problems as PlanBench instances 1-6, in `all_problems()` order."""
     return [Instance(i + 1, problem) for i, problem in enumerate(all_problems())]
 
 

@@ -1,8 +1,8 @@
-"""One Rao episode in one of two modes, run as `agentic-robotics episode --plan-mode <mode>`:
+"""One Blocksworld episode in one of two modes, `agentic-robotics episode --plan-mode <mode>`:
 
-    agentic-robotics episode --task rao_invert_5 --plan-mode closed \\
+    agentic-robotics episode --task blocksworld_invert_5 --plan-mode closed \\
         --instance 0 --skills inline_oracle --model opus-5.5
-    agentic-robotics episode --task rao_invert_5 --plan-mode online ...
+    agentic-robotics episode --task blocksworld_invert_5 --plan-mode online ...
 
 `agentic-robotics` owns the boot; this module supplies the agent thread, as `leap.evaluate` does for
 the LEAP evaluation. Both modes share the composed server (here only for its allowlist and local
@@ -22,8 +22,8 @@ gripper opened, settled by position) and the summary schema; what differs is the
 Everything the agent reads comes from `src`: the step model, the three
 tools' names, schemas and docstrings (`OnlineRefinementAgent`, registered here through
 `register_declared_tool`, which refuses an implementation whose signature drifts) and every
-message, from `adapters/toyblocks/release/rao_prompts.py`; the mode prompt is that module's
-behind the LEAP evaluation preamble, the way `tasks/rao.py` assembles the closed-loop one.
+message, from `adapters/toyblocks/release/blocksworld_prompts.py`; the mode prompt is that module's
+behind the LEAP evaluation preamble, the way `tasks/blocksworld.py` assembles the closed-loop one.
 
 Perception calls are free up to the LEAP safety ceiling on calls of any kind. `PlanningLoop`
 is the base loop's hooks; `OnlineLoop.run` is a loop over plan steps, each a short loop of base
@@ -46,7 +46,7 @@ from mcp_types import CallToolResult, ImageContent, TextContent
 from mcp_types import Tool as MCPTool
 
 from agentic_robotics.adapters.toyblocks.leap.declarations import register_declared_tool
-from agentic_robotics.adapters.toyblocks.release.rao_prompts import (
+from agentic_robotics.adapters.toyblocks.release.blocksworld_prompts import (
     ABORT_TOOL,
     PLAN_TOOL,
     STEP_TOOL,
@@ -62,7 +62,10 @@ from agentic_robotics.adapters.toyblocks.release.rao_prompts import (
     plan_accepted,
     planning_status,
 )
-from agentic_robotics.adapters.toyblocks.tasks.rao_problems import RaoProblem, problem_for
+from agentic_robotics.adapters.toyblocks.tasks.blocksworld_problems import (
+    BlocksworldProblem,
+    problem_for,
+)
 from agentic_robotics.core.agentic_loop import AgenticLoop
 from agentic_robotics.core.foundation_models import History, create_openai_message
 from agentic_robotics.core.images import PixelCoord  # noqa: TC001 (used for MCP tool registration)
@@ -76,7 +79,7 @@ if TYPE_CHECKING:
 
     from agentic_robotics.adapters.toyblocks.toyblocks_mcp_server import ToyBlocksMCPServer
 
-logger = logging.getLogger("agentic_robotics.examples.rao.modes")
+logger = logging.getLogger("agentic_robotics.examples.blocksworld.modes")
 
 MODES = ("closed", "online")
 
@@ -374,7 +377,7 @@ def register_online_tools(
     return {"plan": PLAN_TOOL, "step": STEP_TOOL, "abort": ABORT_TOOL}
 
 
-def online_prompt(problem: RaoProblem, max_steps: int) -> str:
+def online_prompt(problem: BlocksworldProblem, max_steps: int) -> str:
     """The online mode's prompt: the LEAP evaluation preamble, then `src`'s mode prompt around
     the goal text, so both modes open with the same role and objective."""
     from agentic_robotics.adapters.toyblocks.leap.prompts.evaluation import EVAL_PROMPT_PREFIX
@@ -382,7 +385,9 @@ def online_prompt(problem: RaoProblem, max_steps: int) -> str:
     return EVAL_PROMPT_PREFIX + online_refinement_prompt(problem.goal_text, max_steps)
 
 
-async def run_rao_episode(server: ToyBlocksMCPServer, *, mode: str, instance: int | None) -> None:
+async def run_blocksworld_episode(
+    server: ToyBlocksMCPServer, *, mode: str, instance: int | None
+) -> None:
     """One episode in `mode`, writing `evaluation_summary.json` (and `execution.json` for the
     online mode) in the run directory."""
     from mcp import Client as MCPClient
@@ -406,11 +411,11 @@ async def run_rao_episode(server: ToyBlocksMCPServer, *, mode: str, instance: in
     if mode not in MODES:
         raise ValueError(f"Unknown mode {mode!r}; one of {MODES}.")
     config = server.config
-    problem: RaoProblem = problem_for(config.task_config.task_slug)
+    problem: BlocksworldProblem = problem_for(config.task_config.task_slug)
     cutoff = config.task_config.max_tool_calls
     model_client = OpenAIModelClient(config=config.model_config)
     transcript = Transcript(out_dir=config.output_dir)
-    composed = ComposedServer(f"rao-{mode}", simulator=server.mcp, snapshot_dir=None)
+    composed = ComposedServer(f"blocksworld-{mode}", simulator=server.mcp, snapshot_dir=None)
     metadata = lambda: {"frame_count": server.frame_count}  # noqa: E731
 
     summary: dict[str, Any] = {
@@ -540,7 +545,7 @@ async def run_rao_episode(server: ToyBlocksMCPServer, *, mode: str, instance: in
                     summary["finished"] = True
                 except Exception as exc:
                     summary["error"] = f"{type(exc).__name__}: {exc}"[:1000]
-                    logger.exception("Rao episode failed; ending after cleanup.")
+                    logger.exception("Blocksworld episode failed; ending after cleanup.")
                 finally:
                     try:
                         summary.update(
@@ -566,19 +571,19 @@ async def run_rao_episode(server: ToyBlocksMCPServer, *, mode: str, instance: in
                         json.dumps(summary, indent=1), encoding="utf-8"
                     )
                     logger.info(
-                        f"Rao {mode} episode: success={summary['success']}, "
+                        f"Blocksworld {mode} episode: success={summary['success']}, "
                         f"${summary['cost_usd']}, {summary['seconds']} s."
                     )
 
 
-def rao_agentic_thread(
+def blocksworld_agentic_thread(
     server: ToyBlocksMCPServer, finished: threading.Event, **kwargs: Any
 ) -> None:
     """Run the episode on this thread, which is not the simulator's; release it when done."""
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     try:
-        loop.run_until_complete(run_rao_episode(server, **kwargs))
+        loop.run_until_complete(run_blocksworld_episode(server, **kwargs))
     finally:
         loop.close()
         finished.set()

@@ -537,7 +537,7 @@ PHYSX_SCALE = 1
 `agentic-robotics --physx-scale` sets it. ToyBlocks sizes the buffers for many-env datagen
 (`gpu_max_rigid_patch_count` 2**22 in `base_env_cfg.py`, Isaac Lab's defaults for the rest),
 and they are most of an agent process's GPU memory: 8.4 GB per process at 1, 6.1 GB at 16 on
-the Rao one-env scenes (2026-10-14 measurement, `vram_probe_20261014/`), so four processes
+the one-env Blocksworld scenes, so four processes
 fit on the 32 GB workstation instead of three. Left at 1, nothing changes."""
 
 PHYSX_CAPACITY_FIELDS = (

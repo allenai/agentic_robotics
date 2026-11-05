@@ -2,12 +2,12 @@
 resolve.
 
 The minimum viable test of a ManiFlow checkpoint is a skill on a scene from its own training
-distribution. `generate_task_from_dataset.py` builds such a package but samples no reset states,
-so instead the env packages of some of the dataset's 1000 training problems are copies of the
-dataset's own (with their 32 reset states and scene profiles) in `data/tasks/<problem>/`, with
-each problem's PDDL in `data/problems/`. This table gives those packages task keys; `cli.py`'s
-`load_tasks` merges it the way it merges the Rao instances. No agent runs on it, so its prompt is
-empty and the budget is nominal; a skill probe drives it through `agentic-robotics pool`.
+distribution. `generate_task_from_dataset.py` builds such a package but samples no reset states, so
+instead the env packages of some of the dataset's 1000 training problems are copies of the dataset's
+own (with their 32 reset states and scene profiles) in `data/tasks/<problem>/`, with each problem's
+PDDL in `data/problems/`. This table gives those packages task keys; `cli.py`'s `load_tasks` merges
+it the way it merges the Blocksworld instances. No agent runs on it, so its prompt is empty and the
+budget is nominal; a skill probe drives it through `agentic-robotics pool`.
 """
 
 from __future__ import annotations

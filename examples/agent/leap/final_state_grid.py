@@ -88,7 +88,7 @@ def final_frame(run_dir: Path) -> Image.Image | None:
 
 
 def task_of(row: dict[str, Any]) -> str:
-    """The LEAP rows say `variant`, the Rao rows `task`."""
+    """The LEAP rows say `variant`, the Blocksworld rows `task`."""
     return row.get("variant") or row.get("task") or "?"
 
 
@@ -173,7 +173,7 @@ def main() -> int:
         default=None,
         metavar="NAME",
         help="One grid NAME.png of every episode from every file, successes and failures together, "
-        "captioned ok/FAIL (the view used for the Rao pilot)",
+        "captioned ok/FAIL (the view used for the Blocksworld pilot)",
     )
     args = parser.parse_args()
     remap = tuple(args.remap.split("=", 1)) if args.remap else None

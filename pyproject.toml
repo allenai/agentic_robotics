@@ -22,7 +22,7 @@ dependencies = [
 [project.scripts]
 agentic-robotics = "agentic_robotics.adapters.toyblocks.cli:main"
 agentic-robotics-suite = "agentic_robotics.adapters.toyblocks.drivers.evaluate_suite:main"
-agentic-robotics-rao-suite = "agentic_robotics.adapters.toyblocks.drivers.rao_suite:main"
+agentic-robotics-blocksworld-suite = "agentic_robotics.adapters.toyblocks.drivers.blocksworld_suite:main"
 agentic-robotics-planbench = "agentic_robotics.adapters.toyblocks.drivers.planbench_run:main"
 agentic-robotics-planbench-domain = "agentic_robotics.adapters.toyblocks.drivers.planbench_domain:main"
 agentic-robotics-spell-build = "agentic_robotics.adapters.toyblocks.drivers.search_spell_build:main"

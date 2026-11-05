@@ -114,7 +114,7 @@ The experiments behind the released results:
   `agentic-robotics-spell-summary` tabulates a suite. (The drivers live in
   `src/agentic_robotics/adapters/toyblocks/drivers/`.)
 - **Blocksworld goals on color cubes**: closed-loop and open-loop suites
-  (`agentic-robotics-rao-suite`), and the language-only plan generation in PlanBench's format
+  (`agentic-robotics-blocksworld-suite`), and the language-only plan generation in PlanBench's format
   (`agentic-robotics-planbench`, `agentic-robotics-planbench-domain`).
 - **LEAP** (`agentic-robotics leap`): the experimentation phase in which the agent probes its
   skills before the task, and its evaluation suites (`agentic-robotics-suite`).

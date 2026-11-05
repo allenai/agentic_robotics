@@ -1,12 +1,12 @@
-"""Run the Rao suite for one mode and model: every instance, the chosen reset states, one
+"""Run the Blocksworld suite for one mode and model: every instance, the chosen reset states, one
 `agentic-robotics episode --plan-mode <mode>` subprocess per episode.
 
     # Inside the container (the subprocesses boot Isaac):
-    agentic-robotics-rao-suite run \\
+    agentic-robotics-blocksworld-suite run \\
         --mode closed --model opus-5.5 --instances 0-4 --parallel 2 \\
         --suite-dir <suite-dir>
 
-    agentic-robotics-rao-suite summarize --suite-dir <suite-dir>
+    agentic-robotics-blocksworld-suite summarize --suite-dir <suite-dir>
 
 Five sampled reset states per instance, three goal families at five and six blocks, so 30
 episodes per mode and model, the same reset-state indices in every mode so comparisons are
@@ -37,10 +37,10 @@ from agentic_robotics.adapters.toyblocks.drivers.evaluate_suite import (
     wait_for_launch_slot,
 )
 from agentic_robotics.adapters.toyblocks.leap.openrouter_budget import require_budget
-from agentic_robotics.adapters.toyblocks.release.rao_modes import MODES
-from agentic_robotics.adapters.toyblocks.tasks.rao_problems import all_problems
+from agentic_robotics.adapters.toyblocks.release.blocksworld_modes import MODES
+from agentic_robotics.adapters.toyblocks.tasks.blocksworld_problems import all_problems
 
-logger = logging.getLogger("agentic_robotics.examples.rao.run_suite")
+logger = logging.getLogger("agentic_robotics.examples.blocksworld.run_suite")
 
 EPISODE_COST_ESTIMATE_USD = 0.30
 """Planning figure per episode, the LEAP Oracle suite's $0.17-0.25 with a margin for six blocks."""

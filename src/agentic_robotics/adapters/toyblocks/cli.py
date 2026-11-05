@@ -65,9 +65,9 @@ from agentic_robotics.adapters.toyblocks import experiment, task_variants
 from agentic_robotics.adapters.toyblocks import runner_bootstrap as boot
 from agentic_robotics.adapters.toyblocks.config import TOYBLOCKS_TASKS, SkillBackend
 from agentic_robotics.adapters.toyblocks.maniflow_config import MANIFLOW_CONFIGS
+from agentic_robotics.adapters.toyblocks.tasks.blocksworld import blocksworld_tasks
 from agentic_robotics.adapters.toyblocks.tasks.le import le_tasks, letter_probe_tasks
 from agentic_robotics.adapters.toyblocks.tasks.library_swaps import library_swap_tasks
-from agentic_robotics.adapters.toyblocks.tasks.rao import rao_tasks
 from agentic_robotics.adapters.toyblocks.tasks.spell import spell_tasks
 
 if TYPE_CHECKING:
@@ -99,7 +99,8 @@ def load_tasks() -> dict[str, Any]:
     """
     tasks = dict(TOYBLOCKS_TASKS)
     tasks.update(boot.load_leap_tasks())
-    tasks.update(rao_tasks())  # The Rao release instances, defined in `tasks/rao.py`
+    # The Blocksworld release instances, defined in `tasks/blocksworld.py`
+    tasks.update(blocksworld_tasks())
     tasks.update(le_tasks())  # One LE training scene, for model-free skill trials
     # Untrained letters beside trained ones, for the per-letter probe
     tasks.update(letter_probe_tasks())
@@ -760,26 +761,28 @@ def run_episode_mode(args: argparse.Namespace, settings: ExperimentSettings) -> 
     so the tool set is checked against `EvaluationAgent` and the baseline's descriptions are
     served, and the run directory is prefixed with the baseline.
 
-    With `--plan-mode`, the episode is a Rao release evaluation: `release/rao_modes.py` runs the
-    closed or online loop on the skill server's own tool descriptions, and the run directory is
-    prefixed with the mode.
+    With `--plan-mode`, the episode is a Blocksworld release evaluation:
+    `release/blocksworld_modes.py` runs the closed or online loop on the skill server's own tool
+    descriptions, and the run directory is prefixed with the mode.
     """
     if args.plan_mode is not None:
         if args.baseline is not None:
             raise SystemExit("--plan-mode and --baseline are two evaluations; pass one.")
-        from agentic_robotics.adapters.toyblocks.release.rao_modes import rao_agentic_thread
+        from agentic_robotics.adapters.toyblocks.release.blocksworld_modes import (
+            blocksworld_agentic_thread,
+        )
 
         task = chosen_task(args, settings)
         config = prepare_scene(
             task,
             args,
             settings,
-            dir_prefix=f"rao-{args.plan_mode}-{task.task_slug.replace('_', '-')}",
+            dir_prefix=f"blocksworld-{args.plan_mode}-{task.task_slug.replace('_', '-')}",
         )
         boot.run_episode(
             boot.import_skill_module(config, args.skills, quiet_isaac=not args.verbose_isaac),
             config,
-            agent_thread=rao_agentic_thread,
+            agent_thread=blocksworld_agentic_thread,
             agent_thread_kwargs={"mode": args.plan_mode, "instance": args.instance},
             preflight=not args.no_preflight,
         )
@@ -1430,13 +1433,14 @@ def parse_args() -> argparse.Namespace:
         help="episode with --model-host claude-code: ceiling on tool-use round trips, the "
         "CLI's own stop (default: none; the motor cutoff and the call ceiling end the episode)",
     )
-    rao = parser.add_argument_group("episode, as a Rao release evaluation")
-    rao.add_argument(
+    blocksworld = parser.add_argument_group("episode, as a Blocksworld release evaluation")
+    blocksworld.add_argument(
         "--plan-mode",
         choices=("closed", "online"),
         default=None,
-        help="episode: run a Rao instance closed-loop (plan-act) or online (a committed "
-        "symbolic plan, each step's pixel chosen on the current image); see release/rao_modes.py",
+        help="episode: run a Blocksworld instance closed-loop (plan-act) or online (a committed "
+        "symbolic plan, each step's pixel chosen on the current image); see "
+        "release/blocksworld_modes.py",
     )
     leap.add_argument(
         "--model",

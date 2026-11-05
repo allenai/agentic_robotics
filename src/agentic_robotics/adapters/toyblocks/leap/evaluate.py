@@ -164,9 +164,9 @@ GRIPPER_OPEN_BELOW = 0.25
 SETTLE_DISPLACEMENT_M = 0.002
 """A goal block that moves no more than this across the settle syncs counts as at rest, whatever
 its reported velocity. The classifier's own gate reads PhysX velocities, and the top cube of a
-six-cube Rao tower reports a steady 0.04-0.05 m/s while sitting still (settle_probe, 2026-10-14,
-against the gate's 0.03), which would score a complete tower as a failure. Blocks that do not
-move are therefore at rest, whatever velocities they report."""
+six-cube Blocksworld tower reports a steady 0.04-0.05 m/s while sitting still (settle_probe,
+2026-10-14, against the gate's 0.03), which would score a complete tower as a failure. Blocks that
+do not move are therefore at rest, whatever velocities they report."""
 
 
 def classify_scene(server: ToyBlocksMCPServer) -> dict[str, Any]:

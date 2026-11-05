@@ -1,8 +1,8 @@
-"""Language-only plan generation on the Rao problems, in PlanBench's one-shot format, against one model.
+"""Language-only plan generation on the Blocksworld problems, in PlanBench's one-shot format, against one model.
 
 Every query is `planbench_domain.t1_query` (the domain intro, one solved example, the query ending at
 `[PLAN]`), with no image, as PlanBench's interface has none. Each of the six instances is queried
-`--samples` times (the thirty Rao task instances are six symbolic problems, so sampling stands in for
+`--samples` times (the thirty Blocksworld task instances are six symbolic problems, so sampling stands in for
 the reset states), with the previous instance (cyclic) as the solved example, as `prompt` defaults.
 The reply is parsed with PlanBench's parser and replayed with the domain's checker; validity and
 optimality are what is scored. Requests go to OpenRouter's chat-completions endpoint with the

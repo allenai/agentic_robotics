@@ -1,12 +1,12 @@
-"""Write the Rao task problems, `data/problems/rao_<family>_<blocks>.pddl`, one per instance.
+"""Write the Blocksworld task problems, `data/problems/blocksworld_<family>_<blocks>.pddl`, one per instance.
 
-    python examples/agent/task_gen/generate_rao_problems.py
+    python examples/agent/task_gen/generate_blocksworld_problems.py
 
 Each is a single-problem task (the legacy `data/problems/<slug>.pddl` form `task_variants`
 reads), whose package samples five reset states: the design's five random states are
 `agentic-robotics generate-env --task <slug> --reset-states 5 --generate-env`, and an
 episode runs on one of them with `--instance k`. The instances themselves, their goal texts
-and optimal plan lengths, come from `rao.problems`; this script only writes the files and
+and optimal plan lengths, come from `blocksworld.problems`; this script only writes the files and
 prints what it wrote.
 """
 
@@ -20,7 +20,7 @@ EXAMPLES_DIR = Path(__file__).resolve().parents[1]
 if str(EXAMPLES_DIR) not in sys.path:
     sys.path.insert(0, str(EXAMPLES_DIR))
 
-from agentic_robotics.adapters.toyblocks.tasks.rao_problems import all_problems
+from agentic_robotics.adapters.toyblocks.tasks.blocksworld_problems import all_problems
 
 PROBLEMS_DIR = Path(__file__).resolve().parents[3] / "data/problems"
 
@@ -31,7 +31,7 @@ def main() -> None:
         "--slugs",
         nargs="*",
         default=None,
-        help="Instances to write (default: all six), e.g. rao_tower_5",
+        help="Instances to write (default: all six), e.g. blocksworld_tower_5",
     )
     args = parser.parse_args()
     PROBLEMS_DIR.mkdir(parents=True, exist_ok=True)
