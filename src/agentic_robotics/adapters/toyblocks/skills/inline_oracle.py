@@ -108,8 +108,8 @@ class OracleToyBlocksEnv(ToyBlocksEnv):
 
         # ToyBlocks re-renders once after a reset. The RTX denoiser keeps several frames of
         # history, so one render leaves ghosts of the blocks' old positions in the first image.
-        self.base_env.cfg.num_rerenders_on_reset = max(
-            self.base_env.cfg.num_rerenders_on_reset, RESET_RERENDERS
+        self.base_env.cfg.num_renders_on_reset = max(
+            self.base_env.cfg.num_renders_on_reset, RESET_RERENDERS
         )
 
 
