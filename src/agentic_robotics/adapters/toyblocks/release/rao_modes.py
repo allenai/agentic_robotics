@@ -464,9 +464,6 @@ async def run_rao_episode(server: ToyBlocksMCPServer, *, mode: str, instance: in
             if instance is not None:
                 await on_simulator_thread(server, lambda: reset_to_instance(server, instance))
                 logger.info(f"Scene reset to reset state {instance}.")
-                if hasattr(server, "seed_quirks_for"):
-                    # Quirk draws per task and instance, not per process.
-                    server.seed_quirks_for(config.task_config.task_slug, instance)
             async with MCPClient(composed.server) as mcp_client:
                 try:
                     if mode == "closed":

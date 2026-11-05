@@ -258,7 +258,7 @@ class OracleSceneLoader:
     """Builds and disposes scenes on the simulator's thread, for the page's task menu.
 
     What `server.py` asks of a task loader: `tasks`, `describe(name)`, `load(name)` and
-    `viser_url()`. A scene's whole construction -- gym environment, curobo warmup, viser server --
+    `viser_url()`. A scene's whole construction -- gym environment, skill engine, viser server --
     runs inside one dispatched job, so it happens on the thread that owns Isaac. No episode can be
     running while a load is applied, so nothing else is waiting on that thread meanwhile.
     """
@@ -425,7 +425,7 @@ class OracleSceneLoader:
         logger.info(
             f"Wrote the resolved configuration to {experiment.write_resolved_config(config)}."
         )
-        logger.info(f"Building scene '{name}' (gym env, curobo, viser)...")
+        logger.info(f"Building scene '{name}' (gym env, skills, viser)...")
         server_class = boot.sim_thread_server_class(self._skills, config)
         self._current = server_class(self._dispatcher, config)
 
@@ -1116,7 +1116,7 @@ def run_serve_mode(args: argparse.Namespace, settings: ExperimentSettings) -> No
 
     checkpoint = maniflow.safetensors_path
     train_config = (
-        boot.toyblocks_root() / "baselines/hvla/examples/Franka/train_maniflow_multimodal.yaml"
+        boot.toyblocks_root() / "maniflow-tb/examples/Franka/train_maniflow_multimodal.yaml"
     )
     policy_config = maniflow.checkpoint_dir / "config.yaml"
     stats = maniflow.checkpoint_dir / "stats.json"
@@ -1125,7 +1125,7 @@ def run_serve_mode(args: argparse.Namespace, settings: ExperimentSettings) -> No
         (checkpoint, "config.maniflow.safetensors_path"),
         (policy_config, "the checkpoint's config.yaml"),
         (stats, "the checkpoint's stats.json"),
-        (train_config, "the HVLA train config"),
+        (train_config, "the maniflow-tb train config"),
     ):
         if not path.is_file():
             raise SystemExit(f"No file at {path}, named by {what}.")
@@ -1133,7 +1133,7 @@ def run_serve_mode(args: argparse.Namespace, settings: ExperimentSettings) -> No
     require_free_ports(maniflow.policy_port)
 
     python = boot.resolve_isaac_python(args.python)
-    hvla_path = boot.toyblocks_root() / "baselines/hvla"
+    hvla_path = boot.toyblocks_root() / "maniflow-tb"
     env = dict(os.environ)
     env["H_VLA_PATH"] = str(hvla_path)
     env["PYTHONPATH"] = ":".join(filter(None, (env.get("PYTHONPATH"), str(hvla_path))))

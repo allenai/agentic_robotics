@@ -399,7 +399,7 @@ def parse_args() -> argparse.Namespace:
     run.add_argument(
         "--skills",
         default=None,
-        help="Passed to every episode: the skill module to drive (inline_oracle for the scripted skills, quirk_skills for the quirk space; default: the configured backend's)",
+        help="Passed to every episode: the skill module to drive (inline_oracle for the scripted skills; default: the configured backend's)",
     )
     run.add_argument(
         "--backend",

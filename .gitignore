@@ -223,3 +223,7 @@ runs/
 suites/
 checkpoints/
 datasets/
+
+# Task packages are generated on demand with ToyBlocks's codegen (agentic-robotics generate-env)
+data/tasks/*
+!data/tasks/.gitkeep

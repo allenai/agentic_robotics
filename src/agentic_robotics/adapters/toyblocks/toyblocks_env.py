@@ -5,6 +5,10 @@
 # `SimulationApp` class has been instantiated. It is a requirement of the
 # Carbonite framework's extension/runtime plugin system.
 # ========================================================================
+# The venv's Warp must be imported before the app starts: Isaac Sim's omni.warp.core extension
+# otherwise puts its bundled (older) Warp first on sys.path, and the oracle skills' cuRobo v2 needs
+# the Warp version ToyBlocks pins (the same order as `blocksuite.cli.isaac_app.launch_app`).
+import warp  # noqa: F401, I001
 from isaaclab.app import AppLauncher
 
 _SIMULATION_APP = AppLauncher(headless=True, enable_cameras=True, device="cuda:0").app

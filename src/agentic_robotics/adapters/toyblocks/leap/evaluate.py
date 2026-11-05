@@ -182,8 +182,8 @@ def open_gripper_for_scoring(server: ToyBlocksMCPServer) -> None:
     """Open the gripper the way the serving skill module does.
 
     The ManiFlow server ramps the gripper command through `ToyBlocksEnv.step`; the scripted
-    and quirky servers write the Robotiq target through their motion layer and settle, and
-    forget the held block, since the release detaches it from the planner. Calling only the
+    server opens it through its motion layer, which settles and forgets the held
+    block. Calling only the
     ManiFlow path would make a scripted-skills episode that ends with the gripper closed raise
     during scoring and be recorded with no success value.
     """
@@ -191,7 +191,6 @@ def open_gripper_for_scoring(server: ToyBlocksMCPServer) -> None:
         server._command_gripper(close=False)
         return
     server._motion.open_gripper()
-    server._held_block = None
 
 
 def score_scene(server: ToyBlocksMCPServer, output_dir: Path | None = None) -> dict[str, Any]:

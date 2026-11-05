@@ -5,7 +5,7 @@
 
 task = "ai2_stacked"          # key into the task table, run when --task is not given
 model = "fable-5.1"           # key into OPENAI_API_MODEL_CONFIGS
-skill_backend = "oracle"      # "oracle" (scripted skills, cuRobo) or "maniflow" (policy server)
+skill_backend = "oracle"      # "oracle" (scripted vecgen skills) or "maniflow" (policy server)
 maniflow = "LEA"              # key into MANIFLOW_CONFIGS: the checkpoint `serve` and the ManiFlow skills use
 viewer = true
 camera_name = "front_camera"
@@ -14,8 +14,7 @@ action_horizon = 25
 
 [oracle]                      # the scripted skills' parameters (config.OracleConfig)
 settle_steps = 10
-max_samples = 12
-retract_height_m = 0.05
 pointing_error_ratio = 1.2
-rl_max_steps = 100
-rl_settle_steps = 10
+skill_timeout_steps = 1500
+release_settle_steps = 25
+return_home_steps = 75

@@ -67,7 +67,7 @@ class ExperimentSettings:
     """Camera the agent sees and the video records."""
 
     rng_seed: int = 1612
-    """Seed for the scene draws and the quirk skills."""
+    """Seed for the scene draws."""
 
     action_horizon: int = 25
     """ManiFlow action chunk length."""

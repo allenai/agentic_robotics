@@ -19,7 +19,7 @@ agents working in this repo.
 | `src/agentic_robotics/core/` | The MCP host, the model client (any OpenAI-compatible endpoint; OpenRouter by default), transcripts, images, cameras |
 | `src/agentic_robotics/adapters/toyblocks/` | The ToyBlocks adapter: the `agentic-robotics` CLI, the task tables, the scripted and ManiFlow skill servers, the LEAP experimentation phase, the Search & Spell scorer, and under `drivers/` the suite and build drivers behind the released experiments |
 | `examples/` | A no-simulator example (`mcp_image.py`) and, under `agent/`, probes and renderers (`leap/`, `flip_trials.py`, `video_render.py`) and the PDDL problem generators (`task_gen/`) |
-| `data/` | PDDL problems, generated task packages (`data/tasks/<slug>/`), block-face maps, checkpoint block-asset records, the robot description the scripted skills plan with, example states |
+| `data/` | PDDL problems, generated task packages (`data/tasks/<slug>/`, built on first use), block-face maps, checkpoint block-asset records, example states |
 | `tests/` | `pytest` |
 
 ## Install
@@ -32,17 +32,23 @@ uv sync --extra dev --extra claudecode && uv run pytest tests
 uv run python examples/mcp_image.py --help
 ```
 
-Running a task needs ToyBlocks, which brings Isaac Sim 5.1, Isaac Lab and cuRobo. Install
-ToyBlocks into an environment by following its README, then install this package into the same
-environment:
+Running a task needs ToyBlocks, which brings Isaac Sim 5.1, Isaac Lab and cuRobo v2. This repo is
+ToyBlocks's `agentic_robotics/` submodule; install ToyBlocks into an environment by following its
+README, then install this package into the same environment:
 
 ```bash
 uv pip install --python <that environment's python> -e ".[toyblocks]"
 ```
 
-The adapter finds ToyBlocks through the installed package; an ordinary install works, since
-generated task packages live in this repo (`data/tasks/`, imported as `agentic_robotics.tasks.<slug>`)
-and ToyBlocks's tree is never written to.
+The MCP SDK needs newer `starlette`, `uvicorn` and `idna` than the versions Isaac Sim pins; the
+install upgrades those three, which the headless simulator does not use (they serve Isaac's
+livestream and web services).
+
+The adapter finds ToyBlocks through the installed package (or, without one, as the checkout this
+repo is a submodule of). Task packages are generated with ToyBlocks's codegen on first use, into
+`data/tasks/` (imported as `agentic_robotics.tasks.<slug>`, not tracked in git): pass
+`--generate-env` to a run, or build a task's packages beforehand with
+`agentic-robotics generate-env --task <key>`. ToyBlocks's tree is never written to.
 Set `OMNI_KIT_ACCEPT_EULA=YES` for Isaac.
 
 Episodes call the model through OpenRouter and cost money. Put the key in `OPENROUTER_API_KEY` or
@@ -68,8 +74,8 @@ agentic-robotics portal                                        # browse finished
 agentic-robotics portal --static                               # or write them as pages under <runs dir>/portal/
 ```
 
-`--backend oracle` selects the scripted skills (`skills/inline_oracle.py`), which plan with cuRobo
-and need no policy server. Without it the backend is the experiment file's `skill_backend`. The ManiFlow
+`--backend oracle` selects the scripted skills (`skills/inline_oracle.py`): ToyBlocks's vecgen skills,
+planned with cuRobo v2, which need no policy server. Without it the backend is the experiment file's `skill_backend`. The ManiFlow
 skills need the policy server up first, in its own shell:
 
 ```bash

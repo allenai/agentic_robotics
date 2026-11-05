@@ -75,12 +75,10 @@ cross the seam: no live Python objects, no tensors, no environment handles. `cor
   (`get_zoomed_image`, `pick`, `stack`, `place_on_table`, `rotate`, `flip`, `return_home`,
   `open_gripper`, `close_gripper`), every body abstract. **`maniflow_mcp_server.py`** drives a
   served ManiFlow policy over a websocket. The two surfaces differ on purpose.
-- **`skills/`** implements them. `inline_oracle.py` is the scripted skills, planning with cuRobo
-  against the live Isaac Lab scene; `rotate` and `flip` run small RL policies through
-  `rl_executors.py` under the PD gains in `stiffness_profiles.py`, and `ik.py` is the seeded
-  inverse kinematics the short segments use. `quirk_skills.py` is the same module with the LEAP
-  deficiencies layered on, kept separate so the scripted skills stay the ground truth they are
-  measured against. `maniflow_skills.py` is the learned-policy side.
+- **`skills/`** implements them. `inline_oracle.py` is the scripted skills' server; its motion
+  layer, `vecgen_motion.py`, runs ToyBlocks's vecgen skills (pick, place, flip, rotate; cuRobo v2
+  planning) on the live Isaac Lab scene, wired like ToyBlocks's evaluation low-level oracle
+  (`blocksuite.eval.ll_oracle`). `maniflow_skills.py` is the learned-policy side.
 - **Around the boot**: `task_variants.py`; the checks that refuse to start a run on a scene the
   model cannot act in (`block_asset_check.py`, `scene_preflight.py`, `reset_state_check.py`);
   `block_pointing.py` (which block a pointed pixel names); `human_model_client.py`; `portal.py`,

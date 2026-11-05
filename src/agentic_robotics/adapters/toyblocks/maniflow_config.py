@@ -30,7 +30,7 @@ TRAINING_PD_GAINS = PDGains(
 )
 """The arm gains every released checkpoint was trained under, in both PD modes: each checkpoint's
 `stats.json` records these columns with the minimum equal to the maximum on every joint. The same
-numbers are the "medium" profile in `skills/stiffness_profiles.py`."""
+numbers are ToyBlocks's "medium" stiffness profile (`blocksuite.utils.stiffness_profiles`)."""
 
 
 @dataclass(frozen=True)

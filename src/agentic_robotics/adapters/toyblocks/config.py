@@ -34,7 +34,7 @@ class SkillBackend(StrEnum):
     """Learned ManiFlow policies, reached over a websocket."""
 
     ORACLE = "oracle"
-    """Ground-truth TAMP motion plans and privileged RL-trained policies."""
+    """Scripted ToyBlocks vecgen skills (cuRobo v2 planning) on privileged simulator state."""
 
 
 PROBLEMS_DIR = Path(__file__).resolve().parents[4] / "data/problems"
@@ -238,23 +238,21 @@ class OracleConfig:
     """Configuration for the ground-truth (oracle) skills."""
 
     settle_steps: int = 10
-    """Steps simulated to settle the scene after the TAMP backend resets it."""
-
-    max_samples: int = 12
-    """Maximum number of candidate poses a generator may sample before a skill gives up."""
-
-    retract_height_m: float = 0.05
-    """Height the end-effector rises after a skill, to clear the block it acted upon."""
+    """Ticks simulated to settle the arm after it returns home."""
 
     pointing_error_ratio: float = 1.2
     """A pointing pixel is rejected if it's off by more than this ratio of the block's projected
     radius."""
 
-    rl_max_steps: int = 100
-    """Maximum step budget for one rollout of an RL-trained skill policy."""
+    skill_timeout_steps: int = 1500
+    """Ticks (25 Hz) one skill may take before it is abandoned as failed."""
 
-    rl_settle_steps: int = 10
-    """Steps simulated after switching to the RL checkpoint's stiffness profile."""
+    release_settle_steps: int = 25
+    """Ticks simulated after a place, flip, rotate or gripper command, so the block comes to rest
+    before the scene is observed (about 1 s)."""
+
+    return_home_steps: int = 75
+    """Ticks over which `return_home` ramps the arm joints to their home configuration."""
 
 
 DEFAULT_RUNS_ROOT = Path(

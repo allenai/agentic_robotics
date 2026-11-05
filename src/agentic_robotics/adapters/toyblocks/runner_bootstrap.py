@@ -44,8 +44,8 @@ logger = logging.getLogger("agentic_robotics.examples.runner_bootstrap")
 
 AGENTIC_ROBOTICS_ROOT = Path(__file__).resolve().parents[4]
 
-NESTED_TOYBLOCKS_ROOT = Path(__file__).resolve().parents[6]
-"""Where ToyBlocks sits when this repo is cloned under it (the nested layout)."""
+NESTED_TOYBLOCKS_ROOT = AGENTIC_ROBOTICS_ROOT.parent
+"""Where ToyBlocks sits when this repo is its `agentic_robotics/` submodule (the nested layout)."""
 
 
 @functools.cache
@@ -60,13 +60,13 @@ def toyblocks_root() -> Path:
     repo cloned under a ToyBlocks checkout) is tried next, and only a machine where neither holds
     is an error. The answer is cached, so the lookup runs once per process.
 
-    :return: The checkout root, the directory holding `src/toyblocks`
+    :return: The checkout root, the directory holding `src/blocksuite`
     :raises SystemExit: If neither route finds one
     """
     spec = importlib.util.find_spec("blocksuite")
     if spec is not None and spec.origin is not None:
         return Path(spec.origin).resolve().parents[2]
-    if (NESTED_TOYBLOCKS_ROOT / "src/toyblocks").is_dir():
+    if (NESTED_TOYBLOCKS_ROOT / "src/blocksuite").is_dir():
         return NESTED_TOYBLOCKS_ROOT
     raise SystemExit(
         "Cannot find the ToyBlocks checkout. It is neither importable from this interpreter "
@@ -188,17 +188,15 @@ SKILL_MODULES = {"oracle": "inline_oracle", "maniflow": "maniflow_skills"}
 """Module holding the skill surface for each `SkillBackend`. Importing one boots Isaac Sim."""
 
 SKILLS_PACKAGE = "agentic_robotics.adapters.toyblocks.skills"
-"""Where a bare skill-module name such as `quirk_skills` resolves; a dotted name is imported as
+"""Where a bare skill-module name such as `inline_oracle` resolves; a dotted name is imported as
 is."""
 
 SKILL_MODULE_BACKENDS = {
     "inline_oracle": "oracle",
-    "quirk_skills": "oracle",
     "maniflow_skills": "maniflow",
 }
 """The `SkillBackend` each known skill module implements, for `agentic-robotics --skills` to derive
-`--backend` from. A module absent here needs `--backend` spelled out. It is what lets the
-scripted skills and `quirk_skills` be selected without editing `config.py`."""
+`--backend` from. A module absent here needs `--backend` spelled out."""
 
 
 def default_skill_module(backend: SkillBackend) -> str:

@@ -21,7 +21,6 @@ from __future__ import annotations
 import argparse
 import json
 import logging
-import os
 import subprocess
 import sys
 import threading
@@ -105,13 +104,8 @@ def run_one(args: argparse.Namespace, slug: str, instance: int) -> dict[str, Any
     log_path = args.suite_dir / "logs" / f"{slug}_{instance}.log"
     log_path.parent.mkdir(parents=True, exist_ok=True)
     started = time.time()
-    env = os.environ.copy()
-    if args.quirks:
-        env["AGENTIC_QUIRKS"] = args.quirks
     with log_path.open("w", encoding="utf-8") as log:
-        completed = subprocess.run(
-            command, stdout=log, stderr=subprocess.STDOUT, check=False, env=env
-        )
+        completed = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, check=False)
     text = log_path.read_text(encoding="utf-8", errors="replace")
     match = RUN_DIR_PATTERN.search(text)
     run_dir = Path(match.group(1)) if match else None
@@ -129,7 +123,6 @@ def run_one(args: argparse.Namespace, slug: str, instance: int) -> dict[str, Any
         "exit_code": completed.returncode,
         "run_dir": str(run_dir) if run_dir else None,
         "seconds": round(time.time() - started, 1),
-        "quirks": json.loads(args.quirks) if args.quirks else None,
         "success": summary.get("success") if summary else None,
         "summary": summary,
     }
@@ -207,11 +200,6 @@ def main() -> None:
         "--tasks", nargs="*", default=None, help="Instance slugs (default: all six)"
     )
     runner.add_argument("--skills", default="inline_oracle", help="Skill module (inline_oracle)")
-    runner.add_argument(
-        "--quirks",
-        default=None,
-        help="JSON object of QuirkConfig overrides for every episode (AGENTIC_QUIRKS), recorded in each row",
-    )
     runner.add_argument(
         "--physx-scale",
         type=int,
