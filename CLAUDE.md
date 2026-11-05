@@ -229,8 +229,8 @@ the copy and say why.
 | Location | Purpose |
 | --- | --- |
 | `src/` | The library: `core/`, the adapter, the `agentic-robotics` CLI and the suite drivers it runs |
-| `examples/` | A no-simulator example, and under `agent/` the probes, prototypes and task generators; nothing here is imported by the CLI |
-| `scripts/` | `openrouter_spend.sh`, the budget check; `run_suite_local.sh`, an evaluation suite on one machine |
+| `examples/` | A no-simulator example, `mcp_image.py` |
+| `scripts/` | The tools behind the released data and figures (the PDDL problem generators under `task_gen/`, renderers and probes), `openrouter_spend.sh`, the budget check, and `run_suite_local.sh`, an evaluation suite on one machine; nothing here is imported by the CLI |
 | `data/` | PDDL problems, generated task packages (`tasks/<slug>/`), block-face maps, checkpoint block-asset records, the robot description, example states. Removing a package costs an Isaac boot to rebuild, so say when you do |
 | `tests/` | `pytest` |
 
@@ -275,7 +275,7 @@ not settled; ask before assuming either.
 
 **Task:** wire episode setup for a new recorder and a viewer refresh into the ToyBlocks adapter.
 
-**Wrong:** draft it under `examples/agent/`, report that it wants promoting, and wait for a
+**Wrong:** draft it as a standalone script under `scripts/`, report that it wants promoting, and wait for a
 developer to migrate it line by line into `toyblocks_env.py`.
 
 **Right:** agree the design in conversation, implement it in `toyblocks_env.py` with the

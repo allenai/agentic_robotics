@@ -10,13 +10,13 @@ block.
     agentic-robotics pool --task ai2_easy --pool-port 8101
 
     # Five sideways flips per direction, then five upright controls
-    python examples/agent/flip_trials.py run --out-dir RUN --pool-run-dir POOL \
+    python scripts/flip_trials.py run --out-dir RUN --pool-run-dir POOL \
         --base-state runs/gripper_check_20260929/base_state.json \
         --orientations o6,o14 --directions front,back,left,right --trials 5
-    python examples/agent/flip_trials.py run ... --orientations base --directions front --trials 5
+    python scripts/flip_trials.py run ... --orientations base --directions front --trials 5
 
     # After the pool is stopped and its video.mp4 is finalized
-    python examples/agent/flip_trials.py sheet --out-dir RUN --pool-run-dir POOL
+    python scripts/flip_trials.py sheet --out-dir RUN --pool-run-dir POOL
 
 **Start state.** Each trial writes the base state with the target block moved to a fresh spot
 (x 0.42-0.58 m, y -0.18-0.18 m, clear of the other blocks, as on 2026-09-29) and its orientation
@@ -60,7 +60,7 @@ from scipy.spatial.transform import Rotation
 
 from agentic_robotics.adapters.toyblocks.block_orientations import ORI_QUATERNIONS
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from video_render import open_reader
 
 from agentic_robotics.core.cameras import CameraModel

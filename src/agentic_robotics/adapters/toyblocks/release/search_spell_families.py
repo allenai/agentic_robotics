@@ -30,7 +30,7 @@ color cubes and their stack layout over numbered block slots (targets fill the f
 Block names are PDDL object names: `block_<letter>` for the patterned collection
 (`train_blocks_large`), `block_NNNNN` for the unpatterned one (`eval_blocks_36_0`), and the
 training data's six color cubes. The face maps under `data/block_faces/` come from
-`examples/agent/decode_block_faces.py`.
+`scripts/decode_block_faces.py`.
 """
 
 from __future__ import annotations

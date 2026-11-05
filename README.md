@@ -18,7 +18,8 @@ agents working in this repo.
 | --- | --- |
 | `src/agentic_robotics/core/` | The MCP host, the model client (any OpenAI-compatible endpoint; OpenRouter by default), transcripts, images, cameras |
 | `src/agentic_robotics/adapters/toyblocks/` | The ToyBlocks adapter: the `agentic-robotics` CLI, the task tables, the scripted and ManiFlow skill servers, the LEAP experimentation phase, the Search & Spell scorer, and under `drivers/` the suite and build drivers behind the released experiments |
-| `examples/` | A no-simulator example (`mcp_image.py`) and, under `agent/`, probes and renderers (`leap/`, `flip_trials.py`, `video_render.py`) and the PDDL problem generators (`task_gen/`) |
+| `examples/` | A no-simulator example, `mcp_image.py` |
+| `scripts/` | The tools behind the released data and figures: the PDDL problem generators (`task_gen/`), renderers and probes (`leap/`, `flip_trials.py`, `video_render.py`), the budget check and the local suite script |
 | `data/` | PDDL problems, generated task packages (`data/tasks/<slug>/`, built on first use), block-face maps, checkpoint block-asset records, example states |
 | `tests/` | `pytest` |
 

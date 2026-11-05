@@ -1371,7 +1371,7 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=None,
         help="leap: the hand-holding setting; copy this directory's example tasks "
-        "(examples/agent/handholding_tasks.py) into the workspace's logs/example_tasks/ in place "
+        "(scripts/handholding_tasks.py) into the workspace's logs/example_tasks/ in place "
         "of the two example initial states",
     )
     leap.add_argument(

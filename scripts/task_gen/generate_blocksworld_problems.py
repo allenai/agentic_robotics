@@ -1,6 +1,6 @@
 """Write the Blocksworld task problems, `data/problems/blocksworld_<family>_<blocks>.pddl`, one per instance.
 
-    python examples/agent/task_gen/generate_blocksworld_problems.py
+    python scripts/task_gen/generate_blocksworld_problems.py
 
 Each is a single-problem task (the legacy `data/problems/<slug>.pddl` form `task_variants`
 reads), whose package samples five reset states: the design's five random states are
@@ -16,13 +16,13 @@ import argparse
 import sys
 from pathlib import Path
 
-EXAMPLES_DIR = Path(__file__).resolve().parents[1]
-if str(EXAMPLES_DIR) not in sys.path:
-    sys.path.insert(0, str(EXAMPLES_DIR))
+SCRIPTS_DIR = Path(__file__).resolve().parents[1]
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
 from agentic_robotics.adapters.toyblocks.tasks.blocksworld_problems import all_problems
 
-PROBLEMS_DIR = Path(__file__).resolve().parents[3] / "data/problems"
+PROBLEMS_DIR = Path(__file__).resolve().parents[2] / "data/problems"
 
 
 def main() -> None:

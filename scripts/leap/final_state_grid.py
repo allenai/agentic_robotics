@@ -4,7 +4,7 @@ A check on the goal classifier: two image grids per suite, one of every
 episode scored a success and one of every failure, so a person can confirm the labels by eye
 and see the failure modes at a glance.
 
-    python examples/agent/leap/final_state_grid.py --episodes SUITE/episodes.jsonl --out DIR \\
+    python scripts/leap/final_state_grid.py --episodes SUITE/episodes.jsonl --out DIR \\
         [--remap <recorded prefix>=<local prefix>]
 
 The tile is the last frame of the run's `video.mp4`, which the scorer recorded after settling

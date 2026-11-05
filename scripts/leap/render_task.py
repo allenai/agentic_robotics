@@ -1,6 +1,6 @@
 """Render the front camera's view of a task variant's sampled reset states to PNG files.
 
-    python examples/agent/leap/render_task.py \\
+    python scripts/leap/render_task.py \\
         --pddl data/problems/side_effects/side_effects_00.pddl --states 4 \\
         --out-dir <renders dir>
 
@@ -35,9 +35,9 @@ import sys
 from pathlib import Path
 from typing import Any
 
-EXAMPLES_DIR = Path(__file__).resolve().parents[1]
-if str(EXAMPLES_DIR) not in sys.path:
-    sys.path.insert(0, str(EXAMPLES_DIR))
+SCRIPTS_DIR = Path(__file__).resolve().parents[1]
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
 from agentic_robotics.adapters.toyblocks import runner_bootstrap as boot
 from agentic_robotics.adapters.toyblocks import task_variants

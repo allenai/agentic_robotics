@@ -6,9 +6,9 @@ which the Search & Spell generator (`search_spell_env.py`) and scorer (`leap/spe
 read, so neither of them needs USD at run time::
 
     # In the container, where pxr lives; write to a directory the host user can copy from
-    python examples/agent/decode_block_faces.py \\
+    python scripts/decode_block_faces.py \\
         --library eval_blocks_36_0 --out data/block_faces
-    python examples/agent/decode_block_faces.py \\
+    python scripts/decode_block_faces.py \\
         --library train_blocks_large --out data/block_faces
 
 Method. Each block USD carries one decal mesh per face, a quad whose vertices have texture coordinates

@@ -1,7 +1,7 @@
 """Write the hand-holding setting's example tasks: one per evaluation variant, in the phase's scene.
 
     # Inside the container (reset_states.pkl holds numpy arrays):
-    python examples/agent/handholding_tasks.py
+    python scripts/handholding_tasks.py
 
 The hand-holding experimentation phase starts with one example task
 instance from each variant used in evaluation. The phase's simulators all run `ai2_stacked_09`, so
@@ -26,9 +26,9 @@ import sys
 from pathlib import Path
 from typing import Any
 
-EXAMPLES_DIR = Path(__file__).resolve().parent
-REPO_ROOT = EXAMPLES_DIR.parents[1]
-sys.path.insert(0, str(EXAMPLES_DIR))
+SCRIPTS_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPTS_DIR.parent
+sys.path.insert(0, str(SCRIPTS_DIR))
 
 from agentic_robotics.adapters.toyblocks import task_variants
 from agentic_robotics.adapters.toyblocks.leap.prompts.evaluation import (
@@ -43,8 +43,8 @@ CLUTTERED = REPO_ROOT / "data" / "example_states" / "ai2_stacked.json"
 """The `ai2_stacked_09` reset state with all its blocks: the one Ai2 Stack example."""
 
 TASKS_DIR = REPO_ROOT / "data" / "tasks"
-OUT_DIR = EXAMPLES_DIR / "data" / "example_tasks"
-KEY_FILE = EXAMPLES_DIR / "data" / "example_tasks_key.json"
+OUT_DIR = SCRIPTS_DIR / "data" / "example_tasks"
+KEY_FILE = SCRIPTS_DIR / "data" / "example_tasks_key.json"
 """Which variant each example file is; kept outside `OUT_DIR` so it never reaches the workspace."""
 SHUFFLE_SEED = 0
 BLOCKS = ("block_a", "block_i", "block_2")

@@ -15,7 +15,7 @@ No parent simulator is booted. The spawner reads the parent's composed server on
 descriptions, so the parent here is composed over the pool URL too, and the trials' starting
 scene is what the pool simulator's `get_sim_state` returns at the start.
 
-    python examples/agent/leap/delegation_check.py --pool-url http://127.0.0.1:8101/mcp \\
+    python scripts/leap/delegation_check.py --pool-url http://127.0.0.1:8101/mcp \\
         --out-dir <runs dir>/delegation_check
 
 Writes `summary.json` and `summary.md` under the output directory; the workspace under it holds
@@ -34,9 +34,9 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 
-EXAMPLES_DIR = Path(__file__).resolve().parents[1]
-if str(EXAMPLES_DIR) not in sys.path:
-    sys.path.insert(0, str(EXAMPLES_DIR))
+SCRIPTS_DIR = Path(__file__).resolve().parents[1]
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
 from mcp import Client as MCPClient
 

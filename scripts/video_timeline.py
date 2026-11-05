@@ -58,8 +58,8 @@ is whatever spends the seconds the highlights and final card leave over, clamped
 `MONTAGE_SPEED_RANGE`. Highlighted skills are shown exactly as in the full cut, so a highlight
 there reads the same as its slide still.
 
-    python examples/agent/video_timeline.py <run-dir> [--cut full|short] [--looks folded|segments] [--out PATH] [--edit PATH]
-    python examples/agent/video_timeline.py <run-dir> --draft-edit [--force]
+    python scripts/video_timeline.py <run-dir> [--cut full|short] [--looks folded|segments] [--out PATH] [--edit PATH]
+    python scripts/video_timeline.py <run-dir> --draft-edit [--force]
 """
 
 from __future__ import annotations

@@ -20,8 +20,8 @@ follows it call by call with the chip, the quote and the footer clock. The quote
 as a skill segment's would be, but is on screen only while that call's footage plays, since the
 montage takes its length from the footage and not from the reading time: it is there to pause on.
 
-    python examples/agent/video_render.py <run-dir> [--timeline PATH] [--out PATH] [--seconds N] [--crf N]
-    python examples/agent/video_render.py <run-dir> --stills DIR [--timeline PATH]
+    python scripts/video_render.py <run-dir> [--timeline PATH] [--out PATH] [--seconds N] [--crf N]
+    python scripts/video_render.py <run-dir> --stills DIR [--timeline PATH]
 
 `--stills` writes one PNG per highlighted skill segment instead of a video -- the composite as the
 video shows it, at the first frame of the skill (the scene the model reasoned about, with the point
