@@ -33,11 +33,15 @@ uv run python examples/mcp_image.py --help
 ```
 
 Running a task needs ToyBlocks, which brings Isaac Sim 5.1, Isaac Lab and cuRobo v2. This repo is
-ToyBlocks's `agentic_robotics/` submodule; install ToyBlocks into an environment by following its
-README, then install this package into the same environment:
+ToyBlocks's `agentic_robotics/` submodule, and ToyBlocks's `agentic` install extra installs it
+(editable, from the submodule) together with what its skills need from ToyBlocks's serving package;
+follow the [Agentic robotics setup](https://allenai.github.io/ToyBlocks/docs/user_guide/workflows/installation_and_setup_instructions.html#agentic-robotics-setup)
+on ToyBlocks's installation page (`uv pip install -e ".[dev,isaac,torch-cu128,vecgen,agentic]"` in
+the ToyBlocks checkout, then the assets download). To install a checkout of this repo that is not
+that submodule into an existing ToyBlocks environment instead:
 
 ```bash
-uv pip install --python <that environment's python> -e ".[toyblocks]"
+uv pip install --python <that environment's python> -e ".[toyblocks]" msgpack websockets
 ```
 
 The MCP SDK needs newer `starlette`, `uvicorn` and `idna` than the versions Isaac Sim pins; the
