@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import functools
 import logging
 from abc import ABC, abstractmethod
 from inspect import cleandoc, ismethod, signature
@@ -9,6 +10,7 @@ from typing import TYPE_CHECKING, Literal
 
 from mcp.server import MCPServer
 from mcp.server.mcpserver import Image as MCPImage  # noqa: TC002 (used for MCP tool registration)
+from mcp.server.mcpserver.exceptions import ToolError
 
 from agentic_robotics.adapters.toyblocks.config import ToyBlocksConfig
 from agentic_robotics.adapters.toyblocks.errors import InvalidPixelError
@@ -67,6 +69,33 @@ def assert_matches_declaration(
         f"  declared: ({', '.join(declared_params)}) -> {declared_return}\n"
         f"  actual:   ({', '.join(actual_params)}) -> {actual_return}"
     )
+
+
+def reported_to_model(skill):  # noqa: ANN001, ANN201 (the skill's own signature is what MCP reads)
+    """Make a skill's failure text reach the model.
+
+    The skills fail loudly on purpose: `OracleSkillError`, `InvalidPixelError` and the servers'
+    `RuntimeError`s are written for the model, which decides what to do next from them. The MCP
+    SDK hands the model the text of a `ToolError` only; any other exception reaches it as the bare
+    "Error executing tool <name>" and keeps its text on the server (mcp >= 2.1; 2.0 forwarded every
+    exception's text, which is what the released experiments ran under). So every exception a
+    skill raises is re-raised as a `ToolError` carrying its text, and the SDK prefixes the tool's
+    name. A `ToolError` the skill raised itself passes through.
+
+    :param skill: A bound skill coroutine function
+    :return: The same skill, with its failures reported to the model
+    """
+
+    @functools.wraps(skill)
+    async def reported(*args, **kwargs):  # noqa: ANN002, ANN003, ANN202
+        try:
+            return await skill(*args, **kwargs)
+        except ToolError:
+            raise
+        except Exception as exc:
+            raise ToolError(str(exc)) from exc
+
+    return reported
 
 
 class ToyBlocksMCPServer(ABC):
@@ -151,7 +180,7 @@ class ToyBlocksMCPServer(ABC):
             )
 
         description = self._tool_description(skill)
-        self.mcp.tool(title=title, description=description)(skill)
+        self.mcp.tool(title=title, description=description)(reported_to_model(skill))
 
     def _declaring_member(self, tool: Callable) -> Callable | None:
         """Retrieve the furthest ancestor's definition of `tool`."""
