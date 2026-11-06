@@ -84,7 +84,10 @@ planned with cuRobo v2, which need no policy server. Without it the backend is t
 skills need the policy server up first, in its own shell:
 
 ```bash
-agentic-robotics serve                                         # serves the checkpoint the experiment file names
+agentic-robotics serve                               # serves the checkpoint the experiment file names; leave it running
+
+# In a second terminal, with the environment restored (activate the venv, OMNI_KIT_ACCEPT_EULA=YES,
+# the OpenRouter key), from the same working directory:
 agentic-robotics episode --task spell_hen_patterned_0_feasible_0
 ```
 
