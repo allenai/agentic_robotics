@@ -11,6 +11,12 @@ from PIL import Image as PILImage
 logger = logging.getLogger(__name__)
 
 
+MACRO_BLOCK = 8
+"""Pixel alignment the video writer requires of a frame's sides. imageio's default of 16 pads the
+640x360 observation to 640x368, stretching every frame and moving its pixel grid off the one the
+model points into; H.264 is fine with 8 (1080p is 8 x 135), which both sides already satisfy."""
+
+
 def create_unique_dir(parent_dir: Path, dir_prefix: str = "") -> Path:
     """Create a unique directory under the given parent directory.
 
@@ -36,7 +42,7 @@ def export_video(
     :return: True if the video was successfully exported, else False
     """
     video_path.parent.mkdir(parents=True, exist_ok=True)
-    writer = iio.get_writer(video_path, fps=fps, quality=quality)
+    writer = iio.get_writer(video_path, fps=fps, quality=quality, macro_block_size=MACRO_BLOCK)
 
     for image in frames:
         writer.append_data(image)
@@ -73,6 +79,7 @@ class IncrementalVideoWriter:
             video_path,
             fps=fps,
             quality=quality,
+            macro_block_size=MACRO_BLOCK,
             output_params=["-movflags", "+frag_keyframe+empty_moov"],
         )
         self._closed = False
