@@ -1068,11 +1068,14 @@ def run_generate_env_mode(args: argparse.Namespace, settings: ExperimentSettings
     """Stage-1 codegen for every PDDL variant of a task: one env package, with reset states, each.
 
     A task owns a directory of variant problems, and a run draws one at random, so all of them are
-    built here rather than only the one a draw would pick. `--reset-states` (default 32) applies to
-    each variant.
+    built here rather than only the one a draw would pick. `--task` may instead name one variant's
+    slug (how a run is pinned to one scene), and then only that package is built. `--reset-states`
+    (default 32) applies to each variant.
     """
     task = chosen_task_config(args, settings)
     variants = task_variants.all_variants(task)
+    if args.task and args.task not in load_tasks():
+        variants = [variant for variant in variants if variant.task_slug == args.task]
     if not variants:
         raise SystemExit(
             f"Task '{task.task_slug}' has no PDDL variant to build under "
