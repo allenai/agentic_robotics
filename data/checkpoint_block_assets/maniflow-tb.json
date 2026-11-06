@@ -1,0 +1,195 @@
+{
+ "checkpoint": "maniflow-tb",
+ "training_env_pys": [
+  "allenai/toyblocks-data: Easy/Train/Easy_Train",
+  "allenai/toyblocks-data: Medium/Train/Medium_Train",
+  "allenai/toyblocks-data: Hard/Train/Hard_Train"
+ ],
+ "note": "Written by hand for the released checkpoint (https://huggingface.co/allenai/maniflow-tb), whose config.yaml names no dataset directory, so the checkpoint -> dataset -> env.py chain cannot be read. The three training sets are stack_three.py --train scenes: the train-split letters and digits named by their step texts, from the train_blocks_large library at its codegen scale.",
+ "assets": {
+  "block_1": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_3": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_5": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_c": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_d": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_e": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_f": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_g": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_h": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_j": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_k": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_l": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_m": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_n": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_p": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_q": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_s": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_u": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_v": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_w": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_x": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_y": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ],
+  "block_z": [
+   "train_blocks_large",
+   [
+    0.9,
+    0.9,
+    0.9
+   ]
+  ]
+ }
+}
