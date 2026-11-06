@@ -73,8 +73,8 @@ can import ToyBlocks (`--python` or `$AGENTIC_ROBOTICS_PYTHON` names it).
 
 ```bash
 agentic-robotics menu    --backend oracle                      # pick tasks one after another at http://127.0.0.1:8083
-agentic-robotics episode --task r_on_red --backend oracle      # one model-driven episode, scripted skills
-agentic-robotics human   --task r_on_red --backend oracle      # drive it yourself at http://127.0.0.1:8083
+agentic-robotics episode --task spell_hen_patterned_0_feasible_0 --backend oracle   # one model-driven episode, scripted skills
+agentic-robotics human   --task spell_hen_patterned_0_feasible_0 --backend oracle   # drive it yourself at http://127.0.0.1:8083
 agentic-robotics portal                                        # browse finished runs at http://127.0.0.1:8082
 agentic-robotics portal --static                               # or write them as pages under <runs dir>/portal/
 ```
@@ -85,7 +85,7 @@ skills need the policy server up first, in its own shell:
 
 ```bash
 agentic-robotics serve                                         # serves the checkpoint the experiment file names
-agentic-robotics episode --task ai2_stacked
+agentic-robotics episode --task spell_hen_patterned_0_feasible_0
 ```
 
 What a run holds fixed -- the skill backend, the model, the checkpoint, the viewer, the camera,

@@ -3,7 +3,7 @@
 # overrides its value for one run, and the resolved result is written to the run directory as
 # config.json.
 
-task = "r_on_red"             # key into the task table, run when --task is not given
+task = "spell_hen_patterned_0_feasible_0"   # task key or variant slug, run when --task is not given
 model = "opus-5.5"            # key into OPENAI_API_MODEL_CONFIGS
 skill_backend = "oracle"      # "oracle" (scripted vecgen skills) or "maniflow" (policy server)
 maniflow = "maniflow-tb"      # key into MANIFLOW_CONFIGS: the checkpoint `serve` and the ManiFlow skills use
