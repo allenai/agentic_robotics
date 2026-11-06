@@ -278,6 +278,17 @@ async def _run_page_driven_episodes(
 
     if current is not None:
         wire_stop(current)
+        # A scene built before the page existed (`page`, `human`) is announced the way a loaded one
+        # is, so the page's scene label reads its name instead of "no task loaded".
+        task_config = getattr(getattr(current, "config", None), "task_config", None)
+        if task_config is not None:
+            session.emit(
+                {
+                    "type": "task_loaded",
+                    "name": task_config.task_slug,
+                    "description": task_config.name,
+                }
+            )
 
     async def apply_task_request() -> None:
         """Load the task the page asked for, if any, and tell the page how it went."""
